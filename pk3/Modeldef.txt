@@ -1,0 +1,656 @@
+Model MunitionsBox // StrikerMan780
+{
+   Path "Models"
+   Model 0 "Crate.md3"
+   Skin 0 "Crate.png"
+   Scale 8.0 8.0 8.0
+
+   FrameIndex BAR1 A 0 0
+}
+
+Model GoldenGun // Vicious
+{
+   Path "Models"
+   Model 0 "GoldenGun.md2"
+   Skin 0 "GoldenGun.png"
+   Scale 2.0 2.0 2.0
+
+   Frame BFUG A 0 "Base"
+}
+
+model ZMG // Vicious/StrikerMan780
+{
+   Path "Models"
+   Model 0 "ZMG.md2"
+   Skin 0 "ZMG.png"
+   Scale 0.8 0.8 0.8
+
+   Frame ZMGP A 0 "Base1"
+}
+
+model Tazer // StrikerMan780
+{
+   Path "Models"
+   Model 0 "Tazer.md2"
+   Skin 0 "Tazer.png"
+   Scale 2.7 2.7 2.7
+
+   Frame TAZP A 0 "Skin"
+}
+
+model ThrownKnife // Vicious/StrikerMan780
+{
+   Path "Models"
+   Model 0 "KnifeThrow.md2"
+   Skin 0 "Knife.png"
+   Scale 2.5 2.5 2.5
+
+   Frame TKNI A 0 "Base1"
+   Frame TKNI B 0 "Base2"
+   Frame TKNI C 0 "Base3"
+   Frame TKNI D 0 "Base4"
+   Frame TKNI E 0 "Base5"
+   Frame TKNI F 0 "Base6"
+   Frame TKNI G 0 "Base7"
+   Frame TKNI H 0 "Base8"
+}
+
+model HuntingKnife // Vicious/StrikerMan780
+{
+   Path "Models"
+   Model 0 "Knife.md2"
+   Skin 0 "Knife.png"
+   Scale 2.5 2.5 2.5
+   ZOffset 1
+
+   Frame TKNP A 0 "Base1"
+}
+
+model Knives // Vicious/StrikerMan780
+{
+   Path "Models"
+   Model 0 "Knife.md2"
+   Skin 0 "Knife.png"
+   Scale 2.5 2.5 2.5
+   ZOffset 1
+
+   Frame TKNP A 0 "Base1"
+}
+
+model ThrowingKnives // Vicious/StrikerMan780
+{
+   Path "Models"
+   Model 0 "Knife.md2"
+   Skin 0 "Knife.png"
+   Scale 2.5 2.5 2.5
+   ZOffset 1
+
+   Frame TKNP A 0 "Base1"
+}
+
+model DD44 // Vicious
+{
+   Path "Models"
+   Model 0 "DD44.md2"
+   Skin 0 "DD44.png"
+   Scale 0.7 0.7 0.7
+  // ZOffset 0
+
+   Frame DD4P A 0 "Base1"
+}
+
+model CougarMagnum // Vicious
+{
+   Path "Models"
+   Model 0 "CougarMagnum.md2"
+   Skin 0 "CougarMagnum.png"
+   Scale 0.6 0.6 0.6
+  // ZOffset 0
+
+   Frame RAIL A 0 "Base"
+}
+
+model BloodsplatterPool // StrikerMan780
+{
+   Path "Models"
+   Model 0 "BloodPool.md2"
+   Skin 0 "BloodPool.png"
+   Scale 0.7 0.7 0.7
+   ZOffset 0.1
+
+   Frame BLUD E 0 "Skin"
+}
+
+model RCP90 // Dark_Knight
+{
+   Path "Models"
+   Model 0 "RC-P90.md3"
+   Skin 0 "RC-P90.png"
+   Scale 1.4 1.4 1.4
+  // ZOffset 0
+
+   FrameIndex RCPP A 0 0
+}
+
+model Klobb // Dark_Knight
+{
+   Path "Models"
+   Model 0 "Klobb.md3"
+   Skin 0 "Klobb.png"
+   Scale 1.1 1.1 1.1
+  // ZOffset 0
+
+   FrameIndex MGUN A 0 0
+}
+
+model SniperRifle // Dark_Knight
+{
+   Path "Models"
+   Model 0 "SniperRifle.md2"
+   Skin 0 "SniperRifle.png"
+   Scale 1.1 1.1 1.1
+   ZOffset 0
+
+   FrameIndex SNPR A 0 0
+}
+
+model AutomaticShotgun // Dark_Knight
+{
+   Path "Models"
+   Model 0 "AutomaticShotgun.md3"
+   Skin 0 "AutomaticShotgun.png"
+   Scale 1.1 1.1 1.1
+   ZOffset 0
+
+   FrameIndex SGN2 A 0 0
+}
+
+model LaserBeam // StrikerMan780
+{
+   Path "Models"
+   Model 0 "Tracer.md3"
+   Skin 0 "BeamCore.png"
+   Model 1 "TracerTip.md3"
+   Skin 1 "BeamTip.png"
+   Scale 36.0 6.0 6.0
+   PITCHFROMMOMENTUM
+  // ZOffset 0
+
+   FrameIndex PLSS A 0 0
+   FrameIndex PLSS B 0 0
+}
+
+model LaserTrail // StrikerMan780
+{
+   Path "Models"
+   Model 0 "Tracer.md3"
+   Skin 0 "BeamCore.png"
+   Scale 0.0 0.0 0.0
+   PITCHFROMMOMENTUM
+  // ZOffset 0
+
+   FrameIndex PLSS A 0 0
+   FrameIndex PLSS B 0 0
+}
+
+model GE64Grenade
+{
+   Path "Models"
+   Model 0 "GrenadeProjectile.md2"
+   Skin 0 "GrenadeProjectile.png"
+   Scale 1.1 1.1 1.1
+   PITCHFROMMOMENTUM
+
+   FrameIndex SGRN A 0 0
+}
+
+model BulletTracer
+{
+   Path "Models"
+   Model 0 "Tracer.md3"
+   Skin 0 "Tracer.png"
+   Scale 20.0 4.0 4.0
+   PITCHFROMMOMENTUM
+
+   FrameIndex PUFF A 0 0
+}
+
+model Debris1
+{
+   Path "Models"
+   Model 0 "Debris.md2"
+   Skin 0 "Debris1.png"
+   Scale 1.32 1.32 1.32
+   PITCHFROMMOMENTUM
+
+   FrameIndex DEB1 A 0 0
+   FrameIndex DEB1 B 0 1
+   FrameIndex DEB1 C 0 2
+   FrameIndex DEB1 D 0 3
+   FrameIndex DEB1 E 0 4
+   FrameIndex DEB1 F 0 5
+   FrameIndex DEB1 G 0 6
+   FrameIndex DEB1 H 0 7
+}
+
+model Debris2
+{
+   Path "Models"
+   Model 0 "Debris.md2"
+   Skin 0 "Debris2.png"
+   Scale 1.32 1.32 1.32
+   PITCHFROMMOMENTUM
+
+   FrameIndex DEB2 A 0 0
+   FrameIndex DEB2 B 0 1
+   FrameIndex DEB2 C 0 2
+   FrameIndex DEB2 D 0 3
+   FrameIndex DEB2 E 0 4
+   FrameIndex DEB2 F 0 5
+   FrameIndex DEB2 G 0 6
+   FrameIndex DEB2 H 0 7
+}
+
+model Debris3
+{
+   Path "Models"
+   Model 0 "Debris.md2"
+   Skin 0 "Debris3.png"
+   Scale 1.32 1.32 1.32
+   PITCHFROMMOMENTUM
+
+   FrameIndex DEB3 A 0 0
+   FrameIndex DEB3 B 0 1
+   FrameIndex DEB3 C 0 2
+   FrameIndex DEB3 D 0 3
+   FrameIndex DEB3 E 0 4
+   FrameIndex DEB3 F 0 5
+   FrameIndex DEB3 G 0 6
+   FrameIndex DEB3 H 0 7
+}
+
+model Debris4
+{
+   Path "Models"
+   Model 0 "Debris.md2"
+   Skin 0 "Debris4.png"
+   Scale 1.32 1.32 1.32
+   PITCHFROMMOMENTUM
+
+   FrameIndex DEB4 A 0 0
+   FrameIndex DEB4 B 0 1
+   FrameIndex DEB4 C 0 2
+   FrameIndex DEB4 D 0 3
+   FrameIndex DEB4 E 0 4
+   FrameIndex DEB4 F 0 5
+   FrameIndex DEB4 G 0 6
+   FrameIndex DEB4 H 0 7
+}
+
+model Debris5
+{
+   Path "Models"
+   Model 0 "Debris.md2"
+   Skin 0 "Debris5.png"
+   Scale 1.32 1.32 1.32
+   PITCHFROMMOMENTUM
+
+   FrameIndex DEB5 A 0 0
+   FrameIndex DEB5 B 0 1
+   FrameIndex DEB5 C 0 2
+   FrameIndex DEB5 D 0 3
+   FrameIndex DEB5 E 0 4
+   FrameIndex DEB5 F 0 5
+   FrameIndex DEB5 G 0 6
+   FrameIndex DEB5 H 0 7
+}
+
+model CyclonePlasma
+{
+   Path "Models"
+   Model 0 "Tracer.md3"
+   Skin 0 "CycloneTracer.png"
+   Scale 20.0 7.0 7.0
+   PITCHFROMMOMENTUM
+
+   FrameIndex TPLA A 0 0
+}
+
+model MagnumBullets
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGrey.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGrey.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex MAGB A 0 0
+}
+
+model 9mmBullets
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model Large9mmBullets
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model PointedBullets
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex PAMO A 0 0
+}
+
+model ShotgunCartridges
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainRed.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideRed.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxTextYellow.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex SHEL A 0 0
+}
+
+model LargeShotgunCartridges
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainRed.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideRed.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxTextYellow.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex SHEL A 0 0
+}
+
+model GrenadeRounds
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainBrown.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideBrown.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex ROCK A 0 0
+}
+
+model Rockets
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainBrown.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideBrown.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex ROCK A 0 0
+}
+
+model MedikitPickup
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainMed.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideMed.png"
+	Scale 10.0 8.0 8.0
+
+	FrameIndex MEDI A 0 0
+}
+
+model StimpackPickup
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainMed.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideMed.png"
+	Scale 7.0 5.0 7.0
+
+	FrameIndex STIM A 0 0
+}
+
+model BodyArmorPickup
+{
+	Path "Models"
+	Model 0 "BodyArmor.md3"
+	Skin 0 "BodyArmor.png"
+	Scale 3.2 3.2 2.5
+
+	FrameIndex ARM2 A 0 0
+}
+
+Model AutomaticShotgun
+{
+   Path "Models\Autoshotgun"
+   Model 0 "Autoshotgun.Md3"
+   Scale -8 6 8
+
+   FrameIndex ASHG A 0 0
+   FrameIndex ASHG B 0 0
+   FrameIndex ASHG C 0 1
+   FrameIndex ASHG D 0 2
+   FrameIndex ASHG E 0 3
+   FrameIndex ASHG F 0 4
+   FrameIndex ASHG G 0 5
+   FrameIndex ASHG H 0 6
+   FrameIndex ASHG I 0 7
+}
+
+Model AutomaticShotgun
+{
+   Path "Models\Autoshotgun"
+   Model 0 "AutoShotgunFlash.Md3"
+   Scale -8 6 8
+
+   FrameIndex NULL A 0 0
+   FrameIndex NULL B 0 1
+}
+
+Model AutomaticShotgunPaintball
+{
+   Path "Models\Autoshotgun"
+   Model 0 "Autoshotgun.Md3"
+   Scale -8 6 8
+
+   FrameIndex ASHG A 0 0
+   FrameIndex ASHG B 0 0
+   FrameIndex ASHG C 0 1
+   FrameIndex ASHG D 0 2
+   FrameIndex ASHG E 0 3
+   FrameIndex ASHG F 0 4
+   FrameIndex ASHG G 0 5
+   FrameIndex ASHG H 0 6
+   FrameIndex ASHG I 0 7
+}
+
+Model AutomaticShotgunPaintball
+{
+   Path "Models\Autoshotgun"
+   Model 0 "AutoShotgunFlash.Md3"
+   Scale -8 6 8
+
+   FrameIndex NULL A 0 0
+   FrameIndex NULL B 0 1
+}
+
+model Ge64Rocket
+{
+   Path "Models\Projectiles\Rocket"
+   Model 0 "rocket.md3"
+   Scale 1.5 1.5 1.5
+   PITCHFROMMOMENTUM
+
+   FrameIndex MISL A 0 0
+}
+
+Model MoonrakerLaser
+{
+   Path "Models\Moonraker"
+   Model 0 "Moonraker.Md3"
+   Scale -8 6 8
+
+   FrameIndex MOON A 0 0
+   FrameIndex MOON B 0 0
+}
+
+Model MoonrakerLaser
+{
+   Path "Models\Moonraker"
+   Model 0 "MoonrakerFlash.Md3"
+   Scale -8 6 8
+
+   FrameIndex NULL A 0 0
+   FrameIndex NULL B 0 1
+   FrameIndex NULL C 0 2
+}
+
+Model BigSatellite
+{
+   Path "Models"
+   Model 0 "0479_radardish.md3"
+   Skin 0 "0479_radardish.png"
+   Scale 6.0 6.0 4.5
+
+   FrameIndex SATT A 0 0
+}
+
+Model JamesBond
+{
+  Path "Models/player"
+  Model 0 "marine.md2"
+  Skin 0 "green.png"
+  Model 1 "marinegun.md2"
+  Skin 1 "marinegun.pcx"
+  Scale 1.1 1.1 1.1
+  ZOffset 22.0
+
+  Frame PLAY A 0 "run2"
+  Frame PLAY A 1 "run2"
+  Frame PLAY B 0 "run3"
+  Frame PLAY B 1 "run3"
+  Frame PLAY C 0 "run5"
+  Frame PLAY C 1 "run5"
+  Frame PLAY D 0 "run6"
+  Frame PLAY D 1 "run6"
+
+  Frame PLAY E 0 "attack1"
+  Frame PLAY E 1 "attack1"
+  Frame PLAY F 0 "attack3"
+  Frame PLAY F 1 "attack3"
+
+  Frame PLAY G 0 "pain101"
+  Frame PLAY G 1 "pain101"
+}
+
+Model JamesBond
+{
+  Path "Models/player"
+  Model 0 "marine.md2"
+  Skin 0 "greendead.png"
+  Scale 1.1 1.1 1.1
+  ZOffset 22.0
+
+  Frame PLAY H 0 "death301"
+  Frame PLAY I 0 "death302"
+  Frame PLAY J 0 "death303"
+  Frame PLAY K 0 "death304"
+  Frame PLAY L 0 "death306"
+  Frame PLAY M 0 "death307"
+  Frame PLAY N 0 "death308"
+
+  Frame PLYC H 0 "crdeath1"
+  Frame PLYC I 0 "crdeath2"
+  Frame PLYC J 0 "crdeath3"
+  Frame PLYC K 0 "crdeath4"
+  Frame PLYC L 0 "crdeath5"
+  Frame PLYC M 0 "crdeath5"
+  Frame PLYC N 0 "crdeath5"
+}
+
+Model JamesBond
+{
+  Path "Models/player"
+  Model 0 "marine.md2"
+  Skin 0 "green.png"
+  Model 1 "marinegun.md2"
+  Skin 1 "marinegun.pcx"
+  Scale 1.1 1.1 1.1
+  NOINTERPOLATION
+  ZOffset 22.0
+
+  Frame PLYC A 0 "crwalk2"
+  Frame PLYC A 1 "crwalk2"
+  Frame PLYC B 0 "crwalk3"
+  Frame PLYC B 1 "crwalk3"
+  Frame PLYC C 0 "crwalk5"
+  Frame PLYC C 1 "crwalk5"
+  Frame PLYC D 0 "crwalk6"
+  Frame PLYC D 1 "crwalk6"
+
+  Frame PLYC E 0 "crattak1"
+  Frame PLYC E 1 "crattak1"
+  Frame PLYC F 0 "crattak3"
+  Frame PLYC F 1 "crattak3"
+
+  Frame PLYC G 0 "crpain1"
+  Frame PLYC G 1 "crpain1"
+}

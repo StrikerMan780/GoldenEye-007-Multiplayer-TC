@@ -1,0 +1,111 @@
+// Plasma
+pointlight PLASMABALL
+{
+    color 0.0 0.25 1.0
+    size 56
+}
+
+flickerlight PLASMA_X1
+{
+    color 0.2 0.25 1.0
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X2
+{
+    color 0.2 0.25 0.8
+    size 80
+    secondarySize 88
+    chance 0.4
+}
+
+flickerlight PLASMA_X3
+{
+    color 0.1 0.25 0.5
+    size 64
+    secondarySize 72
+    chance 0.4
+}
+
+flickerlight PLASMA_X4
+{
+    color 0.0 0.1 0.25
+    size 8
+    secondarySize 16
+    chance 0.4
+}
+
+object LaserBeam
+{
+    frame PLSSA { light PLASMABALL }
+    frame PLSSB { light PLASMABALL }
+
+    frame PLSEA { light PLASMA_X1 }
+    frame PLSEB { light PLASMA_X2 }
+    frame PLSEC { light PLASMA_X2 }
+    frame PLSED { light PLASMA_X3 }
+    frame PLSEE { light PLASMA_X4 }
+}
+
+flickerlight ProximityMine
+{
+    color 0.0 1.0 0.0
+    size 0
+    secondarySize 6
+    chance 0.995
+}
+
+object ProxProj
+{
+	frame PROX	{ light ProximityMine }
+}
+
+pointlight TRACER
+{
+    color 1.0 0.5 0.25
+    size 32
+}
+
+pointlight EXPLOSION1
+{
+    color 1.0 0.4 0.0
+    size 40
+}
+
+pointlight EXPLOSION2
+{
+    color 1.0 0.4 0.0
+    size 32
+}
+
+object BulletTracer
+{
+	frame PUFF { light TRACER }
+}
+
+object RollingExplosion
+{
+	frame FIR2 { light EXPLOSION1 }
+}
+
+object RollingExplosion2
+{
+	frame FIR2 { light EXPLOSION1 }
+}
+
+object RollingExplosion3
+{
+	frame FIR2 { light EXPLOSION1 }
+}
+
+object RollingExplosion4
+{
+	frame FIR2 { light EXPLOSION2 }
+}
+
+object ProxExplosion
+{
+	frame FIR2 { light EXPLOSION1 }
+}

@@ -1,0 +1,3 @@
+texture WHITE
+	pic WHITE tics 4
+	pic WHITE tics 4 

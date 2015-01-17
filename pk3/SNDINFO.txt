@@ -1,0 +1,99 @@
+WeaponReload DSRELOAD
+weapons/chngun dschngn
+GoldenGunFire dsgoldgn
+
+BarrelExplode1 dsbarexp
+BarrelExplode2 dsbarex2
+
+$random world/barrelx { BarrelExplode1 BarrelExplode2 }
+
+SniperFire dssniper
+LaserUp dsmoonup
+
+KnifeSwing dsknife
+KnifeHit dsknfhit
+KnifeUp dsknifup
+
+RCP90Fire dsrcp90
+
+Ricochet1 dsrico1
+Ricochet2 dsrico2
+Ricochet3 dsrico3
+Ricochet4 dsrico4
+Ricochet5 dsrico5
+Ricochet6 dsrico6
+Ricochet7 dsrico7
+Ricochet8 dsrico8
+Ricochet9 dsrico9
+
+$random Ricochet { Ricochet1 Ricochet2 Ricochet3 Ricochet4 Ricochet5 Ricochet6 Ricochet7 Ricochet8 Ricochet9 }
+$limit Ricochet 0
+$limit Ricochet1 0
+$limit Ricochet2 0
+$limit Ricochet3 0
+$limit Ricochet4 0
+$limit Ricochet5 0
+$limit Ricochet6 0
+$limit Ricochet7 0
+$limit Ricochet8 0
+$limit Ricochet9 0
+
+Tazer dstaze
+FleshHit DSFLESH
+KnifeBounce DSKNFBNC
+
+DD44Fire dsdd44
+
+misc/armor_pkup dsarmor
+
+ShellCasing1 dsshell1
+ShellCasing2 dsshell2
+ShellCasing3 dsshell3
+ShellCasing4 dsshell4
+ShellCasing5 dsshell5
+ShellCasing6 dsshell6
+
+$random ShellCasing { ShellCasing1 ShellCasing2 ShellCasing3 ShellCasing4 ShellCasing5 ShellCasing6 }
+
+Bulletcasing1 dsd39m1
+Bulletcasing2 dsd39m2
+Bulletcasing3 dsd39m3
+Bulletcasing4 dsd39m4
+Bulletcasing5 dsd39m5
+
+$random Bulletcasing { Bulletcasing1 Bulletcasing2 Bulletcasing3 Bulletcasing4 Bulletcasing5 }
+
+KF7Fire DSKF7
+
+CycloneFire DSCYCLON
+$limit CycloneFire 0
+CycloneReload DSCYCREL
+
+Snow1 DSSNOW1
+Snow2 DSSNOW2
+Snow3 DSSNOW3
+Snow4 DSSNOW4
+
+$random Snow { Snow1 Snow2 Snow3 Snow4 }
+
+Ar33Fire dsar33
+
+GlassBreak DSGLASSB
+GlassHit DSGLHIT
+
+ProxBeep DSMINEBP
+ProxHit DSMINEHT
+ProxThrow DSMINETH
+RemoteButton DSREMOTE
+
+misc/health_pkup	dshealth
+misc/ammo_pkup		dswpnup
+misc/goldeneye_damage	dsgepain
+misc/goldeneye_death	dsgedeth
+
+// ************************ MENU SOUNDS ************
+menu/activate		dsmcnfrm	// Activate a new menu
+menu/backup			dsmenubk	// Backup to previous menu
+menu/cursor			dsmenumv	// Move cursor up/down
+menu/choose			dsmcnfrm 	// Choose a menu item
+menu/clear			dsmenubk	// Close top menu

@@ -1,0 +1,79 @@
+Height 0;
+
+// 269 179 for Bullet Icon
+// 262 182 for Primary Ammo
+// 298 182 for Secondary Ammo
+// 24 189 for health
+// 24 181 for armor
+// 95 180 for frags
+
+// 271 184 for Centered Ammo Icon
+// 318 1 for alternate Frags location
+
+// 50 21/176 Health Bar
+// 215 21/176 Armor Bar
+
+// Fullscreen HUD
+
+statusbar fullscreen, forcescaled
+{
+	drawimage ammoicon1, 271, 184, center;
+    drawnumber 3, AMMOFONT, untranslated, ammo1, 262, 182;
+    drawnumber 3, AMMOFONT, untranslated, ammo2, 298, 182;
+
+    GameMode deathmatch, teamgame
+    {
+    	drawnumber 3, STATUSFONT, green, frags, 318, 1;
+    }
+
+	//keys
+	GameMode singleplayer, cooperative
+	{
+	drawswitchableimage BlueCard && BlueSkull, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 36, 171;
+	drawswitchableimage YellowCard && YellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 36, 181;
+	drawswitchableimage RedCard && RedSkull, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 36, 191;
+	}
+
+	// GE Health and Armor Indicators
+	InInventory PowerFrightener, 1
+	{
+	drawbar "HEALTH", "HEALTHBK", health, vertical, 50, 21;
+	drawbar "ARMOR", "ARMORBK", armor, vertical, 215, 21;
+	drawnumber 3, SMALLFONT, white, health, 24, 189;
+    drawnumber 3, SMALLFONT, blue, armor, 24, 181;
+	}
+}
+
+statusbar normal, forcescaled
+{
+	drawimage ammoicon1, 271, 184, center;
+    drawnumber 3, AMMOFONT, untranslated, ammo1, 262, 182;
+    drawnumber 3, AMMOFONT, untranslated, ammo2, 298, 182;
+
+    GameMode deathmatch, teamgame
+    {
+    	drawnumber 3, STATUSFONT, green, frags, 318, 1;
+    }
+
+	//keys
+	GameMode singleplayer, cooperative
+	{
+	drawswitchableimage BlueCard && BlueSkull, "nullimage", "STKEYS0", "STKEYS3", "STKEYS6", 36, 171;
+	drawswitchableimage YellowCard && YellowSkull, "nullimage", "STKEYS1", "STKEYS4", "STKEYS7", 36, 181;
+	drawswitchableimage RedCard && RedSkull, "nullimage", "STKEYS2", "STKEYS5", "STKEYS8", 36, 191;
+	}
+
+	// GE Health and Armor Indicators
+	InInventory PowerFrightener, 1
+	{
+	drawbar "HEALTH", "HEALTHBK", health, vertical, 50, 21;
+	drawbar "ARMOR", "ARMORBK", armor, vertical, 215, 21;
+	drawnumber 3, SMALLFONT, white, health, 24, 189;
+    drawnumber 3, SMALLFONT, blue, armor, 24, 181;
+	}
+}
+
+statusbar inventory
+{
+	drawinventorybar Doom, 7, INDEXFONT, 50, 170;
+}

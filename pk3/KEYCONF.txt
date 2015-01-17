@@ -1,0 +1,15 @@
+weaponsection "Ge64 DM Weapons"
+setslot 1 Tazer ThrowingKnives HuntingKnife
+setslot 2 PP7 DD44 CougarMagnum
+setslot 3 GE64Shotgun AutomaticShotgun
+setslot 4 Klobb KF7Soviet ZMG AR33
+setslot 5 GE64GrenadeLauncher GE64RocketLauncher
+setslot 6 MoonrakerLaser PD_Cyclone
+setslot 7 RCP90 GoldenGun
+setslot 8 SniperRifle
+setslot 9 RemoteMines ProximityMines
+
+clearplayerclasses
+
+addplayerclass JamesBond nomenu
+alias ge_paintball "set paintballvar %1;puke 997"

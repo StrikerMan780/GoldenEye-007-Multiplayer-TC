@@ -1,0 +1,13 @@
+splash Snow
+{
+ sound		Snow
+ NoAlert
+}
+
+terrain	 Snow_t
+{
+ footclip	 8
+ splash Snow
+}
+
+floor white Snow_t
