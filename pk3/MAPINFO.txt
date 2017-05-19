@@ -8,7 +8,7 @@ noskillmenu
 
 map ARCHIVES "Goldeneye 007 - Archives"
 sky1 sky1 0.0
-music D_RUNNIN
+music D_ARCHIV
 clipmidtextures
 allowcrouch
 next BUNKER

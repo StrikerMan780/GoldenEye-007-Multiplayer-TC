@@ -18,12 +18,12 @@ Height 0;
 statusbar fullscreen, forcescaled
 {
 	drawimage ammoicon1, 271, 184, center;
-    drawnumber 3, AMMOFONT, untranslated, ammo1, 262, 182;
-    drawnumber 3, AMMOFONT, untranslated, ammo2, 298, 182;
+    drawnumber 3, SMALLFONT, untranslated, ammo1, 262, 182;
+    drawnumber 3, SMALLFONT, untranslated, ammo2, 298, 182;
 
     GameMode deathmatch, teamgame
     {
-    	drawnumber 3, STATUSFONT, green, frags, 318, 1;
+    	drawnumber 3, BIGFONT, green, frags, 318, 1;
     }
 
 	//keys
@@ -47,12 +47,12 @@ statusbar fullscreen, forcescaled
 statusbar normal, forcescaled
 {
 	drawimage ammoicon1, 271, 184, center;
-    drawnumber 3, AMMOFONT, untranslated, ammo1, 262, 182;
-    drawnumber 3, AMMOFONT, untranslated, ammo2, 298, 182;
+    drawnumber 3, SMALLFONT, untranslated, ammo1, 262, 182;
+    drawnumber 3, SMALLFONT, untranslated, ammo2, 298, 182;
 
     GameMode deathmatch, teamgame
     {
-    	drawnumber 3, STATUSFONT, green, frags, 318, 1;
+    	drawnumber 3, BIGFONT, green, frags, 318, 1;
     }
 
 	//keys
