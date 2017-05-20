@@ -15,6 +15,7 @@ KnifeHit dsknfhit
 KnifeUp dsknifup
 
 RCP90Fire dsrcp90
+ZMGFire dsminign
 
 Ricochet1 dsrico1
 Ricochet2 dsrico2

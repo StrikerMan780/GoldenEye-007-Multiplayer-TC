@@ -660,14 +660,14 @@ actor AutomaticShotgunPaintball : AutomaticShotgun
 
 ACTOR ZMGClip : Ammo
 {
-Inventory.MaxAmount 32 // size of the clip
-Ammo.BackpackAmount 0
-Ammo.BackpackMaxAmount 32 //MUST be the same as Inventory.MaxAmmount
-Inventory.Icon ICONBULL
-+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 32 // size of the clip
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 32 //MUST be the same as Inventory.MaxAmmount
+	Inventory.Icon ICONBULL
+	+INVENTORY.IGNORESKILL
 }
 
-ACTOR ZMG : Weapon Replaces Minigun
+ACTOR ZMG : Weapon 5014
 {
 	Decal BulletChip
 	Weapon.UpSound "misc/w_pkup"
@@ -681,7 +681,7 @@ ACTOR ZMG : Weapon Replaces Minigun
 	Weapon.SisterWeapon "ZMGPaintball"
 	Inventory.PickupMessage "ZMG"
 	Obituary "%o was drilled by %k's ZMG"
-	AttackSound "weapons/minigun"
+	AttackSound "ZMGFire"
 	SpawnID 214
 	Radius 20
 	Height 16
@@ -1766,7 +1766,7 @@ ACTOR MagnumBullets : Ammo Replaces CellPack
 	}
 }
 
-ACTOR CougarMagnum : DoomWeapon Replaces Railgun
+ACTOR CougarMagnum : DoomWeapon 5012
 {
 	Decal BulletChip
 	Weapon.UpSound "misc/w_pkup"
@@ -1994,7 +1994,7 @@ Inventory.Icon "GRENADE"
 +INVENTORY.IGNORESKILL
 }
 
-actor GE64GrenadeLauncher : GrenadeLauncher Replaces GrenadeLauncher
+actor GE64GrenadeLauncher : Weapon 5011
 {
   Weapon.AmmoType "GrenadeClip"
   Weapon.AmmoType2 "GrenadeRounds"
@@ -2341,7 +2341,7 @@ Inventory.Icon ICONBULL
 +INVENTORY.IGNORESKILL
 }
 
-actor RCP90 : BFG10k Replaces BFG10k
+actor RCP90 : Weapon 5013
 {
   Obituary "%o was ripped apart by %k's RC-P90."
   Weapon.Ammotype1 "RCP90Clip"

@@ -1,49 +1,49 @@
 Model MunitionsBox // StrikerMan780
 {
-   Path "Models"
-   Model 0 "Crate.md3"
-   Skin 0 "Crate.png"
-   Scale 8.0 8.0 8.0
+	Path "Models"
+	Model 0 "Crate.md3"
+	Skin 0 "Crate.png"
+	Scale 8.0 8.0 8.0
 
    FrameIndex BAR1 A 0 0
 }
 
 Model GoldenGun // Vicious
 {
-   Path "Models"
-   Model 0 "GoldenGun.md2"
-   Skin 0 "GoldenGun.png"
-   Scale 2.0 2.0 2.0
+	Path "Models"
+	Model 0 "GoldenGun.md2"
+	Skin 0 "GoldenGun.png"
+	Scale 2.0 2.0 2.0
 
    Frame BFUG A 0 "Base"
 }
 
 model ZMG // Vicious/StrikerMan780
 {
-   Path "Models"
-   Model 0 "ZMG.md2"
-   Skin 0 "ZMG.png"
-   Scale 0.8 0.8 0.8
+	Path "Models"
+	Model 0 "ZMG.md2"
+	Skin 0 "ZMG.png"
+	Scale 0.8 0.8 0.8
 
    Frame ZMGP A 0 "Base1"
 }
 
 model Tazer // StrikerMan780
 {
-   Path "Models"
-   Model 0 "Tazer.md2"
-   Skin 0 "Tazer.png"
-   Scale 2.7 2.7 2.7
+	Path "Models"
+	Model 0 "Tazer.md2"
+	Skin 0 "Tazer.png"
+	Scale 2.7 2.7 2.7
 
    Frame TAZP A 0 "Skin"
 }
 
 model ThrownKnife // Vicious/StrikerMan780
 {
-   Path "Models"
-   Model 0 "KnifeThrow.md2"
-   Skin 0 "Knife.png"
-   Scale 2.5 2.5 2.5
+	Path "Models"
+	Model 0 "KnifeThrow.md2"
+	Skin 0 "Knife.png"
+	Scale 2.5 2.5 2.5
 
    Frame TKNI A 0 "Base1"
    Frame TKNI B 0 "Base2"
@@ -57,10 +57,10 @@ model ThrownKnife // Vicious/StrikerMan780
 
 model HuntingKnife // Vicious/StrikerMan780
 {
-   Path "Models"
-   Model 0 "Knife.md2"
-   Skin 0 "Knife.png"
-   Scale 2.5 2.5 2.5
+	Path "Models"
+	Model 0 "Knife.md2"
+	Skin 0 "Knife.png"
+	Scale 2.5 2.5 2.5
    ZOffset 1
 
    Frame TKNP A 0 "Base1"
@@ -68,10 +68,10 @@ model HuntingKnife // Vicious/StrikerMan780
 
 model Knives // Vicious/StrikerMan780
 {
-   Path "Models"
-   Model 0 "Knife.md2"
-   Skin 0 "Knife.png"
-   Scale 2.5 2.5 2.5
+	Path "Models"
+	Model 0 "Knife.md2"
+	Skin 0 "Knife.png"
+	Scale 2.5 2.5 2.5
    ZOffset 1
 
    Frame TKNP A 0 "Base1"
@@ -79,10 +79,10 @@ model Knives // Vicious/StrikerMan780
 
 model ThrowingKnives // Vicious/StrikerMan780
 {
-   Path "Models"
-   Model 0 "Knife.md2"
-   Skin 0 "Knife.png"
-   Scale 2.5 2.5 2.5
+	Path "Models"
+	Model 0 "Knife.md2"
+	Skin 0 "Knife.png"
+	Scale 2.5 2.5 2.5
    ZOffset 1
 
    Frame TKNP A 0 "Base1"
@@ -90,10 +90,10 @@ model ThrowingKnives // Vicious/StrikerMan780
 
 model DD44 // Vicious
 {
-   Path "Models"
-   Model 0 "DD44.md2"
-   Skin 0 "DD44.png"
-   Scale 0.7 0.7 0.7
+	Path "Models"
+	Model 0 "DD44.md2"
+	Skin 0 "DD44.png"
+	Scale 0.7 0.7 0.7
   // ZOffset 0
 
    Frame DD4P A 0 "Base1"
@@ -101,10 +101,10 @@ model DD44 // Vicious
 
 model CougarMagnum // Vicious
 {
-   Path "Models"
-   Model 0 "CougarMagnum.md2"
-   Skin 0 "CougarMagnum.png"
-   Scale 0.6 0.6 0.6
+	Path "Models"
+	Model 0 "CougarMagnum.md2"
+	Skin 0 "CougarMagnum.png"
+	Scale 0.6 0.6 0.6
   // ZOffset 0
 
    Frame RAIL A 0 "Base"
@@ -112,10 +112,10 @@ model CougarMagnum // Vicious
 
 model BloodsplatterPool // StrikerMan780
 {
-   Path "Models"
-   Model 0 "BloodPool.md2"
-   Skin 0 "BloodPool.png"
-   Scale 0.7 0.7 0.7
+	Path "Models"
+	Model 0 "BloodPool.md2"
+	Skin 0 "BloodPool.png"
+	Scale 0.7 0.7 0.7
    ZOffset 0.1
 
    Frame BLUD E 0 "Skin"
@@ -123,10 +123,10 @@ model BloodsplatterPool // StrikerMan780
 
 model RCP90 // Dark_Knight
 {
-   Path "Models"
-   Model 0 "RC-P90.md3"
-   Skin 0 "RC-P90.png"
-   Scale 1.4 1.4 1.4
+	Path "Models"
+	Model 0 "RC-P90.md3"
+	Skin 0 "RC-P90.png"
+	Scale 1.4 1.4 1.4
   // ZOffset 0
 
    FrameIndex RCPP A 0 0
@@ -134,10 +134,10 @@ model RCP90 // Dark_Knight
 
 model Klobb // Dark_Knight
 {
-   Path "Models"
-   Model 0 "Klobb.md3"
-   Skin 0 "Klobb.png"
-   Scale 1.1 1.1 1.1
+	Path "Models"
+	Model 0 "Klobb.md3"
+	Skin 0 "Klobb.png"
+	Scale 1.1 1.1 1.1
   // ZOffset 0
 
    FrameIndex MGUN A 0 0
@@ -145,10 +145,10 @@ model Klobb // Dark_Knight
 
 model SniperRifle // Dark_Knight
 {
-   Path "Models"
-   Model 0 "SniperRifle.md2"
-   Skin 0 "SniperRifle.png"
-   Scale 1.1 1.1 1.1
+	Path "Models"
+	Model 0 "SniperRifle.md2"
+	Skin 0 "SniperRifle.png"
+	Scale 1.1 1.1 1.1
    ZOffset 0
 
    FrameIndex SNPR A 0 0
@@ -156,10 +156,10 @@ model SniperRifle // Dark_Knight
 
 model AutomaticShotgun // Dark_Knight
 {
-   Path "Models"
-   Model 0 "AutomaticShotgun.md3"
-   Skin 0 "AutomaticShotgun.png"
-   Scale 1.1 1.1 1.1
+	Path "Models"
+	Model 0 "AutomaticShotgun.md3"
+	Skin 0 "AutomaticShotgun.png"
+	Scale 1.1 1.1 1.1
    ZOffset 0
 
    FrameIndex SGN2 A 0 0
@@ -167,12 +167,12 @@ model AutomaticShotgun // Dark_Knight
 
 model LaserBeam // StrikerMan780
 {
-   Path "Models"
-   Model 0 "Tracer.md3"
+	Path "Models"
+	Model 0 "Tracer.md3"
    Skin 0 "BeamCore.png"
    Model 1 "TracerTip.md3"
    Skin 1 "BeamTip.png"
-   Scale 36.0 6.0 6.0
+	Scale 36.0 6.0 6.0
    PITCHFROMMOMENTUM
   // ZOffset 0
 
@@ -182,10 +182,10 @@ model LaserBeam // StrikerMan780
 
 model LaserTrail // StrikerMan780
 {
-   Path "Models"
-   Model 0 "Tracer.md3"
-   Skin 0 "BeamCore.png"
-   Scale 0.0 0.0 0.0
+	Path "Models"
+	Model 0 "Tracer.md3"
+	Skin 0 "BeamCore.png"
+	Scale 0.0 0.0 0.0
    PITCHFROMMOMENTUM
   // ZOffset 0
 
@@ -195,10 +195,10 @@ model LaserTrail // StrikerMan780
 
 model GE64Grenade
 {
-   Path "Models"
-   Model 0 "GrenadeProjectile.md2"
-   Skin 0 "GrenadeProjectile.png"
-   Scale 1.1 1.1 1.1
+	Path "Models"
+	Model 0 "GrenadeProjectile.md2"
+	Skin 0 "GrenadeProjectile.png"
+	Scale 1.1 1.1 1.1
    PITCHFROMMOMENTUM
 
    FrameIndex SGRN A 0 0
@@ -206,10 +206,10 @@ model GE64Grenade
 
 model BulletTracer
 {
-   Path "Models"
-   Model 0 "Tracer.md3"
-   Skin 0 "Tracer.png"
-   Scale 20.0 4.0 4.0
+	Path "Models"
+	Model 0 "Tracer.md3"
+	Skin 0 "Tracer.png"
+	Scale 20.0 4.0 4.0
    PITCHFROMMOMENTUM
 
    FrameIndex PUFF A 0 0
@@ -217,10 +217,10 @@ model BulletTracer
 
 model Debris1
 {
-   Path "Models"
-   Model 0 "Debris.md2"
-   Skin 0 "Debris1.png"
-   Scale 1.32 1.32 1.32
+	Path "Models"
+	Model 0 "Debris.md2"
+	Skin 0 "Debris1.png"
+	Scale 1.32 1.32 1.32
    PITCHFROMMOMENTUM
 
    FrameIndex DEB1 A 0 0
@@ -235,10 +235,10 @@ model Debris1
 
 model Debris2
 {
-   Path "Models"
-   Model 0 "Debris.md2"
-   Skin 0 "Debris2.png"
-   Scale 1.32 1.32 1.32
+	Path "Models"
+	Model 0 "Debris.md2"
+	Skin 0 "Debris2.png"
+	Scale 1.32 1.32 1.32
    PITCHFROMMOMENTUM
 
    FrameIndex DEB2 A 0 0
@@ -253,10 +253,10 @@ model Debris2
 
 model Debris3
 {
-   Path "Models"
-   Model 0 "Debris.md2"
-   Skin 0 "Debris3.png"
-   Scale 1.32 1.32 1.32
+	Path "Models"
+	Model 0 "Debris.md2"
+	Skin 0 "Debris3.png"
+	Scale 1.32 1.32 1.32
    PITCHFROMMOMENTUM
 
    FrameIndex DEB3 A 0 0
@@ -271,10 +271,10 @@ model Debris3
 
 model Debris4
 {
-   Path "Models"
-   Model 0 "Debris.md2"
-   Skin 0 "Debris4.png"
-   Scale 1.32 1.32 1.32
+	Path "Models"
+	Model 0 "Debris.md2"
+	Skin 0 "Debris4.png"
+	Scale 1.32 1.32 1.32
    PITCHFROMMOMENTUM
 
    FrameIndex DEB4 A 0 0
@@ -289,10 +289,10 @@ model Debris4
 
 model Debris5
 {
-   Path "Models"
-   Model 0 "Debris.md2"
-   Skin 0 "Debris5.png"
-   Scale 1.32 1.32 1.32
+	Path "Models"
+	Model 0 "Debris.md2"
+	Skin 0 "Debris5.png"
+	Scale 1.32 1.32 1.32
    PITCHFROMMOMENTUM
 
    FrameIndex DEB5 A 0 0
@@ -307,10 +307,10 @@ model Debris5
 
 model CyclonePlasma
 {
-   Path "Models"
-   Model 0 "Tracer.md3"
-   Skin 0 "CycloneTracer.png"
-   Scale 20.0 7.0 7.0
+	Path "Models"
+	Model 0 "Tracer.md3"
+	Skin 0 "CycloneTracer.png"
+	Scale 20.0 7.0 7.0
    PITCHFROMMOMENTUM
 
    FrameIndex TPLA A 0 0
@@ -480,9 +480,9 @@ model BodyArmorPickup
 
 Model AutomaticShotgun
 {
-   Path "Models\Autoshotgun"
+	Path "Models\Autoshotgun"
    Model 0 "Autoshotgun.Md3"
-   Scale -8 6 8
+	Scale -8 6 8
 
    FrameIndex ASHG A 0 0
    FrameIndex ASHG B 0 0
@@ -497,9 +497,9 @@ Model AutomaticShotgun
 
 Model AutomaticShotgun
 {
-   Path "Models\Autoshotgun"
+	Path "Models\Autoshotgun"
    Model 0 "AutoShotgunFlash.Md3"
-   Scale -8 6 8
+	Scale -8 6 8
 
    FrameIndex NULL A 0 0
    FrameIndex NULL B 0 1
@@ -507,9 +507,9 @@ Model AutomaticShotgun
 
 Model AutomaticShotgunPaintball
 {
-   Path "Models\Autoshotgun"
+	Path "Models\Autoshotgun"
    Model 0 "Autoshotgun.Md3"
-   Scale -8 6 8
+	Scale -8 6 8
 
    FrameIndex ASHG A 0 0
    FrameIndex ASHG B 0 0
@@ -524,9 +524,9 @@ Model AutomaticShotgunPaintball
 
 Model AutomaticShotgunPaintball
 {
-   Path "Models\Autoshotgun"
+	Path "Models\Autoshotgun"
    Model 0 "AutoShotgunFlash.Md3"
-   Scale -8 6 8
+	Scale -8 6 8
 
    FrameIndex NULL A 0 0
    FrameIndex NULL B 0 1
@@ -534,9 +534,9 @@ Model AutomaticShotgunPaintball
 
 model Ge64Rocket
 {
-   Path "Models\Projectiles\Rocket"
-   Model 0 "rocket.md3"
-   Scale 1.5 1.5 1.5
+	Path "Models\Projectiles\Rocket"
+	Model 0 "rocket.md3"
+	Scale 1.5 1.5 1.5
    PITCHFROMMOMENTUM
 
    FrameIndex MISL A 0 0
@@ -544,9 +544,9 @@ model Ge64Rocket
 
 Model MoonrakerLaser
 {
-   Path "Models\Moonraker"
+	Path "Models\Moonraker"
    Model 0 "Moonraker.Md3"
-   Scale -8 6 8
+	Scale -8 6 8
 
    FrameIndex MOON A 0 0
    FrameIndex MOON B 0 0
@@ -554,9 +554,9 @@ Model MoonrakerLaser
 
 Model MoonrakerLaser
 {
-   Path "Models\Moonraker"
+	Path "Models\Moonraker"
    Model 0 "MoonrakerFlash.Md3"
-   Scale -8 6 8
+	Scale -8 6 8
 
    FrameIndex NULL A 0 0
    FrameIndex NULL B 0 1
