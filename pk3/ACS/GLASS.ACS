@@ -1,0 +1,30 @@
+#library "GLASS"
+#include "zcommon.acs"
+
+script "SET_GLASS" (int TID)
+{
+	SetLineSpecial(TID, ACS_NamedExecuteWithResult, "GLASS_HIT", TID);
+	SetLineActivation(TID, SPAC_Impact);
+	SetLineTexture(TID, SIDE_FRONT, TEXTURE_MIDDLE, "PWWINDOW");
+	SetLineTexture(TID, SIDE_BACK, TEXTURE_MIDDLE, "PWWINDOW");
+	SetLineBlocking(TID, 2);
+	TranslucentLine(TID, 128, false);
+}
+
+script "GLASS_HIT" (int TID)
+{
+	ThingSound(TID, "GlassHit", 127);
+	SetUserVariable(TID, "user_hits", GetUserVariable(TID, "user_hits")-1);
+	if(GetUserVariable(TID, "user_hits") <= 0)
+	{
+		SetActorState(TID, "Shatter");
+		SetLineSpecial(TID, 0);
+		SetLineBlocking(TID, 0);
+		SetLineTexture(TID, SIDE_FRONT, TEXTURE_MIDDLE, "PWBROKEN");
+		SetLineTexture(TID, SIDE_BACK, TEXTURE_MIDDLE, "PWBROKEN");
+		Delay(2);
+		SetLineTexture(TID, SIDE_FRONT, TEXTURE_MIDDLE, "-");
+		SetLineTexture(TID, SIDE_BACK, TEXTURE_MIDDLE, "-");
+		terminate;
+	}
+}

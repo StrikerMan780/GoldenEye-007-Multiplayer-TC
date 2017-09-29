@@ -1,0 +1,140 @@
+#library "STUFF"
+#include "zcommon.acs"
+
+script 999 ENTER
+{
+	int Paintball = GetCVar("paintballvar");
+	if(Paintball == 1)
+	{
+		GiveInventory("PaintBallMode", 1);
+		Print(s:"Paintball Mode \cdON");
+	}
+}
+
+script 998 RESPAWN
+{
+	GiveInventory("RespawnCheck", 1);
+	int Paintball = GetCVar("paintballvar");
+	if(Paintball == 1)
+	{
+		GiveInventory("PaintBallMode", 1);
+	}
+}
+
+script 997 (void)
+{
+	int Paintball = GetCVar("paintballvar");
+	if(Paintball == 1)
+	{
+		GiveActorInventory(0, "PaintBallMode", 1);
+		PrintBold(s:"Paintball Mode \cdON");
+	}
+	if(Paintball == 0)
+	{
+		TakeActorInventory(0, "PowerWeaponLevel2", 1);
+		PrintBold(s:"Paintball Mode \cgOFF");
+	}
+}
+
+script 996 (void) CLIENTSIDE
+{
+	LocalAmbientSound("misc/goldeneye_damage", 127);
+	delay(4);
+}
+
+script 995 DEATH CLIENTSIDE
+{
+	LocalAmbientSound("misc/goldeneye_death", 127);
+}
+
+script 923 ENTER CLIENTSIDE
+{
+	int OpenGL = GetCVar("vid_renderer");
+	if(OpenGL == 0)
+	{
+		SetFont("DOOMFONT");
+		hudmessage(s:"\cgNOTICE!\cf: \cc THIS MOD RUNS BEST IN \cgOPENGL!\n\ccFeel free to stay in software, but expect it to look and run like ass.";
+		HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_RED, 1.5, 0.5, 6.0, 2.0, 2.0);
+	}
+}
+
+str BloodFrames[40] = {
+"BLUDSC01",
+"BLUDSC02",
+"BLUDSC03",
+"BLUDSC04",
+"BLUDSC05",
+"BLUDSC06",
+"BLUDSC07",
+"BLUDSC08",
+"BLUDSC09",
+"BLUDSC10",
+"BLUDSC11",
+"BLUDSC12",
+"BLUDSC13",
+"BLUDSC14",
+"BLUDSC15",
+"BLUDSC16",
+"BLUDSC17",
+"BLUDSC18",
+"BLUDSC19",
+"BLUDSC20",
+"BLUDSC21",
+"BLUDSC22",
+"BLUDSC23",
+"BLUDSC24",
+"BLUDSC25",
+"BLUDSC26",
+"BLUDSC27",
+"BLUDSC28",
+"BLUDSC29",
+"BLUDSC30",
+"BLUDSC31",
+"BLUDSC32",
+"BLUDSC33",
+"BLUDSC34",
+"BLUDSC35",
+"BLUDSC36",
+"BLUDSC37",
+"BLUDSC38",
+"BLUDSC39",
+"BLUDSC40"
+};
+
+int frame[32];
+
+script 921 DEATH CLIENTSIDE
+{
+ TakeInventory("RespawnCheck", 1);
+ SetHudSize(96, 80, 1);
+ Frame[PlayerNumber()] = 0;
+ 
+ while(CheckInventory("RespawnCheck") <= 0 && Frame[PlayerNumber()] < 40) 
+ { 
+    SetFont(BloodFrames[Frame[PlayerNumber()]]);
+	Hudmessage(s:"a";
+    HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.1, 0.1, 1.0, 0.0);
+    Delay(2);
+	Frame[PlayerNumber()]++;
+ }
+ 
+ if(CheckInventory("RespawnCheck") <= 0 && Frame[PlayerNumber()] >= 40)
+ {
+	HudMessage(s:"a";
+	HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.1, 0.1, 0.0, 8.0);
+	TakeInventory("RespawnCheck", 1);
+	Frame[PlayerNumber()] = 0;
+ }
+ else
+ {
+	TakeInventory("RespawnCheck", 1);
+	HudMessage(s:""; HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.1, 0.1, 0.0, 0.0);
+	Frame[PlayerNumber()] = 0;
+ }
+}
+
+script 920 RESPAWN CLIENTSIDE
+{
+	HudMessage(s:""; HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.1, 0.1, 0.0, 0.0);
+	Frame[PlayerNumber()] = 0;
+}

@@ -1,0 +1,9 @@
+#library "TAZEME"
+#include "zcommon.acs"
+
+script 888 (void)
+{
+ SetPlayerProperty(0, 1, 4);
+ Delay(48);
+ SetPlayerProperty(0, 0, 4);
+}
