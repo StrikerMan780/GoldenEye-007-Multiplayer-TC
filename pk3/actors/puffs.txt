@@ -22,19 +22,34 @@ actor BulletHeat
 
 actor BulletSpark Replaces BulletPuff
 {
-  spawnid 131
-  renderstyle Add
-  alpha 0.9
-  +NOBLOCKMAP
-  +NOGRAVITY
-  -ALLOWPARTICLES
-  +DONTSPLASH
-  +FORCEXYBILLBOARD
-  Scale 0.17
-  states
-  {
+	Radius 4
+	Height 2
+	spawnid 131
+	renderstyle Add
+	alpha 0.9
+	+FIXMAPTHINGPOS
+	+FORCEXYBILLBOARD
+	+PUFFGETSOWNER
+	+NOINTERACTION
+	+NOBLOCKMAP
+	+NOGRAVITY
+	+ISMONSTER
+	-ALLOWPARTICLES
+	Scale 0.17
+	states
+	{
   Spawn:
+	TNT1 A 0
+	TNT1 A 0 A_SetScale(0.10)
+	TNT1 A 0 A_SpawnItemEx("BulletTracerSpawner", 0, 0, 0, 0, 0, 0, 0,  SXF_SETMASTER | SXF_TRANSFERPOINTERS, 0)
+	goto BodySpark
+  BodySpark:
+	SPRK A 0 A_Jump(127, "Spark2", "Spark3", "Spark4")
+	SPRK ABCDE 1 bright
+	stop
+  Crash:
 	SPRK A 0
+	SPRK A 0 A_SpawnItemEx("BulletTracerSpawner", 0, 0, 0, 0, 0, 0, 0,  SXF_SETMASTER | SXF_TRANSFERPOINTERS, 0)
 	SPRK A 0 A_SpawnItemEx("BulletSmoke", 0, 0, 0, 0, 0, 0, 0, 128, 0)
 	SPRK A 0 A_SpawnItemEx("BulletHeat", 0, 0, 0, 0, 0, 0, 0, 128, 64)
 	SPRK A 0 A_SpawnItemEx("Ricochet", 0, 0, 0, 0, 0, 0, 0, 128, 168)
@@ -43,16 +58,16 @@ actor BulletSpark Replaces BulletPuff
 	SPRK AAA 0 A_SpawnItemEx("Debris3", 0, 0, 0, Random(-1, 1), Random(-1, 1), Random(0, 2), Random(-360, 360), 128, 164)
 	SPRK AAA 0 A_SpawnItemEx("Debris4", 0, 0, 0, Random(-1, 1), Random(-1, 1), Random(0, 2), Random(-360, 360), 128, 164)
 	SPRK A 0 A_SpawnItemEx("Debris5", 0, 0, 0, Random(-1, 1), Random(-1, 1), Random(0, 2), Random(-360, 360), 128, 164)
-	SPRK A 0 A_Jump(127, "Spawn2", "Spawn3", "Spawn4")
+	SPRK A 0 A_Jump(127, "Spark2", "Spark3", "Spark4")
 	SPRK ABCDE 1 bright
 	stop
-  Spawn2:
+  Spark2:
   	SPR2 ABCDE 1 bright
 	stop
-  Spawn3:
+  Spark3:
   	SPR3 ABCDE 1 bright
 	stop
-  Spawn4:
+  Spark4:
   	SPR4 ABCDE 1 bright
 	stop
   Melee:
