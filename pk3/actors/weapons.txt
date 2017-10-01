@@ -249,7 +249,7 @@ actor AutomaticShotgun : DoomWeapon Replaces SuperShotgun
   Fire:
 	ASHG A 0 A_JumpIfNoAmmo("ReloadCheck")
 	ASHG A 0 A_FireCustomMissile("ShellCasing", Random(-40, -50), 0, 2, 4, 0)
-	ASHG A 0 A_FireBullets (6, 5, 5, 16, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+	ASHG A 0 A_FireBullets (6, 4, 5, 16, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 	ASHG A 0 A_GunFlash
 	ASHG B 1
 	ASHG CDEF 2
