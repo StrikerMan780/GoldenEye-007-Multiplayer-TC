@@ -513,13 +513,13 @@ actor GE64Rocket : Rocket Replaces Rocket
   obituary "%k shoved a rocket up %o's Ass."
   radius 8
   height 8
-  speed 10
+  speed 6
   damage (60)
   DamageType Rocket
   seesound "weapons/rocklf"
   deathsound "weapons/rocklx"
   Decal BigScorch
-  Gravity 0.01
+  Gravity 0.02
   PROJECTILE
   -NOGRAVITY
   +RANDOMIZE
