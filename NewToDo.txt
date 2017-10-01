@@ -1,4 +1,3 @@
-Make rocket accelerate as it flies.
 Get rid of randomized damage on guns, follow real GE stats.
 Make Tazer stun not freeze turning
 Replace upper areas with 3D Floors in Stack
