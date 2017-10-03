@@ -13,3 +13,5 @@ clearplayerclasses
 
 addplayerclass JamesBond nomenu
 alias ge_paintball "set paintballvar %1;puke 997"
+
+alias getc_fontfix "con_scaletext true; con_scaletext_usescreenratio true; con_virtualwidth 640; con_virtualheight 360;"
