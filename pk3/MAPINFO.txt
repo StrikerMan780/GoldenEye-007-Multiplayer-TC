@@ -1,125 +1,217 @@
+gameinfo
+{
+	swapmenu = false
+	dimcolor = "00 00 00"
+    dimamount = 0.25
+	pickupcolor = "00 00 FF"
+}
+
+clearskills
+
+skill baby
+{
+	AutoUseHealth
+	AmmoFactor = 2
+	DoubleAmmoFactor = 2
+	EasyKey 
+	EasyBossBrain
+	SpawnFilter = Baby
+	Name = "Agent"
+	Key = "a"
+}
+
+skill easy
+{
+	EasyKey 
+	EasyBossBrain
+	SpawnFilter = Easy
+	Name = "Secret Agent"
+	Key = "s"
+}
+
+skill normal
+{
+	EasyKey 
+	SpawnFilter = Normal
+	Name = "00 Agent"
+	Key = "0"
+}
+
+skill hard
+{
+	EasyKey 
+	SpawnFilter = Hard
+	Name = "007"
+	Key = "7"
+}
+
+skill nightmare
+{
+	AmmoFactor = 2
+	DoubleAmmoFactor = 2
+	FastMonsters
+	RespawnTime = 30
+	RespawnLimit = 2
+	SpawnFilter = Nightmare
+	Name = "License To Kill"
+	MustConfirm = "Are you sure? This difficulty level will break you."
+	Key = "l"
+}
+
 episode ARCHIVES
-name "GoldenEye 007 Maps"
-noskillmenu
+{
+	name = "GoldenEye 007 Maps"
+	noskillmenu
+}
 
 episode ORIG01
-name "GE007 TC Original Maps"
-noskillmenu
+{
+	name = "GE007 TC Original Maps"
+	noskillmenu
+}
 
 map ARCHIVES "Goldeneye 007 - Archives"
-sky1 sky1 0.0
-music D_ARCHIV
-clipmidtextures
-allowcrouch
-next BUNKER
-cluster 1
+{
+	sky1 = sky1, 0.0
+	music = "D_ARCHIV"
+	clipmidtextures
+	allowcrouch
+	next = "BUNKER"
+	cluster = 1
+}
 
 map BUNKER "Goldeneye 007 - Bunker"
-sky1 bsky1 0.0
-music D_BUNKER
-evenlighting
-clipmidtextures
-allowcrouch
-UsePlayerStartZ
-next STACK
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_BUNKER"
+	evenlighting
+	clipmidtextures
+	allowcrouch
+	UsePlayerStartZ
+	next = "STACK"
+	cluster = 1
+}
 
 map STACK "Goldeneye 007 - Stack/Library"
-sky1 bsky1 0.0
-music D_STACK
-clipmidtextures
-allowcrouch
-next FACILITY
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_STACK"
+	clipmidtextures
+	allowcrouch
+	next = "FACILITY"
+	cluster = 1
+}
 
 map FACILITY "Goldeneye 007 - Facility"
-sky1 bsky1 0.0
-music D_FACIL
-clipmidtextures
-allowcrouch
-next TEMPLE
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_FACIL"
+	clipmidtextures
+	allowcrouch
+	next = "TEMPLE"
+	cluster = 1
+}
 
 map TEMPLE "Goldeneye 007 - Temple"
-sky1 bsky1 0.0
-music D_TEMPLE
-clipmidtextures
-allowcrouch
-next BASEMENT
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_TEMPLE"
+	clipmidtextures
+	allowcrouch
+	next = "BASEMENT"
+	cluster = 1
+}
 
 map BASEMENT "Goldeneye 007 - Basement"
-sky1 bsky1 0.0
-music D_BASEME
-clipmidtextures
-evenlighting
-allowcrouch
-next EGYPTIAN
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_BASEME"
+	clipmidtextures
+	evenlighting
+	allowcrouch
+	next = "EGYPTIAN"
+	cluster = 1
+}
 
 map EGYPTIAN "Goldeneye 007 - Egyptian Temple"
-sky1 bsky1 0.0
-music D_EGYPT
-clipmidtextures
-allowcrouch
-next CAVERNS
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_EGYPT"
+	clipmidtextures
+	allowcrouch
+	next = "CAVERNS"
+	cluster = 1
+}
 
 map CAVERNS "Goldeneye 007 - Water Caverns"
-sky1 bsky1 0.0
-music D_CAVE
-clipmidtextures
-allowcrouch
-next FACILBZ
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_CAVE"
+	clipmidtextures
+	allowcrouch
+	next = "FACILBZ"
+	cluster = 1
+}
 
 map FACILBZ "Goldeneye 007 - Facility Backzone"
-sky1 bsky1 0.0
-music D_BACKZN
-clipmidtextures
-allowcrouch
-next COMPLEX
-cluster 1
+{
+	sky1 = bsky1, 0.0
+	music = "D_BACKZN"
+	clipmidtextures
+	allowcrouch
+	next = "COMPLEX"
+	cluster = 1
+}
 
 map COMPLEX "Goldeneye 007 - Complex"
-sky1 REDSKY1 0.0
-music D_COMPLE
-clipmidtextures
-allowcrouch
-UsePlayerStartZ 
-next SURFACE
-cluster 1
+{
+	sky1 = REDSKY1, 0.0
+	music = "D_COMPLE"
+	clipmidtextures
+	allowcrouch
+	UsePlayerStartZ 
+	next = "SURFACE"
+	cluster = 1
+}
 
 map SURFACE "Goldeneye 007 - Surface"
-sky1 WHITE 0.0
-music D_SURFAC
-outsidefog "ED ED ED"
-clipmidtextures
-evenlighting
-allowcrouch
-next FACIQUAD
-cluster 1
+{
+	sky1 = WHITE, 0.0
+	music = "D_SURFAC"
+	outsidefog = "ED ED ED"
+	clipmidtextures
+	evenlighting
+	allowcrouch
+	next = "FACIQUAD"
+	cluster = 1
+}
 
 map FACIQUAD "Goldeneye 007 - Facility Quad"
-sky1 REDSKY1 0.0
-music D_QUAD
-clipmidtextures
-allowcrouch
-next ARCHIVES
-cluster 1
+{
+	sky1 = REDSKY1, 0.0
+	music = "D_QUAD"
+	clipmidtextures
+	allowcrouch
+	next = "ARCHIVES"
+	cluster = 1
+}
 
 map ORIG01 "GE TC Original - Clusterfuck (StrikerMan780)"
-sky1 DONNITE 0.0
-music D_POLKA
-clipmidtextures
-allowcrouch
-next ORIG02
-cluster 1
+{
+	sky1 = DONNITE, 0.0
+	music = "D_POLKA"
+	clipmidtextures
+	allowcrouch
+	next = "ORIG02"
+	cluster = 1
+}
 
 map ORIG02 "GE TC Original - Greens (Keo and StrikerMan780)"
-sky1 DONNITE 0.0
-music D_TEMPLE
-clipmidtextures
-allowcrouch
-next ORIG01
-cluster 1
+{
+	sky1 = DONNITE, 0.0
+	music = "D_TEMPLE"
+	clipmidtextures
+	allowcrouch
+	next = "ORIG01"
+	cluster = 1
+}
