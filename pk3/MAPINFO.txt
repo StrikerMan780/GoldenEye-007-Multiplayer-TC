@@ -76,6 +76,7 @@ map ARCHIVES "Goldeneye 007 - Archives"
 	music = "D_ARCHIV"
 	clipmidtextures
 	allowcrouch
+	UsePlayerStartZ
 	next = "BUNKER"
 	cluster = 1
 }
@@ -98,6 +99,7 @@ map STACK "Goldeneye 007 - Stack/Library"
 	music = "D_STACK"
 	clipmidtextures
 	allowcrouch
+	UsePlayerStartZ
 	next = "FACILITY"
 	cluster = 1
 }
