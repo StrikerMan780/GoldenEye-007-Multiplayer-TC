@@ -4,37 +4,37 @@
 
 actor GhostCustomBridge : CustomBridge Replaces CustomBridge
 {
-	+GHOST
+	+NONSHOOTABLE
 }
 
 actor GhostInvisibleBridge : InvisibleBridge Replaces InvisibleBridge
 {
-	+GHOST
+	+NONSHOOTABLE
 }
 
 actor GhostInvisibleBridge8 : InvisibleBridge8 Replaces InvisibleBridge8
 {
-	+GHOST
+	+NONSHOOTABLE
 }
 
 actor GhostInvisibleBridge16 : InvisibleBridge16 Replaces InvisibleBridge16
 {
-	+GHOST
+	+NONSHOOTABLE
 }
 
 actor GhostInvisibleBridge32 : InvisibleBridge32 Replaces InvisibleBridge32
 {
-	+GHOST
+	+NONSHOOTABLE
 }
 
 actor GhostBridge : Bridge Replaces Bridge
 {
-	+GHOST
+	+NONSHOOTABLE
 }
 
 actor GhostZBridge : ZBridge Replaces ZBridge
 {
-	+GHOST
+	+NONSHOOTABLE
 }
 
 actor DamageDummy : PowerupGiver
@@ -368,6 +368,7 @@ actor MunitionsBox : ExplosiveBarrel Replaces ExplosiveBarrel
   +NOBLOOD
   +DONTGIB
   +NOICEDEATH
+  +NOTAUTOAIMED
   states
   {
   Spawn:
@@ -643,6 +644,7 @@ ACTOR LaserBeam : FastProjectile Replaces PlasmaBall
 	+RANDOMIZE
 	+STRIFEDAMAGE
 	+RIPPER
+	+THRUGHOST
 	RenderStyle Add
 	Alpha 1.0
 	Scale 0.5
@@ -1648,6 +1650,7 @@ ACTOR ExplodingChair 19993
 	+SOLID
 	+NOBLOOD
 	+SHOOTABLE
+	+NOTAUTOAIMED
 	States
 	{
 	Spawn:
