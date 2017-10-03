@@ -3,7 +3,7 @@ actor BulletTracer : FastProjectile
 	Projectile
 	Radius 2
 	Height 2
-	Speed 300
+	Speed 232
 	RenderStyle Add
 	Alpha 1.0
 	+NOGRAVITY
