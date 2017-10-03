@@ -1,6 +1,33 @@
 #library "STUFF"
 #include "zcommon.acs"
 
+
+#define SUBTRACT_OFFSET 1
+#define SCREEN_RATIO 2
+function int round_zan(int fixedNumber)
+{
+	return (fixedNumber + 0.5) >> 16;
+}
+
+function int get_widescreen_xoffset(int width, int height, int xoffset, int option)
+{
+	int scr_width = GetScreenWidth() << 16;
+	int scr_height = GetScreenHeight() << 16;
+	
+	int x_difference = (FixedDiv(scr_width, scr_height) * height)-(width << 16);
+	
+	if(option == SUBTRACT_OFFSET)
+	{
+		return round_zan((xoffset << 16)-FixedDiv(x_difference, 2.0)) << 16;
+	}
+	else if (option == SCREEN_RATIO)
+	{
+		return round_zan((xoffset << 16)-x_difference) << 16;
+	}
+	
+	return round_zan((xoffset << 16)+FixedDiv(x_difference, 2.0)) << 16;
+}
+
 script 999 ENTER
 {
 	int Paintball = GetCVar("paintballvar");
@@ -110,7 +137,7 @@ script 921 DEATH CLIENTSIDE
 		Terminate;
 	}
 	
-	SetHudSize(96, 80, 1);
+	SetHudSize(get_widescreen_xoffset(96, 80, 96, SCREEN_RATIO) >> 16, 80, true);
 	Frame = 0;
  
 	while(Frame < 40 && Frame != -1) 
@@ -118,7 +145,7 @@ script 921 DEATH CLIENTSIDE
 		if(Frame != -1)
 		{
 			SetFont(BloodFrames[Frame]);
-			Hudmessage(s:"a"; HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.1, 0.1, 1.0, 0.0);
+			Hudmessage(s:"a"; HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, get_widescreen_xoffset(96, 80, 0, SUBTRACT_OFFSET)+0.1, 0.1, 1.0, 0.0);
 		}
 		Delay(2);
 		if(Frame != -1)
@@ -130,7 +157,7 @@ script 921 DEATH CLIENTSIDE
 	if(Frame >= 40)
 	{
 		HudMessage(s:"a";
-		HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, 0.1, 0.1, 0.0, 8.0);
+		HUDMSG_FADEOUT, 2, CR_UNTRANSLATED, get_widescreen_xoffset(96, 80, 0, SUBTRACT_OFFSET)+0.1, 0.1, 0.0, 8.0);
 		Frame = -1;
 	}
 	else
