@@ -899,7 +899,7 @@ ACTOR HuntingKnife : Weapon
 		KNIF D 1
 		KNIF F 0 A_Recoil(-4)
 		KNIF E 2 A_PlayWeaponSound("KnifeSwing")
-		KNIF F 1 A_CustomPunch (16, 0, 0, "BulletSpark", 70)
+		KNIF F 1 A_CustomPunch (75, true, 0, "BulletSpark", 70)
 		KNIF GH 1
 		TNT1 A 14
 		KNIF HG 1
@@ -1129,7 +1129,7 @@ actor ThrownKnife
  Projectile
  Radius 8
  Height 8
- Damage (50)
+ Damage (75)
  Speed 42
  Scale 0.5
  Obituary "%o gets a throwing knife up %p ass by %k."
