@@ -58,7 +58,7 @@ echo Compiling GoldenEye TC Local Development Build...
 del .\builds\GE007_MPTC-DEV.pk3 /q
 
 cd pk3
-7za a -y -tzip -mx=0 -mmt -x!.svn ..\builds\GE007_MPTC-DEV.pk3 .\
+7za a -y -tzip -mx=0 -mmt -x!.git -xr!*.backup* -xr!*.dbs ..\builds\GE007_MPTC-DEV.pk3 .\
 
 pause
 goto MENU
@@ -68,7 +68,7 @@ echo Compiling GoldenEye TC GIT Release Rev#: %REVISIONNUMBER% (Full Compression
 del .\builds\GE007_MPTC-r%REVISIONNUMBER%.pk3 /q
 
 cd pk3
-7za a -y -tzip -mx=9 -mmt -x!.svn ..\builds\GE007_MPTC-r%REVISIONNUMBER%.pk3 .\
+7za a -y -tzip -mx=9 -mmt -x!.git -xr!*.backup* -xr!*.dbs ..\builds\GE007_MPTC-r%REVISIONNUMBER%.pk3 .\
 
 pause
 goto MENU
