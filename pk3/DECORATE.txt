@@ -860,64 +860,6 @@ ACTOR Knives : Ammo 16701
  }
 }
 
-ACTOR HuntingKnife : Weapon
-{
-	Radius 8
-	Height 8
-	Weapon.SelectionOrder 3700
-	Weapon.Kickback 60
-	Obituary "%o was Shanked by %k"
-	AttackSound "KnifeHit"
-	Inventory.PickupMessage "Throwing Knife"
-	Inventory.PickupSound "KnifeUp"
-	Weapon.UpSound "KnifeUp"
-	Weapon.AmmoType "Knives"
-	Weapon.AmmoUse 0
-	Weapon.AmmoGive 1
-	Scale 0.5
-	+INVENTORY.ALWAYSPICKUP
-	+WEAPON.WIMPY_WEAPON
-	+WEAPON.MELEEWEAPON
-	//+WEAPON.ALLOW_WITH_RESPAWN_INVUL
-	States
-	{
-	Ready:
-		KNIF A 1 A_WeaponReady
-		Loop
-	Deselect:
-		KNIF A 1 A_Lower
-		TNT1 A 0 A_Lower
-		TNT1 A 0 A_Lower
-		Loop
-	Select:
-		KNIF A 1 A_Raise
-		TNT1 A 0 A_Raise
-		TNT1 A 0 A_Raise
-		Loop
-	Fire:
-		KNIF BC 2
-		KNIF D 1
-		KNIF F 0 A_Recoil(-4)
-		KNIF E 2 A_PlayWeaponSound("KnifeSwing")
-		KNIF F 1 A_CustomPunch (75, true, 0, "BulletSpark", 70)
-		KNIF GH 1
-		TNT1 A 14
-		KNIF HG 1
-		KNIF A 3
-		KNIF A 0 A_ReFire
-		Goto Ready
-	Altfire:
-		KNIF A 0 A_JumpIfInventory("Knives", 2, 1)
-		goto Ready
-		KNIF A 1 A_SelectWeapon("ThrowingKnives")
-		goto Ready
-	Spawn:
-		TKNP A 0
-		TKNP A 0 A_SpawnItem("Knives", 8)
-		stop
-	}
-}
-
 actor RollingExplosion4
 {
   Radius 1
@@ -1161,59 +1103,6 @@ actor ThrownKnife
  }
 }
 
-ACTOR ThrowingKnives : Weapon
-{
-	Weapon.SelectionOrder 3600
-	Weapon.Kickback 60
-	Obituary "%o gets a throwing knife up %p ass by %k."
-	Inventory.PickupMessage "Throwing Knife"
-	Inventory.PickupSound "KnifeUp"
-	Weapon.UpSound "KnifeUp"
-	Weapon.AmmoType "Knives"
-	Weapon.AmmoUse 1
-	Weapon.AmmoGive 1
-	Scale 0.5
-	+WEAPON.WIMPY_WEAPON
-	+WEAPON.NOAUTOAIM
-	+INVENTORY.ALWAYSPICKUP
-	//+WEAPON.ALLOW_WITH_RESPAWN_INVUL
-	States
-	{
-	Ready:
-		THRO A 1 A_WeaponReady
-		Loop
-	Deselect:
-		THRO A 1 A_Lower
-		TNT1 A 0 A_Lower
-		TNT1 A 0 A_Lower
-		Loop
-	Select:
-		THRO A 1 A_Raise
-		TNT1 A 0 A_Raise
-		TNT1 A 0 A_Raise
-		Loop
-	Fire:
-		THRO A 1 A_JumpIfInventory("Knives", 2, "KnifeThrow")
-		THRO A 1 A_SelectWeapon("HuntingKnife")
-		goto Ready
-	KnifeThrow:
-		THRO BCD 3
-		TNT1 A 0 A_PlayWeaponSound("KnifeSwing")
-		TNT1 A 8 A_FireCustomMissile("ThrownKnife", 0, 1, 4, 0, 0)
-		THRO EFGH 2
-		THRO A 4
-		THRO A 0 A_ReFire
-		Goto Ready
-	Altfire:
-		THRO A 1 A_SelectWeapon("HuntingKnife")
-		goto Ready
-	Spawn:
-		TKNP A 0
-		TKNP A 0 A_SpawnItem("Knives", 8)
-		stop
-	}
-}
-
 actor BulletSmoke
 {
   Projectile
@@ -1360,15 +1249,6 @@ loop
 }
 
 
-ACTOR CycloneClip : Ammo
-{
-Inventory.MaxAmount 50 // size of the clip
-Ammo.BackpackAmount 0
-Ammo.BackpackMaxAmount 50 //MUST be the same as Inventory.MaxAmmount
-Inventory.Icon ICONBULL
-+INVENTORY.IGNORESKILL
-}
-
 ACTOR CycloneCell : Ammo 16552
 {
  Inventory.PickupMessage "Picked up some Cyclone Cells."
@@ -1384,87 +1264,6 @@ ACTOR CycloneCell : Ammo 16552
   CCEL A -1
   loop
  }
-}
-
-actor PD_Cyclone : Weapon 18244
-{
-  Obituary "%o was vaporized by %k's cyclone."
-  Weapon.Ammotype1 "CycloneClip"
-  Weapon.Ammotype2 "CycloneCell"
-  Decal BulletChip
-  Weapon.UpSound "misc/w_pkup"
-  Inventory.Pickupmessage "Cyclone"
-  AttackSound "CycloneFire"
-  Weapon.Selectionorder 550
-  Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 50
-  Weapon.AmmoGive2 50
-  Scale 0.9
-  -WEAPON.NOAUTOFIRE
-  +WEAPON.AMMO_OPTIONAL
-  States
-  {
-  Ready:
-	CYCL A 0 A_WeaponReady
-	goto ReloadCheck
-	CYCL A 1 A_WeaponReady
-	goto Ready+1
-
-  ReloadCheck:
-	 CYCL A 0 A_JumpIfInventory("CycloneClip",50,2)
-	 CYCL A 0 A_JumpIfInventory("CycloneCell",1,"ReloadStart")
-	 CYCL A 0
-	 goto Ready+1
-
-  ReloadStart:
-	 CYCR A 0 A_PlayWeaponSound("CycloneReload")
-	 CYCR ABCDEF 3
-	 goto ReloadAmmo
-
-  ReloadAmmo:
-	 TNT1 A 0 A_TakeInventory("CycloneCell",1)
-	 TNT1 A 0 A_GiveInventory("CycloneClip",1)
-	 TNT1 A 0 A_JumpIfInventory("CycloneClip",50,"ReloadDone")
-	 TNT1 A 0 A_JumpIfInventory("CycloneCell",1,"ReloadAmmo")
-	 goto ReloadDone
-
-  ReloadDone:
-	 CYCR GHIJK 3
-	 goto Ready+1
-
-	Deselect:
-		CYCL A 1 A_Lower
-		TNT1 A 0 A_Lower
-		loop
-	Select:
-		CYCL A 1 A_Raise
-		TNT1 A 0 A_Raise
-		loop
-	Hold: // Intentional Fall-Through
-	Fire:
-		CYCL A 0 A_JumpIfNoAmmo("ReloadCheck")
-		CYCL A 0 A_GunFlash
-		CYCL B 0 A_Jump(128, "FireRandom")
-		CYCL B 1 BRIGHT A_FireCustomMissile("CyclonePlasma", Random(-1,1), 1, 11, -2, 0, Random(-1,1))
-		CYCL A 2
-		CYCL D 0 A_Refire
-		CYCL DEF 3
-		goto Ready+1
-	FireRandom:
-		CYCL C 1 BRIGHT A_FireCustomMissile("CyclonePlasma", Random(-1,1), 1, 11, -2, 0, Random(-1,1))
-		goto Fire+4
-	AltFire:
-		CYCL A 0
-		goto ReloadCheck
-	Flash:
-		TNT1 A 2 bright A_Light1
-		TNT1 A 1 bright A_Light2
-		TNT1 A 0 bright A_Light0
-		stop
-	Spawn:
-		CYCP A -1
-		stop
-  }
 }
 
 actor CyclonePlasma : FastProjectile
