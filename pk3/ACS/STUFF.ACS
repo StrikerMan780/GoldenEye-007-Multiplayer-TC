@@ -77,11 +77,19 @@ script 995 DEATH CLIENTSIDE
 script 923 ENTER CLIENTSIDE
 {
 	int OpenGL = GetCVar("vid_renderer");
+	int TextScale = GetCVar("con_scaletext");
+	SetHudSize(640, 360, false);
+	SetFont("DOOMFONT");
 	if(OpenGL == 0)
 	{
-		SetFont("DOOMFONT");
 		hudmessage(s:"\cgNOTICE!\cf: \cc THIS MOD RUNS BEST IN \cgOPENGL!\n\ccFeel free to stay in software, but expect it to look and run like ass.";
-		HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_RED, 1.5, 0.5, 6.0, 2.0, 2.0);
+		HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_RED, 320.0, 32.0, 6.0, 2.0, 2.0);
+	}
+	
+	if(TextScale == 0)
+	{
+		hudmessage(s:"\cgWARNING!\cf: \cc Text scaling is \cgOFF!\n\ccPlease type ``getc_fontfix`` in the console.";
+		HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_RED, 320.0, 100.0, 10.0, 2.0, 2.0);
 	}
 }
 
