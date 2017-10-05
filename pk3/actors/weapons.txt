@@ -389,11 +389,11 @@ actor ZMGPaintball : ZMG
 
 ACTOR KlobbClip : Ammo
 {
-Inventory.MaxAmount 20 // size of the clip
-Ammo.BackpackAmount 0
-Ammo.BackpackMaxAmount 20 //MUST be the same as Inventory.MaxAmmount
-Inventory.Icon ICONBULL
-+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 20 // size of the clip
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 20 //MUST be the same as Inventory.MaxAmmount
+	Inventory.Icon ICONBULL
+	+INVENTORY.IGNORESKILL
 }
 
 ACTOR Klobb : GEWeapon Replaces Chaingun
@@ -411,7 +411,6 @@ ACTOR Klobb : GEWeapon Replaces Chaingun
 	Weapon.SisterWeapon "KlobbPaintball"
 	Inventory.PickupMessage "Klobb"
 	Obituary "%o was klobbered by %k, how humiliating."
-	Attacksound "weapons/chngun"
 	+WEAPON.AMMO_OPTIONAL
 	States
 	{
@@ -452,23 +451,22 @@ ACTOR Klobb : GEWeapon Replaces Chaingun
 		KLBG A 1 A_Raise
 		TNT1 A 0 A_Raise
 		Loop
-	Hold:
-		KLBG A 0 A_JumpIfNoAmmo("ReloadCheck")
-		KLBG B 0 BRIGHT A_GunFlash
-		KLBG B 0 A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 2, 6, 0)
-		KLBG B 1 BRIGHT A_FireBullets(4, 3, 1, 8, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
-		KLBG A 2
-		KLBG B 1 BRIGHT
-		KLBG A 1
-		CHGG B 0 A_ReFire
-		Goto Ready+1
 	Fire:
-		KLBG A 0 A_JumpIfNoAmmo("ReloadCheck")
+		KLBG B 0 A_JumpIfNoAmmo("ReloadCheck")
+		KLBG B 0 BRIGHT A_PlaySound("weapons/chngun", CHAN_WEAPON)
 		KLBG B 0 BRIGHT A_GunFlash
-		KLBG B 0 A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 2, 6, 0)
-		KLBG B 1 BRIGHT A_FireBullets(2, 2, -1, 8, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
-		KLBG A 4
-		CHGG B 0 A_ReFire
+		KLBG B 0 BRIGHT A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 2, 6, 0)
+		KLBG B 1 BRIGHT A_FireBullets(5, 3, -1, 7, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+		KLBG A 2
+		KLBG A 0 A_ReFire("Fire2")
+		goto Ready+1
+	Fire2:
+		KLBG B 0 A_JumpIfNoAmmo("ReloadCheck")
+		KLBG B 0 BRIGHT A_GunFlash
+		KLBG B 0 BRIGHT A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 2, 6, 0)
+		KLBG B 1 BRIGHT A_FireBullets(5, 3, -1, 7, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+		KLBG A 1
+		CHGG B 0 A_ReFire("Fire")
 		Goto Ready+1
 	AltFire:
 		KLBG A 0
@@ -492,11 +490,11 @@ actor KlobbPaintball : Klobb
 
 ACTOR KF7Clip : Ammo
 {
-Inventory.MaxAmount 30 // size of the clip
-Ammo.BackpackAmount 0
-Ammo.BackpackMaxAmount 30 //MUST be the same as Inventory.MaxAmmount
-Inventory.Icon "POINTBUL"
-+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 30 // size of the clip
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 30 //MUST be the same as Inventory.MaxAmmount
+	Inventory.Icon "POINTBUL"
+	+INVENTORY.IGNORESKILL
 }
 
 actor KF7Soviet : GEWeapon 18212
@@ -561,13 +559,13 @@ actor KF7Soviet : GEWeapon 18212
 		KF7S A 0 A_GunFlash
 		KF7S B 1 BRIGHT A_FireBullets(4, 2, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		KF7S A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
-		KF7S A 2
+		KF7S A 2 A_JumpIfNoAmmo("ReloadCheck")
 		KF7S C 2 BRIGHT A_FireBullets(4, 2, -1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		KF7S A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
-		KF7S A 2
+		KF7S A 2 A_JumpIfNoAmmo("ReloadCheck")
 		KF7S B 1 BRIGHT A_FireBullets(4, 2, -1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		KF7S A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
-		KF7S A 2
+		KF7S A 2 A_JumpIfNoAmmo("ReloadCheck")
 		KF7S D 0 A_Refire
 		KF7S DEF 3
 		goto Ready+1
@@ -1288,21 +1286,21 @@ actor RCP90 : GEWeapon 5013
 	Hold: // Intentional Fall-Through
 	Fire:
 		RCP9 A 0 A_JumpIfNoAmmo("ReloadCheck")
-		RCP9 B 0 A_Jump(128, "FireRandom")
 		RCP9 A 1
 		RCP9 A 0 A_GunFlash
 		RCP9 B 1 BRIGHT A_FireBullets(5, 4, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		RCP9 D 0 A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 1, 6, 0)
-		RCP9 D 0 A_Refire
-		RCP9 D 1
-		RCP9 EFG 3
-		goto Ready+1
-	FireRandom:
-		RCP9 A 2
+		RCP9 D 0 A_Refire("Fire2")
+		goto FireEnd
+	Fire2:
+		RCP9 A 0 A_JumpIfNoAmmo("ReloadCheck")
+		RCP9 A 1
 		RCP9 A 0 A_GunFlash
 		RCP9 C 1 BRIGHT A_FireBullets(5, 4, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		RCP9 D 0 A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 1, 6, 0)
-		RCP9 D 0 A_Refire
+		RCP9 D 0 A_Refire("Fire")
+		goto FireEnd
+	FireEnd:
 		RCP9 D 1
 		RCP9 EFG 3
 		goto Ready+1
@@ -1568,15 +1566,15 @@ actor AR33 : GEWeapon 18431
 		AR33 A 0 A_GunFlash
 		AR33 B 1 BRIGHT A_FireBullets(4, 2, 1, 16, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		AR33 A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
-		AR33 A 2
+		AR33 A 2 A_JumpIfNoAmmo("ReloadCheck")
 		AR33 A 0 A_GunFlash
 		AR33 C 2 BRIGHT A_FireBullets(4, 2, 1, 16, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		AR33 A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
-		AR33 A 2
+		AR33 A 2 A_JumpIfNoAmmo("ReloadCheck")
 		AR33 A 0 A_GunFlash
 		AR33 B 1 BRIGHT A_FireBullets(4, 2, 1, 16, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		AR33 A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
-		AR33 A 2
+		AR33 A 2 A_JumpIfNoAmmo("ReloadCheck")
 		AR33 D 0 A_Refire
 		AR33 DEFGHIJ 2
 		goto Ready+1

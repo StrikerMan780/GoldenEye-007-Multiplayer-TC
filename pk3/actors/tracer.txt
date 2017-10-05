@@ -7,7 +7,6 @@ actor BulletTracer : FastProjectile
 	RenderStyle Add
 	Alpha 1.0
 	+NOGRAVITY
-	+THRUGHOST
 	+DONTSPLASH
 	+THRUACTORS
 	-ACTIVATEIMPACT
