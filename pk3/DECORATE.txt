@@ -2,41 +2,6 @@
 #include "actors/puffs.txt"
 #include "actors/tracer.txt"
 
-actor GhostCustomBridge : CustomBridge Replaces CustomBridge
-{
-	+NONSHOOTABLE
-}
-
-actor GhostInvisibleBridge : InvisibleBridge Replaces InvisibleBridge
-{
-	+NONSHOOTABLE
-}
-
-actor GhostInvisibleBridge8 : InvisibleBridge8 Replaces InvisibleBridge8
-{
-	+NONSHOOTABLE
-}
-
-actor GhostInvisibleBridge16 : InvisibleBridge16 Replaces InvisibleBridge16
-{
-	+NONSHOOTABLE
-}
-
-actor GhostInvisibleBridge32 : InvisibleBridge32 Replaces InvisibleBridge32
-{
-	+NONSHOOTABLE
-}
-
-actor GhostBridge : Bridge Replaces Bridge
-{
-	+NONSHOOTABLE
-}
-
-actor GhostZBridge : ZBridge Replaces ZBridge
-{
-	+NONSHOOTABLE
-}
-
 actor DamageDummy : PowerupGiver
 {
   inventory.pickupmessage ""
@@ -436,6 +401,7 @@ ACTOR GoldenBullet : Ammo Replaces Cell
 	Ammo.BackpackAmount 2
 	Ammo.BackpackMaxAmount 20
 	Inventory.Icon "GBULLET"
+	+INVENTORY.IGNORESKILL
 	States
 	{
 	Spawn:
@@ -639,12 +605,11 @@ ACTOR LaserBeam : FastProjectile Replaces PlasmaBall
 	Radius 4
 	Height 4
 	Speed 100
-	Damage (5)
+	Damage (6)
 	Projectile
 	+RANDOMIZE
 	+STRIFEDAMAGE
 	+RIPPER
-	+THRUGHOST
 	RenderStyle Add
 	Alpha 1.0
 	Scale 0.5
@@ -1644,6 +1609,7 @@ actor ProxProj
 	+SHOOTABLE
 	-NOGRAVITY
 	+LOOKALLAROUND
+	+NOTAUTOAIMED
 	+NOTARGET
 	+BOUNCEONACTORS
 	+GHOST
@@ -1820,6 +1786,7 @@ ACTOR RemoteMine
 	+EXTREMEDEATH
 	+SEEKERMISSILE
 	+THRUGHOST
+	+NOTAUTOAIMED
 	-NOBLOCKMAP
 	-NOLIFTDROP
 	-NOGRAVITY
