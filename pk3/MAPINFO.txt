@@ -4,6 +4,7 @@ gameinfo
 	dimcolor = "00 00 00"
     dimamount = 0.25
 	pickupcolor = "00 00 FF"
+	quitmessages = 	"For England, James?"
 }
 
 clearskills
