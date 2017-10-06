@@ -1,6 +1,6 @@
 ListMenu "MainMenu"
 {
-	StaticPatch 8, 24, "M_DOOM"
+	StaticPatch 24, 36, "M_DOOM"
 	
 	Font "SmallFont", "White", "Red"
 	Linespacing 10
