@@ -173,18 +173,6 @@ map COMPLEX "Goldeneye 007 - Complex"
 	clipmidtextures
 	allowcrouch
 	UsePlayerStartZ 
-	next = "SURFACE"
-	cluster = 1
-}
-
-map SURFACE "Goldeneye 007 - Surface"
-{
-	sky1 = WHITE, 0.0
-	music = "D_SURFAC"
-	outsidefog = "ED ED ED"
-	clipmidtextures
-	evenlighting
-	allowcrouch
 	next = "FACIQUAD"
 	cluster = 1
 }
@@ -194,6 +182,18 @@ map FACIQUAD "Goldeneye 007 - Facility Quad"
 	sky1 = REDSKY1, 0.0
 	music = "D_QUAD"
 	clipmidtextures
+	allowcrouch
+	next = "ARCHIVES"
+	cluster = 1
+}
+
+map SURFACE "Goldeneye 007 - Surface (WIP)"
+{
+	sky1 = WHITE, 0.0
+	music = "D_SURFAC"
+	outsidefog = "ED ED ED"
+	clipmidtextures
+	evenlighting
 	allowcrouch
 	next = "ARCHIVES"
 	cluster = 1
