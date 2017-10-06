@@ -482,7 +482,7 @@ Model AutomaticShotgun
 {
 	Path "Models\Autoshotgun"
    Model 0 "Autoshotgun.Md3"
-	Scale -8 6 8
+	Scale -4 3 4
 
    FrameIndex ASHG A 0 0
    FrameIndex ASHG B 0 0
@@ -499,7 +499,7 @@ Model AutomaticShotgun
 {
 	Path "Models\Autoshotgun"
    Model 0 "AutoShotgunFlash.Md3"
-	Scale -8 6 8
+	Scale -4 3 4
 
    FrameIndex NULL A 0 0
    FrameIndex NULL B 0 1
@@ -509,7 +509,7 @@ Model AutomaticShotgunPaintball
 {
 	Path "Models\Autoshotgun"
    Model 0 "Autoshotgun.Md3"
-	Scale -8 6 8
+	Scale -4 3 4
 
    FrameIndex ASHG A 0 0
    FrameIndex ASHG B 0 0
@@ -526,7 +526,7 @@ Model AutomaticShotgunPaintball
 {
 	Path "Models\Autoshotgun"
    Model 0 "AutoShotgunFlash.Md3"
-	Scale -8 6 8
+	Scale -4 3 4
 
    FrameIndex NULL A 0 0
    FrameIndex NULL B 0 1
@@ -546,7 +546,7 @@ Model MoonrakerLaser
 {
 	Path "Models\Moonraker"
    Model 0 "Moonraker.Md3"
-	Scale -8 6 8
+	Scale -4 3 4
 
    FrameIndex MOON A 0 0
    FrameIndex MOON B 0 0
@@ -556,7 +556,7 @@ Model MoonrakerLaser
 {
 	Path "Models\Moonraker"
    Model 0 "MoonrakerFlash.Md3"
-	Scale -8 6 8
+	Scale -4 3 4
 
    FrameIndex NULL A 0 0
    FrameIndex NULL B 0 1
@@ -653,4 +653,50 @@ Model JamesBond
 
   Frame PLYC G 0 "crpain1"
   Frame PLYC G 1 "crpain1"
+}
+
+model ExplodingChair
+{
+	Path "Models/chair"
+	Model 0 "chair.md3"
+	Scale 0.75 0.75 0.75
+
+	FrameIndex CHAI A 0 0
+}
+
+model ExplodingChair
+{
+	Path "Models/chair"
+	Model 0 "chair.md3"
+	SurfaceSkin 0 0 "chairpipe_burnt.png"
+	SurfaceSkin 0 1 "chairbottom_burnt.png"
+	SurfaceSkin 0 2 "chaircushion_burnt.png"
+	SurfaceSkin 0 3 "chairpipe_burnt.png"
+	SurfaceSkin 0 4 "chaircushion_burnt.png"
+	Scale 0.75 0.75 0.75
+
+	FrameIndex CHAI B 0 1
+}
+
+Model KF7Soviet
+{
+	Path "Models\KF7"
+	Model 0 "kf7.md3"
+	Scale -4 3 4
+
+	FrameIndex KF7S A 0 0
+	FrameIndex KF7S B 0 1
+	FrameIndex KF7S C 0 2
+	FrameIndex KF7S D 0 3
+	FrameIndex KF7S E 0 4
+}
+
+Model KF7Soviet
+{
+	Path "Models\KF7"
+	Model 0 "kf7flash.md3"
+	Scale -4 3 4
+
+	FrameIndex NULL A 0 0
+	FrameIndex NULL B 0 1
 }

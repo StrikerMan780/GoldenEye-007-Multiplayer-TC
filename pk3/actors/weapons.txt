@@ -526,23 +526,35 @@ actor KF7Soviet : GEWeapon 18212
 	 KF7S A 0 A_JumpIfInventory("PointedBullets",1,"ReloadStart")
 	 KF7S A 0
 	 goto Ready+1
-
-  ReloadStart:
-	 KF7R A 0 A_PlayWeaponSound("WeaponReload")
-	 KF7R ABCDEFG 1
+	 
+	ReloadStart:
+	 KF7S A 0 A_PlayWeaponSound("WeaponReload")
+	 KF7S A 1 Offset (0, 40)
+	 KF7S A 1 Offset (0, 50)
+	 KF7S A 1 Offset (0, 60)
+	 KF7S A 1 Offset (0, 70)
+	 KF7S A 1 Offset (0, 80)
+	 KF7S A 1 Offset (0, 90)
+	 KF7S A 1 Offset (0, 100)
 	 TNT1 A 5
 	 goto ReloadAmmo
 
-  ReloadAmmo:
+	ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("PointedBullets",1)
 	 TNT1 A 0 A_GiveInventory("KF7Clip",1)
 	 TNT1 A 0 A_JumpIfInventory("KF7Clip",30,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("PointedBullets",1,"ReloadAmmo")
 	 goto ReloadDone
 
-  ReloadDone:
+	ReloadDone:
 	 TNT1 A 5
-	 KF7R GFEDCBA 1
+	 KF7S A 1 Offset (0, 100)
+	 KF7S A 1 Offset (0, 90)
+	 KF7S A 1 Offset (0, 80)
+	 KF7S A 1 Offset (0, 70)
+	 KF7S A 1 Offset (0, 60)
+	 KF7S A 1 Offset (0, 50)
+	 KF7S A 1 Offset (0, 40)
 	 goto Ready+1
 
 	Deselect:
@@ -556,26 +568,31 @@ actor KF7Soviet : GEWeapon 18212
 	Hold: // Intentional Fall-Through
 	Fire:
 		KF7S A 0 A_JumpIfNoAmmo("ReloadCheck")
-		KF7S A 0 A_GunFlash
+		KF7S B 0 BRIGHT A_GunFlash("Flash")
 		KF7S B 1 BRIGHT A_FireBullets(4, 2, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		KF7S A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
 		KF7S A 2 A_JumpIfNoAmmo("ReloadCheck")
-		KF7S C 2 BRIGHT A_FireBullets(4, 2, -1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+		KF7S B 0 BRIGHT A_GunFlash("Flash2")
+		KF7S B 2 BRIGHT A_FireBullets(4, 2, -1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		KF7S A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
 		KF7S A 2 A_JumpIfNoAmmo("ReloadCheck")
+		KF7S B 0 BRIGHT A_GunFlash("Flash")
 		KF7S B 1 BRIGHT A_FireBullets(4, 2, -1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		KF7S A 0 A_FireCustomMissile("PointedBulletCasing", Random(-40, -50), 0, 3, 6, 0)
 		KF7S A 2 A_JumpIfNoAmmo("ReloadCheck")
-		KF7S D 0 A_Refire
-		KF7S DEF 3
+		KF7S A 0 A_Refire
+		KF7S CDE 3
 		goto Ready+1
 	AltFire:
 		KF7S A 0
 		goto ReloadCheck
 	Flash:
-		TNT1 A 2 bright A_Light1
-		TNT1 A 1 bright A_Light2
+		NULL A 2 bright A_Light2
 		TNT1 A 0 bright A_Light0
+		stop
+	Flash2:
+		NULL B 2 bright A_Light2
+		TNT1 A 0 bright	A_Light0
 		stop
 	Spawn:
 		KF7P A -1
@@ -607,7 +624,7 @@ ACTOR GoldenGun : GEWeapon Replaces BFG9000
 	SpawnID 31
 	Weapon.SelectionOrder 2800
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive 1
+	Weapon.AmmoGive1 1
 	Weapon.AmmoGive2 1
 	Weapon.AmmoType "GoldenGunShot"
 	Weapon.AmmoType2 "GoldenBullet"
@@ -615,6 +632,7 @@ ACTOR GoldenGun : GEWeapon Replaces BFG9000
 	+WEAPON.BFG
 	+WEAPON.NOLMS
 	+WEAPON.AMMO_OPTIONAL
+	+INVENTORY.IGNORESKILL
 	Obituary "%k put a golden bullet into %o's skull."
 	Inventory.PickupMessage "Golden Gun"
 	AttackSound "GoldenGunFire"
