@@ -2,6 +2,8 @@
 *.tmp
 *.bak
 *-DEV.pk3
+*.backup*
+*.qc
 
 #############
 ## Windows detritus
@@ -20,4 +22,8 @@ $RECYCLE.BIN/
 # Mac crap
 .DS_Store
 resources
-/pk3/Models/KF7/*.qc
+/tobbszintesudmf3.wad
+/Letalis_Multi Floor Door Test2.wad
+/Sector_SetPortal_E1.wad
+/Sector_SetPortal_E2.wad
+*.dbs

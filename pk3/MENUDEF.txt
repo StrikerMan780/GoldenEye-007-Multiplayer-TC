@@ -63,4 +63,7 @@ OptionMenu "GETCOptions"
 {
 	Title "GoldenEye Options"
 	SafeCommand "Set Recommended Font Scaling", "getc_fontfix"
+	StaticText 	""
+	StaticText "Key Bindings", 1
+	Control "Detonate Remote Mines", "getc_detonate"
 }

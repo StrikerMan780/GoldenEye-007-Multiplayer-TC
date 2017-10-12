@@ -1,0 +1,232 @@
+ACTOR ShotgunCartridges : Ammo Replaces Shell
+{
+  Inventory.PickupMessage "Picked up some Shotgun Cartridges"
+  Inventory.Amount 5
+  Inventory.MaxAmount 50
+  Ammo.BackpackAmount 5
+  Ammo.BackpackMaxAmount 100
+  Inventory.Icon "SHELA0"
+  States
+  {
+  Spawn:
+    SHEL A -1
+    Stop
+  }
+}
+
+ACTOR LargeShotgunCartridges : ShotgunCartridges Replaces ShellBox
+{
+	Inventory.Amount 15
+}
+
+ACTOR GrenadeRounds : Ammo Replaces RocketAmmo
+{
+  Inventory.PickupMessage "Picked up some Grenade Rounds"
+  Inventory.Amount 6
+  Inventory.MaxAmount 12
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 24
+  Inventory.Icon "ROCKA0"
+  States
+  {
+  Spawn:
+    ROCK A -1
+    stop
+  }
+}
+
+ACTOR Rockets : Ammo Replaces RocketBox
+{
+  Inventory.PickupMessage "Picked up some Rockets"
+  Inventory.Amount 3
+  Inventory.MaxAmount 3
+  Ammo.BackpackAmount 1
+  Ammo.BackpackMaxAmount 6
+  Inventory.Icon "ROCKA0"
+  States
+  {
+  Spawn:
+    ROCK A -1
+    stop
+  }
+}
+
+ACTOR 9mmBullets : Ammo Replaces Clip
+{
+  Inventory.PickupMessage "Picked up some Ammo"
+  Inventory.Amount 14
+  Inventory.MaxAmount 200
+  Ammo.BackpackAmount 14
+  Ammo.BackpackMaxAmount 400
+  Inventory.Icon "CLIPA0"
+  States
+  {
+  Spawn:
+    CLIP A -1
+    Stop
+  }
+}
+
+
+actor Large9mmBullets : 9mmBullets replaces ClipBox
+{
+  Game Doom
+  SpawnID 139
+  Inventory.PickupMessage "Picked up some Ammo"
+  Inventory.Amount 42
+  States
+  {
+  Spawn:
+    CLIP A -1
+    Stop
+  }
+}
+
+ACTOR PointedBullets : Ammo 16532
+{
+ Inventory.PickupMessage "Picked up some Pointed Bullets."
+ Inventory.Amount 30
+ Inventory.MaxAmount 200
+ Ammo.BackpackAmount 0
+ Ammo.BackpackMaxAmount 400
+ Inventory.Icon ICONBULL
+ States
+ {
+ Spawn:
+  PAMO A -1
+  loop
+ }
+}
+
+ACTOR GoldenBullet : Ammo Replaces Cell
+{
+	Game Doom
+	SpawnID 75
+	Inventory.PickupMessage "Picked up a Golden Bullet"
+	Inventory.Amount 1
+	Inventory.MaxAmount 10
+	Ammo.BackpackAmount 2
+	Ammo.BackpackMaxAmount 20
+	Inventory.Icon "GBULLET"
+	+INVENTORY.IGNORESKILL
+	States
+	{
+	Spawn:
+		CELL A -1
+		Stop
+	}
+}
+
+ACTOR MagnumBullets : Ammo Replaces CellPack
+{
+	Game Doom
+	SpawnID 142
+	Inventory.PickupMessage "Picked up some Magnum Bullets."
+	Inventory.Amount 6
+	Inventory.MaxAmount 100
+	Ammo.BackpackAmount 6
+	Ammo.BackpackMaxAmount 200
+	Inventory.Icon "MAGBA0"
+	States
+	{
+	Spawn:
+		MAGB A -1
+		Stop
+	}
+}
+
+ACTOR Knives : Ammo 16701
+{
+	Inventory.MaxAmount 11
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 22
+	Inventory.Icon "KNIFE"
+	Inventory.PickupMessage "Throwing Knife"
+	Inventory.PickupSound "KnifeUp"
+	Scale 0.5
+	+INVENTORY.ALWAYSPICKUP
+	+INVENTORY.IGNORESKILL
+	States
+	{
+		Spawn:
+			TKNP A -1
+			loop
+	}
+}
+
+actor ProxMineAmmo : Ammo
+{
+	scale 0.3
+	radius 16
+	height 8
+	inventory.pickupmessage "Picked up a Proximity Mine"
+	inventory.icon "PROXMINE"
+	inventory.amount 1
+	inventory.maxamount 11
+	ammo.backpackamount 3
+	ammo.backpackmaxamount 22
+	+FLOATBOB
+	states
+	{
+		Spawn:
+			MINE A -1
+			stop
+	}
+}
+
+actor RemoteMineAmmo : Ammo
+{
+	scale 0.3
+	radius 16
+	height 8
+	inventory.pickupmessage "Picked up a Remote Mine"
+	inventory.icon "REMOMINE"
+	inventory.amount 1
+	inventory.maxamount 11
+	ammo.backpackamount 3
+	ammo.backpackmaxamount 22
+	+FLOATBOB
+	states
+	{
+		Spawn:
+			RMIP A -1
+			stop
+	}
+}
+
+actor TimedMineAmmo : Ammo
+{
+	scale 0.3
+	radius 16
+	height 8
+	inventory.pickupmessage "Picked up a Timed Mine"
+	inventory.icon "TIMEMINE"
+	inventory.amount 1
+	inventory.maxamount 11
+	ammo.backpackamount 3
+	ammo.backpackmaxamount 22
+	+FLOATBOB
+	states
+	{
+		Spawn:
+			RMIP A -1
+			stop
+	}
+}
+
+ACTOR CycloneCell : Ammo 16552
+{
+	Inventory.PickupMessage "Picked up some Cyclone Cells."
+	Inventory.Amount 50
+	Inventory.MaxAmount 200
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 400
+	Scale 0.6
+	Inventory.Icon ICONBULL
+	States
+	{
+		Spawn:
+			CCEL A -1
+			loop
+	}
+}

@@ -1,0 +1,105 @@
+#library "MINESTICK"
+#include "zcommon.acs"
+
+function int Trace_Y(int increment, int count, int reversecheck)
+{
+	int spawned = 0;
+	int offset = increment;
+	
+	for(int i = 0; i < count; i++)
+	{
+		spawned = Spawn("PosGrabber", GetActorX(0), GetActorY(0)+offset, GetActorZ(0), 0, 0);
+		if(!spawned && !reversecheck)
+		{
+			return (GetActorY(0)+offset)-increment;
+		}
+		else if(spawned && reversecheck)
+		{
+			return (GetActorY(0)+offset)-increment;
+		}
+		offset += increment;
+	}
+	
+	return 0;
+}
+
+function int Trace_X(int increment, int count, int reversecheck)
+{
+	int spawned = 0;
+	int offset = increment;
+	
+	for(int i = 0; i < count; i++)
+	{
+		spawned = Spawn("PosGrabber", GetActorX(0)+offset, GetActorY(0), GetActorZ(0), 0, 0);
+		if(!spawned && !reversecheck)
+		{
+			return (GetActorX(0)+offset)-increment;
+		}
+		else if(spawned && reversecheck)
+		{
+			return (GetActorX(0)+offset)-increment;
+		}
+		offset += increment;
+	}
+	
+	return 0;
+}
+
+script "MINESTICK" (void)
+{
+	int puff1_hit, puff2_hit, puff3_hit, puff4_hit, spawnoffset, i;
+	
+	
+	puff1_hit = Trace_X(0.25, 40, false); // East
+	puff2_hit = Trace_X(-0.25, 40, false); // West
+	puff3_hit = Trace_Y(0.25, 40, false); // North
+	puff4_hit = Trace_Y(-0.25, 40, false); // South
+	
+	/* // Debug
+	PrintBold(s:"Puff 1 X: ", d:puff1_hit, s:"\n",
+			s:"Puff 2 X: ", d:puff2_hit, s:"\n",
+			s:"Puff 3 X: ", d:puff3_hit, s:"\n",
+			s:"Puff 4 X: ", d:puff4_hit, s:"\n"
+			);
+	*/
+			
+	int move_amount = 0.0;
+	if((puff1_hit == 0) && (puff2_hit == 0) && (puff3_hit == 0) && (puff4_hit != 0)) // Hit southmost wall, face north.
+	{
+		Warp(0, GetActorX(0), puff4_hit, GetActorZ(0), 0.0, WARPF_ABSOLUTEPOSITION | WARPF_NOCHECKPOSITION, "", false, 0.0, 0.0, 0.0);
+		SetActorAngle(0, 0.25);
+	}
+	else if((puff1_hit == 0) && (puff2_hit == 0) && (puff3_hit != 0) && (puff4_hit == 0)) // Hit northmost wall, face south.
+	{
+		Warp(0, GetActorX(0), puff3_hit, GetActorZ(0), 0.0, WARPF_ABSOLUTEPOSITION | WARPF_NOCHECKPOSITION, "", false, 0.0, 0.0, 0.0);
+		SetActorAngle(0, 0.75);
+	}
+	else if((puff1_hit != 0) && (puff2_hit == 0) && (puff3_hit == 0) && (puff4_hit == 0)) // Hit eastmost wall, face west.
+	{
+		Warp(0, puff1_hit, GetActorY(0), GetActorZ(0), 0.0, WARPF_ABSOLUTEPOSITION | WARPF_NOCHECKPOSITION, "", false, 0.0, 0.0, 0.0);
+		SetActorAngle(0, 0.5);
+	}
+	else if((puff1_hit == 0) && (puff2_hit != 0) && (puff3_hit == 0) && (puff4_hit == 0)) // Hit westmost wall, face east.
+	{
+		Warp(0, puff2_hit, GetActorY(0), GetActorZ(0), 0.0, WARPF_ABSOLUTEPOSITION | WARPF_NOCHECKPOSITION, "", false, 0.0, 0.0, 0.0);
+		SetActorAngle(0, 0.0);
+	}
+	else
+	{
+		SetActorState(0, "FallToGround", false);
+	}
+}
+
+script "DETONATEMINES" (void) NET
+{
+	if(CheckInventory("DetonatorTimer") == 0)
+	{
+		GiveInventory("DetonatorTimer", 1);
+		GiveInventory("Detonator", 1);
+		PlaySound(0, "RemoteButton", CHAN_AUTO, 1.0, false, ATTN_NORM, false);
+		Delay(4);
+		TakeInventory("Detonator", 1);
+		Delay(31);
+		TakeInventory("DetonatorTimer", 1);
+	}
+}

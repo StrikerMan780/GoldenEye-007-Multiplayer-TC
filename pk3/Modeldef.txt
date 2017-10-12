@@ -700,3 +700,135 @@ Model KF7Soviet
 	FrameIndex NULL A 0 0
 	FrameIndex NULL B 0 1
 }
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 8.0
+	
+	Rotating
+	Rotation-Speed -10
+	Rotation-Vector 0 0 1
+	Rotation-Center 0.0 4.0 0.0
+
+	FrameIndex RMIN A 0 0
+}
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+
+	FrameIndex RMIN B 0 0
+}
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset -1.25 0.0 8.0
+	PitchOffset -90
+
+	FrameIndex RMIN C 0 0
+}
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 20.0
+	PitchOffset -180
+
+	FrameIndex RMIN D 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	SurfaceSkin 0 1 "proxmine.png"
+	Offset 0.0 0.0 8.0
+	
+	Rotating
+	Rotation-Speed -10
+	Rotation-Vector 0 0 1
+	Rotation-Center 0.0 4.0 0.0
+
+	FrameIndex PROX A 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	SurfaceSkin 0 1 "proxmine.png"
+
+	FrameIndex PROX B 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset -1.25 0.0 8.0
+	PitchOffset -90
+	SurfaceSkin 0 1 "proxmine.png"
+
+	FrameIndex PROX C 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 20.0
+	PitchOffset -180
+	SurfaceSkin 0 1 "proxmine.png"
+
+	FrameIndex PROX D 0 0
+}
+
+model PointedBulletCasing
+{
+	Path "Models\casings"
+	Model 0 "riflecasing.md3"
+	Scale 6.0 6.0 6.0
+	
+	PitchFromMomentum
+
+	FrameIndex PCAS A 0 0
+	FrameIndex PCAS B 0 0
+	FrameIndex PCAS C 0 0
+	FrameIndex PCAS D 0 0
+	FrameIndex PCAS E 0 0
+	FrameIndex PCAS F 0 0
+	FrameIndex PCAS G 0 0
+	FrameIndex PCAS H 0 0
+}
+
+model BulletCasing
+{
+	Path "Models\casings"
+	Model 0 "casing.md3"
+	Scale 6.0 6.0 6.0
+	
+	PitchFromMomentum
+
+	FrameIndex BCAS A 0 0
+	FrameIndex BCAS B 0 0
+	FrameIndex BCAS C 0 0
+	FrameIndex BCAS D 0 0
+	FrameIndex BCAS E 0 0
+	FrameIndex BCAS F 0 0
+	FrameIndex BCAS G 0 0
+	FrameIndex BCAS H 0 0
+}

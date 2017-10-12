@@ -52,9 +52,10 @@ object LaserBeam
 flickerlight ProximityMine
 {
     color 0.0 1.0 0.0
+	offset 0.0 3.0 0.0
     size 0
-    secondarySize 6
-    chance 0.995
+    secondarySize 8
+    chance 0.925
 }
 
 object ProxProj

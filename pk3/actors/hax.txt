@@ -1,0 +1,20 @@
+// The file of ugly hacks.
+
+actor PosGrabber
+{
+	height 2
+	radius 0.25
+	+NOTIMEFREEZE
+	+NOTRIGGER
+	+NODAMAGE
+	+NOGRAVITY
+	+NOBLOCKMAP
+	+THRUACTORS
+	+SERVERSIDEONLY
+	states
+	{
+		Spawn:
+			PUFF A 0
+			stop
+	}
+}

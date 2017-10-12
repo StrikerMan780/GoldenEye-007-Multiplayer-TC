@@ -1,0 +1,93 @@
+#library "WEAPSET"
+#include "zcommon.acs"
+
+struct GEAmmo
+{
+	str class_name;
+	str friendly_name;
+}
+
+#define AMMO_NONE -1
+enum
+{
+	AMMO_BASIC = 0,
+	AMMO_POINTED,
+	AMMO_SHOTGUN,
+	AMMO_MAGNUM,
+	AMMO_GOLDEN,
+	AMMO_GRENADE,
+	AMMO_ROCKET,
+	AMMO_HANDGRENADE,
+	AMMO_TIMEDMINE,
+	AMMO_PROXMINE,
+	AMMO_REMOTEMINE,
+	AMMO_KNIFE,
+}
+
+GEAmmo ammo_types[3] = {
+	{ "9mmBullets",			"ammo" },				// AMMO_BASIC
+	{ "PointedBullets", 	"ammo" },				// AMMO_POINTED
+	{ "ShotgunCartridges",	"shotgun cartridges" },	// AMMO_SHOTGUN
+	{ "MagnumBullets",		"magnum bullets" },		// AMMO_MAGNUM
+	{ "GoldenBullet",		"golden bullets" },		// AMMO_GOLDEN
+	{ "GrenadeRounds",		"grenade rounds" },		// AMMO_GRENADE
+	{ "Rockets",			"rockets" },			// AMMO_ROCKET
+	{ "HandGrenadeAmmo",	"grenades" },			// AMMO_HANDGRENADE
+	{ "TimedMineAmmo",		"timed mines" },		// AMMO_TIMEDMINE
+	{ "ProxMineAmmo",		"proximity mines" },	// AMMO_PROXMINE
+	{ "RemoteMineAmmo",		"remote mines" },		// AMMO_REMOTEMINE
+	{ "Knives",				"throwing knives" },	// AMMO_KNIFE
+};
+
+struct GEWeapon
+{
+	str class_name;
+	str friendly_name;
+	int clip_max;
+	int ammo_type;
+	int ammo_pickup;
+	int ammo_box;
+}
+
+enum
+{
+	WEAPON_PP7 = 0,
+	WEAPON_DD44,
+	WEAPON_KLOBB,
+	WEAPON_KF7,
+	WEAPON_ZMG,
+	WEAPON_AR33,
+	WEAPON_RCP90,
+	WEAPON_SHOTGUN,
+	WEAPON_AUTOSHOTGUN,
+	WEAPON_SNIPER,
+	WEAPON_MAGNUM,
+	WEAPON_GOLDGUN,
+	WEAPON_LASER,
+	WEAPON_GLAUNCHER,
+	WEAPON_RLAUNCHER,
+	WEAPON_HANDGRENADE,
+	WEAPON_TIMEDMINE,
+	WEAPON_PROXMINE,
+	WEAPON_REMOTEMINE,
+	WEAPON_THROWINGKNIFE,
+}
+
+GEWeapon weapons[2] = {
+	{ "PP7",					"PP7 Special",			7,	AMMO_BASIC,			10,	50 },	// WEAPON_PP7
+	{ "DD44",					"DD44 Dostovei",		8,	AMMO_BASIC,			10,	50 },	// WEAPON_DD44
+	{ "Klobb",					"Klobb",				20,	AMMO_BASIC,			10,	100 },	// WEAPON_KLOBB
+	{ "KF7Soviet",				"KF7 Soviet",			30,	AMMO_POINTED,		10,	100 },	// WEAPON_KF7
+	{ "ZMG",					"ZMG",					32,	AMMO_BASIC,			10,	100 },	// WEAPON_ZMG
+	{ "AR33",					"AR-33",				30,	AMMO_POINTED,		10,	100 },	// WEAPON_AR33
+	{ "RCP90",					"RC-P90",				80,	AMMO_BASIC,			10,	100 },	// WEAPON_RCP90
+	{ "GE64Shotgun",			"Shotgun",				5, 	AMMO_SHOTGUN,		5,	30 },	// WEAPON_SHOTGUN
+	{ "AutoShotgun",			"Automatic Shotgun",	5, 	AMMO_SHOTGUN,		5,	30 },	// WEAPON_AUTOSHOTGUN
+	{ "SniperRifle",			"Sniper Rifle",			8,	AMMO_POINTED,		10,	50 },	// WEAPON_SNIPER
+	{ "CougarMagnum",			"Cougar Magnum",		6,	AMMO_MAGNUM,		5,	50 },	// WEAPON_MAGNUM
+	{ "GoldenGun",				"Golden Gun",			1,	AMMO_GOLDEN,		2,	2 },	// WEAPON_GOLDGUN
+	{ "MoonrakerLaser",			"Moonraker Laser",		0,	AMMO_NONE,			0,	0 },	// WEAPON_LASER
+	{ "GE64GrenadeLauncher",	"Grenade Launcher",		6,	AMMO_GRENADE,		3,	6 },	// WEAPON_GLAUNCHER
+	{ "GE64RocketLauncher",		"Rocket Launcher",		1,	AMMO_ROCKET,		1,	3 },	// WEAPON_RLAUNCHER
+	{ "HandGrenade",			"Grenade",				0,	AMMO_HANDGRENADE,	1,	5 },	// WEAPON_HANDGRENADE
+};
