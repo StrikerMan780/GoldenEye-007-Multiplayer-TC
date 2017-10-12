@@ -3,8 +3,8 @@
 
 Texture "GESFN033", 22, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -4, 0
 	{
 		Style CopyAlpha
@@ -13,8 +13,8 @@ Texture "GESFN033", 22, 83
 
 Texture "GESFN034", 26, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -28, 0
 	{
 		Style CopyAlpha
@@ -23,8 +23,8 @@ Texture "GESFN034", 26, 83
 
 Texture "GESFN035", 60, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -56, 0
 	{
 		Style CopyAlpha
@@ -33,8 +33,8 @@ Texture "GESFN035", 60, 83
 
 Texture "GESFN036", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -118, 0
 	{
 		Style CopyAlpha
@@ -43,8 +43,8 @@ Texture "GESFN036", 52, 83
 
 Texture "GESFN037", 61, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -172, 0
 	{
 		Style CopyAlpha
@@ -53,8 +53,8 @@ Texture "GESFN037", 61, 83
 
 Texture "GESFN038", 61, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -235, 0
 	{
 		Style CopyAlpha
@@ -63,8 +63,8 @@ Texture "GESFN038", 61, 83
 
 Texture "GESFN039", 15, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -298, 0
 	{
 		Style CopyAlpha
@@ -73,8 +73,8 @@ Texture "GESFN039", 15, 83
 
 Texture "GESFN040", 24, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -315, 0
 	{
 		Style CopyAlpha
@@ -83,8 +83,8 @@ Texture "GESFN040", 24, 83
 
 Texture "GESFN041", 24, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -341, 0
 	{
 		Style CopyAlpha
@@ -93,8 +93,8 @@ Texture "GESFN041", 24, 83
 
 Texture "GESFN042", 34, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -367, 0
 	{
 		Style CopyAlpha
@@ -103,8 +103,8 @@ Texture "GESFN042", 34, 83
 
 Texture "GESFN043", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -403, 0
 	{
 		Style CopyAlpha
@@ -113,8 +113,8 @@ Texture "GESFN043", 52, 83
 
 Texture "GESFN044", 22, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -457, 0
 	{
 		Style CopyAlpha
@@ -123,8 +123,8 @@ Texture "GESFN044", 22, 83
 
 Texture "GESFN045", 27, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -481, 0
 	{
 		Style CopyAlpha
@@ -133,8 +133,8 @@ Texture "GESFN045", 27, 83
 
 Texture "GESFN046", 22, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -510, 0
 	{
 		Style CopyAlpha
@@ -143,8 +143,8 @@ Texture "GESFN046", 22, 83
 
 Texture "GESFN047", 34, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -534, 0
 	{
 		Style CopyAlpha
@@ -153,8 +153,8 @@ Texture "GESFN047", 34, 83
 
 Texture "GESFN048", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -570, 0
 	{
 		Style CopyAlpha
@@ -163,8 +163,8 @@ Texture "GESFN048", 52, 83
 
 Texture "GESFN049", 26, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -624, 0
 	{
 		Style CopyAlpha
@@ -173,8 +173,8 @@ Texture "GESFN049", 26, 83
 
 Texture "GESFN050", 50, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -652, 0
 	{
 		Style CopyAlpha
@@ -183,8 +183,8 @@ Texture "GESFN050", 50, 83
 
 Texture "GESFN051", 50, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -704, 0
 	{
 		Style CopyAlpha
@@ -193,8 +193,8 @@ Texture "GESFN051", 50, 83
 
 Texture "GESFN052", 55, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -756, 0
 	{
 		Style CopyAlpha
@@ -203,8 +203,8 @@ Texture "GESFN052", 55, 83
 
 Texture "GESFN053", 51, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -813, 0
 	{
 		Style CopyAlpha
@@ -213,8 +213,8 @@ Texture "GESFN053", 51, 83
 
 Texture "GESFN054", 51, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -866, 0
 	{
 		Style CopyAlpha
@@ -223,8 +223,8 @@ Texture "GESFN054", 51, 83
 
 Texture "GESFN055", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -919, 0
 	{
 		Style CopyAlpha
@@ -233,8 +233,8 @@ Texture "GESFN055", 52, 83
 
 Texture "GESFN056", 53, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -972, 0
 	{
 		Style CopyAlpha
@@ -243,8 +243,8 @@ Texture "GESFN056", 53, 83
 
 Texture "GESFN057", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1026, 0
 	{
 		Style CopyAlpha
@@ -253,8 +253,8 @@ Texture "GESFN057", 52, 83
 
 Texture "GESFN058", 22, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1080, 0
 	{
 		Style CopyAlpha
@@ -263,8 +263,8 @@ Texture "GESFN058", 22, 83
 
 Texture "GESFN059", 22, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1104, 0
 	{
 		Style CopyAlpha
@@ -273,8 +273,8 @@ Texture "GESFN059", 22, 83
 
 Texture "GESFN060", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1128, 0
 	{
 		Style CopyAlpha
@@ -283,8 +283,8 @@ Texture "GESFN060", 52, 83
 
 Texture "GESFN061", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1182, 0
 	{
 		Style CopyAlpha
@@ -293,8 +293,8 @@ Texture "GESFN061", 52, 83
 
 Texture "GESFN062", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1236, 0
 	{
 		Style CopyAlpha
@@ -303,8 +303,8 @@ Texture "GESFN062", 52, 83
 
 Texture "GESFN063", 43, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1289, 0
 	{
 		Style CopyAlpha
@@ -313,8 +313,8 @@ Texture "GESFN063", 43, 83
 
 Texture "GESFN064", 75, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1334, 0
 	{
 		Style CopyAlpha
@@ -323,8 +323,8 @@ Texture "GESFN064", 75, 83
 
 Texture "GESFN065", 61, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1411, 0
 	{
 		Style CopyAlpha
@@ -333,8 +333,8 @@ Texture "GESFN065", 61, 83
 
 Texture "GESFN066", 51, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1474, 0
 	{
 		Style CopyAlpha
@@ -343,8 +343,8 @@ Texture "GESFN066", 51, 83
 
 Texture "GESFN067", 51, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1527, 0
 	{
 		Style CopyAlpha
@@ -353,8 +353,8 @@ Texture "GESFN067", 51, 83
 
 Texture "GESFN068", 55, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1580, 0
 	{
 		Style CopyAlpha
@@ -363,8 +363,8 @@ Texture "GESFN068", 55, 83
 
 Texture "GESFN069", 49, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1637, 0
 	{
 		Style CopyAlpha
@@ -373,8 +373,8 @@ Texture "GESFN069", 49, 83
 
 Texture "GESFN070", 48, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1688, 0
 	{
 		Style CopyAlpha
@@ -383,8 +383,8 @@ Texture "GESFN070", 48, 83
 
 Texture "GESFN071", 54, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1738, 0
 	{
 		Style CopyAlpha
@@ -393,8 +393,8 @@ Texture "GESFN071", 54, 83
 
 Texture "GESFN072", 55, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1794, 0
 	{
 		Style CopyAlpha
@@ -403,8 +403,8 @@ Texture "GESFN072", 55, 83
 
 Texture "GESFN073", 19, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1851, 0
 	{
 		Style CopyAlpha
@@ -413,8 +413,8 @@ Texture "GESFN073", 19, 83
 
 Texture "GESFN074", 45, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1872, 0
 	{
 		Style CopyAlpha
@@ -423,8 +423,8 @@ Texture "GESFN074", 45, 83
 
 Texture "GESFN075", 55, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1919, 0
 	{
 		Style CopyAlpha
@@ -433,8 +433,8 @@ Texture "GESFN075", 55, 83
 
 Texture "GESFN076", 47, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -1976, 0
 	{
 		Style CopyAlpha
@@ -443,8 +443,8 @@ Texture "GESFN076", 47, 83
 
 Texture "GESFN077", 59, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2025, 0
 	{
 		Style CopyAlpha
@@ -453,8 +453,8 @@ Texture "GESFN077", 59, 83
 
 Texture "GESFN078", 54, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2086, 0
 	{
 		Style CopyAlpha
@@ -463,8 +463,8 @@ Texture "GESFN078", 54, 83
 
 Texture "GESFN079", 56, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2142, 0
 	{
 		Style CopyAlpha
@@ -473,8 +473,8 @@ Texture "GESFN079", 56, 83
 
 Texture "GESFN080", 51, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2200, 0
 	{
 		Style CopyAlpha
@@ -483,8 +483,8 @@ Texture "GESFN080", 51, 83
 
 Texture "GESFN081", 56, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2253, 0
 	{
 		Style CopyAlpha
@@ -493,8 +493,8 @@ Texture "GESFN081", 56, 83
 
 Texture "GESFN082", 54, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2311, 0
 	{
 		Style CopyAlpha
@@ -503,8 +503,8 @@ Texture "GESFN082", 54, 83
 
 Texture "GESFN083", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2367, 0
 	{
 		Style CopyAlpha
@@ -513,8 +513,8 @@ Texture "GESFN083", 52, 83
 
 Texture "GESFN084", 53, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2421, 0
 	{
 		Style CopyAlpha
@@ -523,8 +523,8 @@ Texture "GESFN084", 53, 83
 
 Texture "GESFN085", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2476, 0
 	{
 		Style CopyAlpha
@@ -533,8 +533,8 @@ Texture "GESFN085", 52, 83
 
 Texture "GESFN086", 58, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2530, 0
 	{
 		Style CopyAlpha
@@ -543,8 +543,8 @@ Texture "GESFN086", 58, 83
 
 Texture "GESFN087", 71, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2590, 0
 	{
 		Style CopyAlpha
@@ -553,8 +553,8 @@ Texture "GESFN087", 71, 83
 
 Texture "GESFN088", 59, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2663, 0
 	{
 		Style CopyAlpha
@@ -563,8 +563,8 @@ Texture "GESFN088", 59, 83
 
 Texture "GESFN089", 59, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2723, 0
 	{
 		Style CopyAlpha
@@ -573,8 +573,8 @@ Texture "GESFN089", 59, 83
 
 Texture "GESFN090", 50, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2784, 0
 	{
 		Style CopyAlpha
@@ -583,8 +583,8 @@ Texture "GESFN090", 50, 83
 
 Texture "GESFN091", 26, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2836, 0
 	{
 		Style CopyAlpha
@@ -593,8 +593,8 @@ Texture "GESFN091", 26, 83
 
 Texture "GESFN092", 34, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2864, 0
 	{
 		Style CopyAlpha
@@ -603,8 +603,8 @@ Texture "GESFN092", 34, 83
 
 Texture "GESFN093", 26, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2900, 0
 	{
 		Style CopyAlpha
@@ -613,8 +613,8 @@ Texture "GESFN093", 26, 83
 
 Texture "GESFN094", 54, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2927, 0
 	{
 		Style CopyAlpha
@@ -623,8 +623,8 @@ Texture "GESFN094", 54, 83
 
 Texture "GESFN095", 46, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2983, 0
 	{
 		Style CopyAlpha
@@ -633,8 +633,8 @@ Texture "GESFN095", 46, 83
 
 Texture "GESFN096", 26, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3030, 0
 	{
 		Style CopyAlpha
@@ -643,8 +643,8 @@ Texture "GESFN096", 26, 83
 
 Texture "GESFN097", 54, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3058, 0
 	{
 		Style CopyAlpha
@@ -653,8 +653,8 @@ Texture "GESFN097", 54, 83
 
 Texture "GESFN098", 45, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3114, 0
 	{
 		Style CopyAlpha
@@ -663,8 +663,8 @@ Texture "GESFN098", 45, 83
 
 Texture "GESFN099", 45, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3161, 0
 	{
 		Style CopyAlpha
@@ -673,8 +673,8 @@ Texture "GESFN099", 45, 83
 
 Texture "GESFN100", 49, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3208, 0
 	{
 		Style CopyAlpha
@@ -683,8 +683,8 @@ Texture "GESFN100", 49, 83
 
 Texture "GESFN101", 43, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3259, 0
 	{
 		Style CopyAlpha
@@ -693,8 +693,8 @@ Texture "GESFN101", 43, 83
 
 Texture "GESFN102", 43, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3304, 0
 	{
 		Style CopyAlpha
@@ -703,8 +703,8 @@ Texture "GESFN102", 43, 83
 
 Texture "GESFN103", 48, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3349, 0
 	{
 		Style CopyAlpha
@@ -713,8 +713,8 @@ Texture "GESFN103", 48, 83
 
 Texture "GESFN104", 48, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3399, 0
 	{
 		Style CopyAlpha
@@ -723,8 +723,8 @@ Texture "GESFN104", 48, 83
 
 Texture "GESFN105", 18, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3449, 0
 	{
 		Style CopyAlpha
@@ -733,8 +733,8 @@ Texture "GESFN105", 18, 83
 
 Texture "GESFN106", 40, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3469, 0
 	{
 		Style CopyAlpha
@@ -743,8 +743,8 @@ Texture "GESFN106", 40, 83
 
 Texture "GESFN107", 49, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3511, 0
 	{
 		Style CopyAlpha
@@ -753,8 +753,8 @@ Texture "GESFN107", 49, 83
 
 Texture "GESFN108", 42, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3562, 0
 	{
 		Style CopyAlpha
@@ -763,8 +763,8 @@ Texture "GESFN108", 42, 83
 
 Texture "GESFN109", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3606, 0
 	{
 		Style CopyAlpha
@@ -773,8 +773,8 @@ Texture "GESFN109", 52, 83
 
 Texture "GESFN110", 48, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3660, 0
 	{
 		Style CopyAlpha
@@ -783,8 +783,8 @@ Texture "GESFN110", 48, 83
 
 Texture "GESFN111", 50, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3710, 0
 	{
 		Style CopyAlpha
@@ -793,8 +793,8 @@ Texture "GESFN111", 50, 83
 
 Texture "GESFN112", 45, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3762, 0
 	{
 		Style CopyAlpha
@@ -803,8 +803,8 @@ Texture "GESFN112", 45, 83
 
 Texture "GESFN113", 50, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3809, 0
 	{
 		Style CopyAlpha
@@ -813,8 +813,8 @@ Texture "GESFN113", 50, 83
 
 Texture "GESFN114", 48, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3861, 0
 	{
 		Style CopyAlpha
@@ -823,8 +823,8 @@ Texture "GESFN114", 48, 83
 
 Texture "GESFN115", 46, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3911, 0
 	{
 		Style CopyAlpha
@@ -833,8 +833,8 @@ Texture "GESFN115", 46, 83
 
 Texture "GESFN116", 47, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -3959, 0
 	{
 		Style CopyAlpha
@@ -843,8 +843,8 @@ Texture "GESFN116", 47, 83
 
 Texture "GESFN117", 46, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -4008, 0
 	{
 		Style CopyAlpha
@@ -853,8 +853,8 @@ Texture "GESFN117", 46, 83
 
 Texture "GESFN118", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -2, -83
 	{
 		Style CopyAlpha
@@ -863,8 +863,8 @@ Texture "GESFN118", 52, 83
 
 Texture "GESFN119", 63, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -56, -83
 	{
 		Style CopyAlpha
@@ -873,8 +873,8 @@ Texture "GESFN119", 63, 83
 
 Texture "GESFN120", 52, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -121, -83
 	{
 		Style CopyAlpha
@@ -883,8 +883,8 @@ Texture "GESFN120", 52, 83
 
 Texture "GESFN121", 51, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -175, -83
 	{
 		Style CopyAlpha
@@ -893,8 +893,8 @@ Texture "GESFN121", 51, 83
 
 Texture "GESFN122", 45, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -228, -83
 	{
 		Style CopyAlpha
@@ -903,8 +903,8 @@ Texture "GESFN122", 45, 83
 
 Texture "GESFN123", 35, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -275, -83
 	{
 		Style CopyAlpha
@@ -913,8 +913,8 @@ Texture "GESFN123", 35, 83
 
 Texture "GESFN124", 16, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -312, -83
 	{
 		Style CopyAlpha
@@ -923,8 +923,8 @@ Texture "GESFN124", 16, 83
 
 Texture "GESFN125", 35, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -330, -83
 	{
 		Style CopyAlpha
@@ -933,8 +933,8 @@ Texture "GESFN125", 35, 83
 
 Texture "GESFN126", 58, 83
 {
-	XScale 8.000
-	YScale 8.000
+	XScale 6.900
+	YScale 6.900
 	Patch "FONT", -367, -83
 	{
 		Style CopyAlpha
