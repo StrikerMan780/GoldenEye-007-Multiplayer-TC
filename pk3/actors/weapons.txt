@@ -625,7 +625,7 @@ ACTOR GoldenGun : GEWeapon Replaces BFG9000
 	Weapon.SelectionOrder 2800
 	Weapon.AmmoUse 1
 	Weapon.AmmoGive1 1
-	Weapon.AmmoGive2 1
+	Weapon.AmmoGive2 0
 	Weapon.AmmoType "GoldenGunShot"
 	Weapon.AmmoType2 "GoldenBullet"
 	Weapon.SisterWeapon "GoldenGunPaintball"
@@ -680,7 +680,9 @@ ACTOR GoldenGun : GEWeapon Replaces BFG9000
 	Fire:
 		GOLD A 0 A_JumpIfNoAmmo("ReloadCheck")
 		GOLD A 0 A_GunFlash
-		GOLD B 1 BRIGHT A_FireBullets(4, 4, -1, 150, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+		GOLD A 0 BRIGHT A_FireBullets(1, 1, -1, 150, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+		GOLD B 0 BRIGHT A_SetAngle(angle-frandom(2.0, 4.0))
+		GOLD B 1 BRIGHT A_SetPitch(pitch-2.0)
 		GOLD CDEF 2
 		GOLD A 15
 		GOLD A 0 A_Refire
