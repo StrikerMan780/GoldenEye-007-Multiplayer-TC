@@ -169,7 +169,7 @@ map FACILBZ "Goldeneye 007 - Facility Backzone"
 map COMPLEX "Goldeneye 007 - Complex"
 {
 	sky1 = REDSKY1, 0.0
-	music = "D_COMPLE"
+	music = "FRIGATE"
 	clipmidtextures
 	allowcrouch
 	UsePlayerStartZ 

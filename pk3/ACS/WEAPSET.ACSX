@@ -1,16 +1,28 @@
 #library "WEAPSET"
 #include "zcommon.acs"
 
+int current_set;
+
+// For Tests:
+// Slot 1 - PP7
+// Slot 2 - DD44
+// Slot 3 - Klobb
+// Slot 4 - KF7
+// Slot 5 - Phantom
+// Slot 6 - D5K
+// Slot 7 - Cougar Magnum
+// Slot 8 - Gold PP7
+
 struct GEAmmo
 {
 	str class_name;
 	str friendly_name;
 }
 
-#define AMMO_NONE -1
 enum
 {
-	AMMO_BASIC = 0,
+	AMMO_NONE,
+	AMMO_BASIC,
 	AMMO_POINTED,
 	AMMO_SHOTGUN,
 	AMMO_MAGNUM,
@@ -22,9 +34,11 @@ enum
 	AMMO_PROXMINE,
 	AMMO_REMOTEMINE,
 	AMMO_KNIFE,
+	AMMO_MAX,
 }
 
-GEAmmo ammo_types[3] = {
+GEAmmo ammo_types[AMMO_MAX] = {
+	{ "InvalidAmmo"			"invalid ammo type" },	// AMMO_NONE
 	{ "9mmBullets",			"ammo" },				// AMMO_BASIC
 	{ "PointedBullets", 	"ammo" },				// AMMO_POINTED
 	{ "ShotgunCartridges",	"shotgun cartridges" },	// AMMO_SHOTGUN
@@ -42,8 +56,9 @@ GEAmmo ammo_types[3] = {
 struct GEWeapon
 {
 	str class_name;
+	str article;
 	str friendly_name;
-	int clip_max;
+	bool has_clip;
 	int ammo_type;
 	int ammo_pickup;
 	int ammo_box;
@@ -51,43 +66,183 @@ struct GEWeapon
 
 enum
 {
-	WEAPON_PP7 = 0,
-	WEAPON_DD44,
-	WEAPON_KLOBB,
-	WEAPON_KF7,
-	WEAPON_ZMG,
-	WEAPON_AR33,
-	WEAPON_RCP90,
-	WEAPON_SHOTGUN,
-	WEAPON_AUTOSHOTGUN,
-	WEAPON_SNIPER,
-	WEAPON_MAGNUM,
-	WEAPON_GOLDGUN,
-	WEAPON_LASER,
-	WEAPON_GLAUNCHER,
-	WEAPON_RLAUNCHER,
-	WEAPON_HANDGRENADE,
-	WEAPON_TIMEDMINE,
-	WEAPON_PROXMINE,
-	WEAPON_REMOTEMINE,
-	WEAPON_THROWINGKNIFE,
+	W_NONE,
+	W_PP7,
+	W_DD44,
+	W_KLOBB,
+	W_KF7,
+	W_ZMG,
+	W_AR33,
+	W_RCP90,
+	W_SHOTGUN,
+	W_AUTOSHOTGUN,
+	W_SNIPER,
+	W_MAGNUM,
+	W_GOLDGUN,
+	W_LASER,
+	W_GLAUNCHER,
+	W_RLAUNCHER,
+	W_HANDGRENADE,
+	W_TIMEDMINE,
+	W_PROXMINE,
+	W_REMOTEMINE,
+	W_THROWINGKNIFE,
+	W_MAX,
 }
 
-GEWeapon weapons[2] = {
-	{ "PP7",					"PP7 Special",			7,	AMMO_BASIC,			10,	50 },	// WEAPON_PP7
-	{ "DD44",					"DD44 Dostovei",		8,	AMMO_BASIC,			10,	50 },	// WEAPON_DD44
-	{ "Klobb",					"Klobb",				20,	AMMO_BASIC,			10,	100 },	// WEAPON_KLOBB
-	{ "KF7Soviet",				"KF7 Soviet",			30,	AMMO_POINTED,		10,	100 },	// WEAPON_KF7
-	{ "ZMG",					"ZMG",					32,	AMMO_BASIC,			10,	100 },	// WEAPON_ZMG
-	{ "AR33",					"AR-33",				30,	AMMO_POINTED,		10,	100 },	// WEAPON_AR33
-	{ "RCP90",					"RC-P90",				80,	AMMO_BASIC,			10,	100 },	// WEAPON_RCP90
-	{ "GE64Shotgun",			"Shotgun",				5, 	AMMO_SHOTGUN,		5,	30 },	// WEAPON_SHOTGUN
-	{ "AutoShotgun",			"Automatic Shotgun",	5, 	AMMO_SHOTGUN,		5,	30 },	// WEAPON_AUTOSHOTGUN
-	{ "SniperRifle",			"Sniper Rifle",			8,	AMMO_POINTED,		10,	50 },	// WEAPON_SNIPER
-	{ "CougarMagnum",			"Cougar Magnum",		6,	AMMO_MAGNUM,		5,	50 },	// WEAPON_MAGNUM
-	{ "GoldenGun",				"Golden Gun",			1,	AMMO_GOLDEN,		2,	2 },	// WEAPON_GOLDGUN
-	{ "MoonrakerLaser",			"Moonraker Laser",		0,	AMMO_NONE,			0,	0 },	// WEAPON_LASER
-	{ "GE64GrenadeLauncher",	"Grenade Launcher",		6,	AMMO_GRENADE,		3,	6 },	// WEAPON_GLAUNCHER
-	{ "GE64RocketLauncher",		"Rocket Launcher",		1,	AMMO_ROCKET,		1,	3 },	// WEAPON_RLAUNCHER
-	{ "HandGrenade",			"Grenade",				0,	AMMO_HANDGRENADE,	1,	5 },	// WEAPON_HANDGRENADE
+GEWeapon weapons[W_MAX] = {
+	{ "InvalidWeapon",			"an",	"Invalid Weapon",		false,	AMMO_NONE,			0,	0 },	// W_NONE
+	{ "PP7",					"a",	"PP7 Special Issue",	true,	AMMO_BASIC,			10,	50 },	// W_PP7
+	{ "DD44",					"a",	"DD44 Dostovei",		true,	AMMO_BASIC,			10,	50 },	// W_DD44
+	{ "Klobb",					"a",	"Klobb",				true,	AMMO_BASIC,			10,	100 },	// W_KLOBB
+	{ "KF7Soviet",				"a",	"KF7 Soviet",			true,	AMMO_POINTED,		10,	100 },	// W_KF7
+	{ "ZMG",					"a",	"ZMG",					true,	AMMO_BASIC,			10,	100 },	// W_ZMG
+	{ "AR33",					"an",	"AR-33",				true,	AMMO_POINTED,		10,	100 },	// W_AR33
+	{ "RCP90",					"an",	"RC-P90",				true,	AMMO_BASIC,			10,	100 },	// W_RCP90
+	{ "GE64Shotgun",			"a",	"Shotgun",				true, 	AMMO_SHOTGUN,		5,	30 },	// W_SHOTGUN
+	{ "AutoShotgun",			"an",	"Automatic Shotgun",	true, 	AMMO_SHOTGUN,		5,	30 },	// W_AUTOSHOTGUN
+	{ "SniperRifle",			"a",	"Sniper Rifle",			true,	AMMO_POINTED,		10,	50 },	// W_SNIPER
+	{ "CougarMagnum",			"a",	"Cougar Magnum",		true,	AMMO_MAGNUM,		5,	50 },	// W_MAGNUM
+	{ "GoldenGun",				"the",	"Golden Gun",			true,	AMMO_GOLDEN,		2,	2 },	// W_GOLDGUN
+	{ "MoonrakerLaser",			"a",	"Moonraker Laser",		false,	AMMO_NONE,			0,	0 },	// W_LASER
+	{ "GE64GrenadeLauncher",	"a",	"Grenade Launcher",		true,	AMMO_GRENADE,		3,	6 },	// W_GLAUNCHER
+	{ "GE64RocketLauncher",		"a",	"Rocket Launcher",		true,	AMMO_ROCKET,		1,	3 },	// W_RLAUNCHER
+	{ "HandGrenade",			"a",	"Grenade",				false,	AMMO_HANDGRENADE,	1,	5 },	// W_HANDGRENADE
+	{ "TimedMines",				"a",	"Timed Mine",			false,	AMMO_TIMEDMINE,		1,	5 },	// W_TIMEDMINE
+	{ "ProximityMines",			"a",	"Proximity Mine",		false,	AMMO_PROXMINE,		1,	5 },	// W_PROXMINE
+	{ "RemoteMines",			"a",	"Remote Mine",			false,	AMMO_REMOTEMINE,	1,	5 },	// W_REMOTEMINE
+	{ "ThrowingKnives",			"a",	"Throwing Knife",		false,	AMMO_KNIFE,			1,	10 },	// W_THROWINGKNIFE
 };
+
+struct GEWeaponSet
+{
+	str set_name;
+	int set_weapons[8];
+}
+
+enum
+{
+	SET_SLAPPERS,
+	SET_PISTOLS,
+	SET_THROWINGKNIVES,
+	SET_AUTOMATICS,
+	SET_POWERWEAPONS,
+	SET_SNIPERRIFLES,
+	SET_GRENADES,
+	SET_REMOTEMINES,
+	SET_TIMEDMINES,
+	SET_PROXMINES,
+	SET_GLAUNCHERS,
+	SET_ROCKETS,
+	SET_LASERS,
+	SET_GOLDENGUN,
+	SET_MAX,
+}
+
+GEWeaponSet weaponsets[SET_MAX] = {
+	{ "Hunting Knives Only!",	{ W_NONE, W_NONE, W_NONE, W_NONE, W_NONE, W_NONE, W_NONE, W_NONE } },
+	{ "Pistols",				{ W_DD44, W_DD44, W_DD44, W_PP7, W_PP7, W_PP7, W_MAGNUM, W_MAGNUM } }, // Change to PP7 (Silenced) later.
+	{ "Throwing Knives",		{ W_THROWINGKNIFE, W_THROWINGKNIFE, W_THROWINGKNIFE, W_THROWINGKNIFE, W_THROWINGKNIFE, W_THROWINGKNIFE, W_THROWINGKNIFE, W_THROWINGKNIFE } },
+	{ "Automatics",				{ W_PP7, W_PP7, W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_ZMG, W_ZMG } }, // Note: Change ZMG to D5K when implemented, and PP7 to silenced.
+	{ "Power Weapons",			{ W_DD44, W_DD44, W_MAGNUM, W_MAGNUM, W_RCP90, W_RCP90, W_AUTOSHOTGUN, W_AUTOSHOTGUN } },
+	{ "Sniper Rifles",			{ W_DD44, W_DD44, W_MAGNUM, W_MAGNUM, W_KLOBB, W_KLOBB, W_SNIPER, W_SNIPER } },
+	{ "Grenades",				{ W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_KF7, W_KF7, W_HANDGRENADE, W_HANDGRENADE } },
+	{ "Remote Mines",			{ W_PP7, W_PP7, W_ZMG, W_ZMG, W_AR33, W_AR33, W_REMOTEMINE, W_REMOTEMINE } },
+	{ "Timed Mines",			{ W_PP7, W_PP7, W_ZMG, W_ZMG, W_AR33, W_AR33, W_TIMEDMINE, W_TIMEDMINE } },
+	{ "Proximity Mines",		{ W_PP7, W_PP7, W_ZMG, W_ZMG, W_AR33, W_AR33, W_PROXMINE, W_PROXMINE } },
+	{ "Grenade Launchers",		{ W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_KF7, W_KF7, W_GLAUNCHER, W_GLAUNCHER } },
+	{ "Rockets",				{ W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_KF7, W_KF7, W_RLAUNCHER, W_RLAUNCHER } },
+	{ "Lasers",					{ W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_KF7, W_KF7, W_LASER, W_LASER } },
+	{ "Golden Gun",				{ W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_KF7, W_KF7, W_PP7, W_GOLDGUN } }, // Change to PP7 (Silenced) later.
+};
+
+script "GIVEWEAPON" (int slot)
+{
+	
+}
+
+script "PICKWEAPONSET" OPEN
+{
+	current_set = GetCvar("ge_weaponset");
+	if(current_set == -1)
+	{
+		current_set = random(0, SET_MAX-1);
+	}
+}
+
+function int GetWeaponNum(int slot)
+{
+	return weaponsets[current_set].set_weapons[slot];
+}
+
+function GEWeapon GetGEWeapon(int slot)
+{
+	return weapons[GetWeaponNum(slot)];
+}
+
+function GEAmmo GetGEAmmo(int slot)
+{
+	GEWeapon weapon = GetGEWeapon(slot);
+	return ammo_types[weapon.ammo_type];
+}
+
+function bool GiveAmmo(int slot)
+{
+	GEWeapon weapon = GetGEWeapon(slot);
+	GEAmmo ammo = GetGEAmmo(slot);
+	if((GetWeaponNum(slot) == W_NONE) || (weapon.ammo_type == AMMO_NONE) || (CheckInventory(ammo.class_name) >= GetAmmoCapacity(ammo.class_name)))
+	{
+		return false;
+	}
+	
+	GiveInventory(ammo.class_name, weapon.ammo_box);
+	return true;
+}
+
+function void GiveStartWeapon(void)
+{
+	if(GetCVar("ge_startweapon"))
+	{	
+		GEWeapon weapon = GetGEWeapon(0);
+		GEAmmo ammo = GetGEAmmo(0);
+		if(GetWeaponNum(0) != W_NONE)
+		{
+			GiveInventory(weapon.class_name, 1);
+			GiveInventory(ammo.class_name, weapon.ammo_box);
+			SetWeapon(weapon.class_name);
+		}
+	}
+}
+
+function str GetWeaponSetName(void)
+{
+	return weaponsets[current_set].set_name;
+}
+
+script "DISPLAYSET" ENTER
+{
+	if(GameType() == GAME_NET_DEATHMATCH)
+	{
+		int ypos = 64.1;
+		
+		Delay(1);
+		GiveStartWeapon();
+		
+		delay(35);
+		SetHudSize(640, 480, false);
+		SetFont("SMALLFONT");
+		HudMessage(s:"Weapon Set: \cd", s:GetWeaponSetName();
+		HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_WHITE, 8.1, ypos, 6.0, 0.5, 2.0);
+		
+		for(int i = 0; i < 8; i++)
+		{
+			if((weaponsets[current_set].set_weapons[i] != W_NONE) && ((i == 0) || ((i > 0) && weaponsets[current_set].set_weapons[i] != weaponsets[current_set].set_weapons[i-1])))
+			{
+				ypos += 14.0;
+				GEWeapon weapon = GetGEWeapon(i);
+				HudMessage(s:"\cf", s:weapon.friendly_name;
+				HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_WHITE, 8.1, ypos, 6.0, 0.5, 2.0);
+			}
+		}
+	}
+}

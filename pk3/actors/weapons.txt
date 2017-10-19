@@ -5,6 +5,8 @@ actor GEWeapon : Weapon
 	Weapon.BobRangeX 0.5
 	Weapon.BobRangeY 0.5
 	Weapon.UpSound "misc/w_pkup"
+	Weapon.AmmoGive1 0
+	Weapon.AmmoGive2 0
 }
 
 ACTOR PP7Clip : Ammo
@@ -28,8 +30,6 @@ ACTOR PP7 : GEWeapon Replaces Pistol
 	Decal BulletChip
 	Weapon.SelectionOrder 1900
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive1 7
-	Weapon.AmmoGive2 14
 	Weapon.AmmoType "PP7Clip"
 	Weapon.AmmoType2 "9mmBullets"
 	Weapon.SisterWeapon "PP7Paintball"
@@ -173,7 +173,7 @@ actor PP7Paintball : PP7
 	+WEAPON.POWERED_UP
 }
 
-ACTOR AutoClip : Ammo
+ACTOR AutomaticShotgunClip : Ammo
 {
 	Inventory.MaxAmount 5 // size of the clip
 	Ammo.BackpackAmount 0
@@ -195,11 +195,9 @@ actor AutomaticShotgun : GEWeapon Replaces SuperShotgun
   Weapon.UpSound "misc/w_pkup"
   weapon.selectionorder 400
   weapon.kickback 100
-  Weapon.Ammotype "AutoClip"
+  Weapon.Ammotype "AutomaticShotgunClip"
   weapon.ammotype2 "ShotgunCartridges"
   weapon.ammouse 1
-  weapon.ammogive 5
-  weapon.ammogive2 5
   Scale 0.9
   +WEAPON.AMMO_OPTIONAL
   states
@@ -211,7 +209,7 @@ actor AutomaticShotgun : GEWeapon Replaces SuperShotgun
 	goto Ready+1
 
   ReloadCheck:
-	 ASHG A 0 A_JumpIfInventory("AutoClip",5,2)
+	 ASHG A 0 A_JumpIfInventory("AutomaticShotgunClip",5,2)
 	 ASHG A 0 A_JumpIfInventory("ShotgunCartridges",1,"ReloadStart")
 	 ASHG A 0
 	 goto Ready+1
@@ -230,8 +228,8 @@ actor AutomaticShotgun : GEWeapon Replaces SuperShotgun
 
   ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("ShotgunCartridges",1)
-	 TNT1 A 0 A_GiveInventory("AutoClip",1)
-	 TNT1 A 0 A_JumpIfInventory("AutoClip",5,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("AutomaticShotgunClip",1)
+	 TNT1 A 0 A_JumpIfInventory("AutomaticShotgunClip",5,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("ShotgunCartridges",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -306,8 +304,6 @@ ACTOR ZMG : GEWeapon 5014
 	Weapon.UpSound "misc/w_pkup"
 	Weapon.AmmoType "ZMGClip"
 	Weapon.AmmoType2 "9mmBullets"
-	Weapon.AmmoGive1 32
-	Weapon.AmmoGive2 40
 	Weapon.AmmoUse 1
 	Weapon.Selectionorder 700
 	Weapon.Kickback 100
@@ -404,8 +400,6 @@ ACTOR Klobb : GEWeapon Replaces Chaingun
 	SpawnID 28
 	Weapon.SelectionOrder 700
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive 20
-	Weapon.AmmoGive2 40
 	Weapon.AmmoType "KlobbClip"
 	Weapon.AmmoType2 "9mmBullets"
 	Weapon.SisterWeapon "KlobbPaintball"
@@ -488,7 +482,7 @@ actor KlobbPaintball : Klobb
 	+WEAPON.POWERED_UP
 }
 
-ACTOR KF7Clip : Ammo
+ACTOR KF7SovietClip : Ammo
 {
 	Inventory.MaxAmount 30 // size of the clip
 	Ammo.BackpackAmount 0
@@ -500,7 +494,7 @@ ACTOR KF7Clip : Ammo
 actor KF7Soviet : GEWeapon 18212
 {
   Obituary "%o was riddled by %k's KF7 Soviet."
-  Weapon.Ammotype1 "KF7Clip"
+  Weapon.Ammotype1 "KF7SovietClip"
   Weapon.Ammotype2 "PointedBullets"
   Decal BulletChip
   Weapon.UpSound "misc/w_pkup"
@@ -508,8 +502,6 @@ actor KF7Soviet : GEWeapon 18212
   AttackSound "KF7Fire"
   Weapon.Selectionorder 650
   Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 30
-  Weapon.AmmoGive2 30
   Weapon.SisterWeapon "KF7SovietPaintball"
   -WEAPON.NOAUTOFIRE
   +WEAPON.AMMO_OPTIONAL
@@ -522,7 +514,7 @@ actor KF7Soviet : GEWeapon 18212
 	goto Ready+1
 
   ReloadCheck:
-	 KF7S A 0 A_JumpIfInventory("KF7Clip",30,2)
+	 KF7S A 0 A_JumpIfInventory("KF7SovietClip",30,2)
 	 KF7S A 0 A_JumpIfInventory("PointedBullets",1,"ReloadStart")
 	 KF7S A 0
 	 goto Ready+1
@@ -541,8 +533,8 @@ actor KF7Soviet : GEWeapon 18212
 
 	ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("PointedBullets",1)
-	 TNT1 A 0 A_GiveInventory("KF7Clip",1)
-	 TNT1 A 0 A_JumpIfInventory("KF7Clip",30,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("KF7SovietClip",1)
+	 TNT1 A 0 A_JumpIfInventory("KF7SovietClip",30,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("PointedBullets",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -607,7 +599,7 @@ actor KF7SovietPaintball : KF7Soviet
 	+WEAPON.POWERED_UP
 }
 
-ACTOR GoldenGunShot : Ammo
+ACTOR GoldenGunClip : Ammo
 {
 	Inventory.MaxAmount 1
 	Ammo.BackpackAmount 0
@@ -624,14 +616,13 @@ ACTOR GoldenGun : GEWeapon Replaces BFG9000
 	SpawnID 31
 	Weapon.SelectionOrder 2800
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive1 1
-	Weapon.AmmoGive2 0
-	Weapon.AmmoType "GoldenGunShot"
+	Weapon.AmmoType "GoldenGunClip"
 	Weapon.AmmoType2 "GoldenBullet"
 	Weapon.SisterWeapon "GoldenGunPaintball"
 	+WEAPON.BFG
 	+WEAPON.NOLMS
 	+WEAPON.AMMO_OPTIONAL
+	+WEAPON.NOAUTOAIM
 	+INVENTORY.IGNORESKILL
 	Obituary "%k put a golden bullet into %o's skull."
 	Inventory.PickupMessage "Golden Gun"
@@ -645,7 +636,7 @@ ACTOR GoldenGun : GEWeapon Replaces BFG9000
 	 goto Ready+1
 
 	ReloadCheck:
-	 GOLD A 0 A_JumpIfInventory("GoldenGunShot",1,2)
+	 GOLD A 0 A_JumpIfInventory("GoldenGunClip",1,2)
 	 GOLD A 0 A_JumpIfInventory("GoldenBullet",1,"ReloadStart")
 	 GOLD A 0
 	 goto Ready+1
@@ -658,8 +649,8 @@ ACTOR GoldenGun : GEWeapon Replaces BFG9000
 
 	ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("GoldenBullet",1)
-	 TNT1 A 0 A_GiveInventory("GoldenGunShot",1)
-	 TNT1 A 0 A_JumpIfInventory("GoldenGunShot",1,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("GoldenGunClip",1)
+	 TNT1 A 0 A_JumpIfInventory("GoldenGunClip",1,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("GoldenBullet",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -707,7 +698,7 @@ actor GoldenGunPaintball : GoldenGun
 	+WEAPON.POWERED_UP
 }
 
-ACTOR ShotgunClip : Ammo
+ACTOR GE64ShotgunClip : Ammo
 {
 	Inventory.MaxAmount 5 // size of the clip
 	Ammo.BackpackAmount 0
@@ -728,11 +719,9 @@ actor GE64Shotgun : GEWeapon Replaces Shotgun
   inventory.pickupmessage "Shotgun"
   weapon.selectionorder 1300
   weapon.kickback 100
-  Weapon.Ammotype "ShotgunClip"
+  Weapon.Ammotype "GE64ShotgunClip"
   weapon.ammotype2 "ShotgunCartridges"
   weapon.ammouse 1
-  weapon.ammogive 5
-  weapon.ammogive2 5
   Weapon.SisterWeapon "GE64ShotgunPaintball"
   Scale 0.9
   +WEAPON.AMMO_OPTIONAL
@@ -745,7 +734,7 @@ actor GE64Shotgun : GEWeapon Replaces Shotgun
 	goto Ready+1
 
   ReloadCheck:
-	 SHTG A 0 A_JumpIfInventory("ShotgunClip",5,2)
+	 SHTG A 0 A_JumpIfInventory("GE64ShotgunClip",5,2)
 	 SHTG A 0 A_JumpIfInventory("ShotgunCartridges",1,"ReloadStart")
 	 SHTG A 0
 	 goto Ready+1
@@ -758,8 +747,8 @@ actor GE64Shotgun : GEWeapon Replaces Shotgun
 
   ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("ShotgunCartridges",1)
-	 TNT1 A 0 A_GiveInventory("ShotgunClip",1)
-	 TNT1 A 0 A_JumpIfInventory("ShotgunClip",5,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("GE64ShotgunClip",1)
+	 TNT1 A 0 A_JumpIfInventory("GE64ShotgunClip",5,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("ShotgunCartridges",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -807,7 +796,7 @@ actor GE64ShotgunPaintball : GE64Shotgun
 	+WEAPON.POWERED_UP
 }
 
-ACTOR RocketShot : Ammo
+ACTOR GE64RocketLauncherClip : Ammo
 {
 	Inventory.MaxAmount 1
 	Ammo.BackpackAmount 0
@@ -822,9 +811,7 @@ ACTOR GE64RocketLauncher : GEWeapon Replaces RocketLauncher
 	SpawnID 29
 	Weapon.SelectionOrder 2500
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive 1
-	Weapon.AmmoGive2 3
-	Weapon.AmmoType "RocketShot"
+	Weapon.AmmoType "GE64RocketLauncherClip"
 	Weapon.AmmoType2 "Rockets"
 	+WEAPON.NOAUTOFIRE
 	+WEAPON.AMMO_OPTIONAL
@@ -839,15 +826,15 @@ ACTOR GE64RocketLauncher : GEWeapon Replaces RocketLauncher
 	goto Ready+1
 
   EmptyReady:
-	RLAU C 0 A_JumpIfInventory("RocketShot",1,3)
+	RLAU C 0 A_JumpIfInventory("GE64RocketLauncherClip",1,3)
 	RLAU C 1 A_WeaponReady
-	RLAU C 0 A_JumpIfInventory("RocketShot",1,1)
+	RLAU C 0 A_JumpIfInventory("GE64RocketLauncherClip",1,1)
 	loop
 	RLAU C 0
 	goto Ready+1
 
   ReloadCheck:
-	 RLAU C 0 A_JumpIfInventory("RocketShot",1,2)
+	 RLAU C 0 A_JumpIfInventory("GE64RocketLauncherClip",1,2)
 	 RLAU C 0 A_JumpIfInventory("Rockets",1,"ReloadStart")
 	 RLAU C 0
 	 goto EmptyReady//+1
@@ -860,8 +847,8 @@ ACTOR GE64RocketLauncher : GEWeapon Replaces RocketLauncher
 
   ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("Rockets",1)
-	 TNT1 A 0 A_GiveInventory("RocketShot",1)
-	 TNT1 A 0 A_JumpIfInventory("RocketShot",1,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("GE64RocketLauncherClip",1)
+	 TNT1 A 0 A_JumpIfInventory("GE64RocketLauncherClip",1,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("Rockets",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -871,13 +858,13 @@ ACTOR GE64RocketLauncher : GEWeapon Replaces RocketLauncher
 	 goto Ready+1
 
 	Deselect:
-		RLAU A 0 A_JumpIfInventory("RocketShot",1,2)
+		RLAU A 0 A_JumpIfInventory("GE64RocketLauncherClip",1,2)
 		RLAU C 1 A_Lower
 		Loop
 		RLAU A 1 A_Lower
 		goto Deselect+2
 	Select:
-		RLAU A 0 A_JumpIfInventory("RocketShot",1,2)
+		RLAU A 0 A_JumpIfInventory("GE64RocketLauncherClip",1,2)
 		RLAU C 1 A_Raise
 		Loop
 		RLAU A 1 A_Raise
@@ -891,7 +878,7 @@ ACTOR GE64RocketLauncher : GEWeapon Replaces RocketLauncher
 		Goto ReloadCheck
 	AltFire:
 		RLAU C 0
-		RLAU C 0 A_JumpIfInventory("RocketShot",1,1)
+		RLAU C 0 A_JumpIfInventory("GE64RocketLauncherClip",1,1)
 		goto ReloadCheck
 		RLAU C 0
 		goto Ready+1
@@ -957,13 +944,13 @@ ACTOR MoonrakerLaser : GEWeapon Replaces PlasmaRifle
 	}
 }
 
-ACTOR MagnumClip : Ammo
+ACTOR CougarMagnumClip : Ammo
 {
-Inventory.MaxAmount 6
-Ammo.BackpackAmount 0
-Ammo.BackpackMaxAmount 6
-Inventory.Icon "MAGNUM"
-+INVENTORY.IGNORESKILL
+	Inventory.MaxAmount 6
+	Ammo.BackpackAmount 0
+	Ammo.BackpackMaxAmount 6
+	Inventory.Icon "MAGNUM"
+	+INVENTORY.IGNORESKILL
 }
 
 ACTOR CougarMagnum : GEWeapon 5012
@@ -975,25 +962,24 @@ ACTOR CougarMagnum : GEWeapon 5012
 	Height 16
 	Weapon.Selectionorder 100
 	Weapon.AmmoUse1 1
-	Weapon.AmmoGive1 6
-	Weapon.AmmoGive2 6
-	Weapon.AmmoType1 "MagnumClip"
+	Weapon.AmmoType1 "CougarMagnumClip"
 	Weapon.AmmoType2 "MagnumBullets"
 	Weapon.SisterWeapon "CougarMagnumPaintball"
 	Inventory.Pickupmessage "Cougar Magnum"
 	Obituary "%o bit %k's silver bullet."
 	+WEAPON.AMMO_OPTIONAL
 	+WEAPON.NOAUTOAIM
+	+WEAPON.NOAUTOFIRE
 	States
 	{
-  Ready:
-	COUG A 0 A_WeaponReady
-	goto ReloadCheck
-	COUG A 1 A_WeaponReady
-	goto Ready+1
+	Ready:
+		COUG A 0 A_WeaponReady
+		goto ReloadCheck
+		COUG A 1 A_WeaponReady
+		goto Ready+1
 
   ReloadCheck:
-	 COUG A 0 A_JumpIfInventory("MagnumClip",6,2)
+	 COUG A 0 A_JumpIfInventory("CougarMagnumClip",6,2)
 	 COUG A 0 A_JumpIfInventory("MagnumBullets",1,"ReloadStart")
 	 COUG A 0
 	 goto Ready+1
@@ -1006,8 +992,8 @@ ACTOR CougarMagnum : GEWeapon 5012
 
   ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("MagnumBullets",1)
-	 TNT1 A 0 A_GiveInventory("MagnumClip",1)
-	 TNT1 A 0 A_JumpIfInventory("MagnumClip",6,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("CougarMagnumClip",1)
+	 TNT1 A 0 A_JumpIfInventory("CougarMagnumClip",6,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("MagnumBullets",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -1029,9 +1015,10 @@ ACTOR CougarMagnum : GEWeapon 5012
 		COUG BC 3
 		COUG D 0 A_GunFlash
 		COUG D 0 A_FireBullets(0, 0, 1, 0, "BulletPuff")
-		COUG D 1 BRIGHT A_RailAttack(38, 0, 0, none, none, 0, 0 , "BulletSpark")
-		COUG EFGHIJ 2
-		COUG A 5
+		COUG D 1 BRIGHT A_RailAttack(50, 0, 0, none, none, 0, 0 , "BulletSpark")
+		COUG EFGHI 2
+		COUG J 2 A_WeaponReady(WRF_NOBOB)
+		COUG A 5 A_WeaponReady(WRF_NOBOB)
 		COUG A 0 A_ReFire
 		goto Ready+1
 	AltFire:
@@ -1056,7 +1043,7 @@ actor CougarMagnumPaintball : CougarMagnum
 	+WEAPON.POWERED_UP
 }
 
-ACTOR SniperClip : Ammo
+ACTOR SniperRifleClip : Ammo
 {
 	Inventory.MaxAmount 8 // size of the clip
 	Ammo.BackpackAmount 0
@@ -1071,9 +1058,7 @@ ACTOR SniperRifle : GEWeapon 13532
 	Weapon.UpSound "misc/w_pkup"
 	Weapon.SelectionOrder 2000
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive1 8
-	Weapon.AmmoGive2 20
-	Weapon.AmmoType "SniperClip"
+	Weapon.AmmoType "SniperRifleClip"
 	Weapon.AmmoType2 "PointedBullets"
 	Weapon.SisterWeapon "SniperRiflePaintball"
 	Obituary "%o was sniped by %k."
@@ -1093,7 +1078,7 @@ ACTOR SniperRifle : GEWeapon 13532
 	 goto Ready+1
 
 	ReloadCheck:
-	 SNIP A 0 A_JumpIfInventory("SniperClip",8,2)
+	 SNIP A 0 A_JumpIfInventory("SniperRifleClip",8,2)
 	 SNIP A 0 A_JumpIfInventory("PointedBullets",1,"ReloadStart")
 	 SNIP A 0
 	 goto Ready+1
@@ -1106,8 +1091,8 @@ ACTOR SniperRifle : GEWeapon 13532
 
 	ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("PointedBullets",1)
-	 TNT1 A 0 A_GiveInventory("SniperClip",1)
-	 TNT1 A 0 A_JumpIfInventory("SniperClip",8,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("SniperRifleClip",1)
+	 TNT1 A 0 A_JumpIfInventory("SniperRifleClip",8,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("PointedBullets",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -1146,7 +1131,7 @@ actor SniperRiflePaintball : SniperRifle
 	+WEAPON.POWERED_UP
 }
 
-ACTOR GrenadeClip : Ammo
+ACTOR GE64GrenadeLauncherClip : Ammo
 {
 Inventory.MaxAmount 6 // size of the clip
 Ammo.BackpackAmount 0
@@ -1157,12 +1142,10 @@ Inventory.Icon "GRENADE"
 
 actor GE64GrenadeLauncher : GEWeapon 5011
 {
-  Weapon.AmmoType "GrenadeClip"
+  Weapon.AmmoType "GE64GrenadeLauncherClip"
   Weapon.AmmoType2 "GrenadeRounds"
   Weapon.AmmoUse1 1
   Weapon.AmmoUse2 0
-  Weapon.AmmoGive 6
-  Weapon.AmmoGive2 6
   Inventory.Pickupmessage "Grenade Launcher"
   Weapon.UpSound "misc/w_pkup"
   Obituary "%o was blown to smithereens by %k's grenade launcher."
@@ -1178,7 +1161,7 @@ actor GE64GrenadeLauncher : GEWeapon 5011
 	goto Ready+1
 
   ReloadCheck:
-	 GLAU A 0 A_JumpIfInventory("GrenadeClip",6,2)
+	 GLAU A 0 A_JumpIfInventory("GE64GrenadeLauncherClip",6,2)
 	 GLAU A 0 A_JumpIfInventory("GrenadeRounds",1,"ReloadStart")
 	 GLAU A 0
 	 goto Ready+1
@@ -1191,8 +1174,8 @@ actor GE64GrenadeLauncher : GEWeapon 5011
 
   ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("GrenadeRounds",1)
-	 TNT1 A 0 A_GiveInventory("GrenadeClip",1)
-	 TNT1 A 0 A_JumpIfInventory("GrenadeClip",6,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("GE64GrenadeLauncherClip",1)
+	 TNT1 A 0 A_JumpIfInventory("GE64GrenadeLauncherClip",6,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("GrenadeRounds",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -1256,8 +1239,6 @@ actor RCP90 : GEWeapon 5013
   AttackSound "RCP90Fire"
   Weapon.Selectionorder 2
   Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 80
-  Weapon.AmmoGive2 40
   Weapon.SisterWeapon "RCP90Paintball"
   -WEAPON.NOAUTOFIRE
   -WEAPON.NOLMS
@@ -1308,7 +1289,7 @@ actor RCP90 : GEWeapon 5013
 		RCP9 A 0 A_JumpIfNoAmmo("ReloadCheck")
 		RCP9 A 1
 		RCP9 A 0 A_GunFlash
-		RCP9 B 1 BRIGHT A_FireBullets(5, 4, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+		RCP9 B 1 BRIGHT A_FireBullets(4, 3, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		RCP9 D 0 A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 1, 6, 0)
 		RCP9 D 0 A_Refire("Fire2")
 		goto FireEnd
@@ -1316,7 +1297,7 @@ actor RCP90 : GEWeapon 5013
 		RCP9 A 0 A_JumpIfNoAmmo("ReloadCheck")
 		RCP9 A 1
 		RCP9 A 0 A_GunFlash
-		RCP9 C 1 BRIGHT A_FireBullets(5, 4, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
+		RCP9 C 1 BRIGHT A_FireBullets(3, 3, 1, 12, "BulletPuff", FBF_NORANDOM | FBF_USEAMMO)
 		RCP9 D 0 A_FireCustomMissile("BulletCasing", Random(-40, -50), 0, 1, 6, 0)
 		RCP9 D 0 A_Refire("Fire")
 		goto FireEnd
@@ -1371,8 +1352,6 @@ actor DD44 : GEWeapon 13200
 	Weapon.UpSound "misc/w_pkup"
 	Weapon.AmmoType1 "DD44Clip"
 	Weapon.AmmoType2 "9mmBullets"
-	Weapon.AmmoGive1 0
-	Weapon.AmmoGive2 20
 	Weapon.AmmoUse1 1
 	Weapon.SisterWeapon "DD44Paintball"
 	weapon.selectionorder 2900
@@ -1515,7 +1494,7 @@ actor DD44Paintball : DD44
 	+WEAPON.POWERED_UP
 }
 
-ACTOR Ar33Clip : Ammo
+ACTOR AR33Clip : Ammo
 {
 	Inventory.MaxAmount 30 // size of the clip
 	Ammo.BackpackAmount 0
@@ -1527,7 +1506,7 @@ ACTOR Ar33Clip : Ammo
 actor AR33 : GEWeapon 18431
 {
   Obituary "%o was splattered by %k's AR-33."
-  Weapon.Ammotype1 "Ar33Clip"
+  Weapon.Ammotype1 "AR33Clip"
   Weapon.Ammotype2 "PointedBullets"
   Decal BulletChip
   Weapon.UpSound "misc/w_pkup"
@@ -1535,8 +1514,6 @@ actor AR33 : GEWeapon 18431
   AttackSound "Ar33Fire"
   Weapon.Selectionorder 450
   Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 30
-  Weapon.AmmoGive2 30
   Weapon.SisterWeapon "AR33Paintball"
   -WEAPON.NOAUTOFIRE
   +WEAPON.AMMO_OPTIONAL
@@ -1549,7 +1526,7 @@ actor AR33 : GEWeapon 18431
 	goto Ready+1
 
   ReloadCheck:
-	 AR33 A 0 A_JumpIfInventory("Ar33Clip",30,2)
+	 AR33 A 0 A_JumpIfInventory("AR33Clip",30,2)
 	 AR33 A 0 A_JumpIfInventory("PointedBullets",1,"ReloadStart")
 	 AR33 A 0
 	 goto Ready+1
@@ -1562,8 +1539,8 @@ actor AR33 : GEWeapon 18431
 
   ReloadAmmo:
 	 TNT1 A 0 A_TakeInventory("PointedBullets",1)
-	 TNT1 A 0 A_GiveInventory("Ar33Clip",1)
-	 TNT1 A 0 A_JumpIfInventory("Ar33Clip",30,"ReloadDone")
+	 TNT1 A 0 A_GiveInventory("AR33Clip",1)
+	 TNT1 A 0 A_JumpIfInventory("AR33Clip",30,"ReloadDone")
 	 TNT1 A 0 A_JumpIfInventory("PointedBullets",1,"ReloadAmmo")
 	 goto ReloadDone
 
@@ -1631,14 +1608,12 @@ ACTOR HuntingKnife : GEWeapon
 	Inventory.PickupMessage "Throwing Knife"
 	Inventory.PickupSound "KnifeUp"
 	Weapon.UpSound "KnifeUp"
-	Weapon.AmmoType "Knives"
 	Weapon.AmmoUse 0
-	Weapon.AmmoGive 1
 	Scale 0.5
 	+INVENTORY.ALWAYSPICKUP
 	+WEAPON.WIMPY_WEAPON
 	+WEAPON.MELEEWEAPON
-	//+WEAPON.ALLOW_WITH_RESPAWN_INVUL
+	+WEAPON.ALLOW_WITH_RESPAWN_INVUL
 	States
 	{
 	Ready:
@@ -1666,11 +1641,6 @@ ACTOR HuntingKnife : GEWeapon
 		KNIF A 3
 		KNIF A 0 A_ReFire
 		Goto Ready
-	Altfire:
-		KNIF A 0 A_JumpIfInventory("Knives", 2, 1)
-		goto Ready
-		KNIF A 1 A_SelectWeapon("ThrowingKnives")
-		goto Ready
 	Spawn:
 		TKNP A 0
 		TKNP A 0 A_SpawnItem("Knives", 8)
@@ -1688,7 +1658,6 @@ ACTOR ThrowingKnives : GEWeapon
 	Weapon.UpSound "KnifeUp"
 	Weapon.AmmoType "Knives"
 	Weapon.AmmoUse 1
-	Weapon.AmmoGive 1
 	Scale 0.5
 	+WEAPON.WIMPY_WEAPON
 	+WEAPON.NOAUTOAIM
@@ -1822,7 +1791,7 @@ actor PD_Cyclone : GEWeapon 18244
   }
 }
 
-actor ProximityMines : Weapon
+actor ProximityMines : GEWeapon
 {
   Obituary "%o didn't see %k's proximity mine."
   Weapon.Ammotype1 "ProxMineAmmo"
@@ -1830,7 +1799,6 @@ actor ProximityMines : Weapon
   Inventory.Pickupmessage "Picked up a proximity mine"
   Weapon.Selectionorder 900
   Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 1
   Scale 0.3
   +WEAPON.NOAUTOFIRE
   +WEAPON.NOAUTOAIM
@@ -1877,7 +1845,7 @@ ACTOR ProxPickup : Custominventory 25375
    }
 }
 
-actor RemoteMines : Weapon
+actor RemoteMines : GEWeapon
 {
   Obituary "%k detonated a remote mine in %o's face."
   Weapon.Ammotype1 "RemoteMineAmmo"
@@ -1885,7 +1853,6 @@ actor RemoteMines : Weapon
   Inventory.Pickupmessage "Picked up a remote mine"
   Weapon.Selectionorder 910
   Weapon.AmmoUse1 1
-  Weapon.AmmoGive1 1
   Scale 0.3
   +WEAPON.NOAUTOFIRE
   +WEAPON.AMMO_OPTIONAL

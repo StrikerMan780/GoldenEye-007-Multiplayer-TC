@@ -1,0 +1,2 @@
+server noarchive int ge_weaponset = -1;
+server noarchive bool ge_startweapon = true;

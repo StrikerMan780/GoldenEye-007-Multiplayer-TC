@@ -97,11 +97,7 @@ actor JamesBond : DoomPlayer Replaces DoomPlayer
 	-CANNOTPUSH
 	player.forwardmove 0.64
 	player.sidemove 0.64
-	player.startitem PP7
 	player.startitem HuntingKnife
-	player.startitem ThrowingKnives
-	player.startitem Knives 1
-	player.startitem 9mmBullets 42
 	States
 	{
 	Death:

@@ -701,6 +701,29 @@ Model KF7Soviet
 	FrameIndex NULL B 0 1
 }
 
+Model KF7SovietPaintball
+{
+	Path "Models\KF7"
+	Model 0 "kf7.md3"
+	Scale -4 3 4
+
+	FrameIndex KF7S A 0 0
+	FrameIndex KF7S B 0 1
+	FrameIndex KF7S C 0 2
+	FrameIndex KF7S D 0 3
+	FrameIndex KF7S E 0 4
+}
+
+Model KF7SovietPaintball
+{
+	Path "Models\KF7"
+	Model 0 "kf7flash.md3"
+	Scale -4 3 4
+
+	FrameIndex NULL A 0 0
+	FrameIndex NULL B 0 1
+}
+
 model RemoteMine
 {
 	Path "Models\mines"
