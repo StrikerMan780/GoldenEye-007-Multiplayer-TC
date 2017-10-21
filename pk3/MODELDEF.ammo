@@ -1,0 +1,127 @@
+model AmmoSlot1
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model AmmoSlot2
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model AmmoSlot3
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model AmmoSlot4
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model AmmoSlot5
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model AmmoSlot6
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model AmmoSlot7
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}
+
+model AmmoSlot8
+{
+	Path "Models"
+	Model 0 "BoxMain.md3"
+	Skin 0 "BoxMainGreen.png"
+	Model 1 "BoxSides.md3"
+	Skin 1 "BoxSideGreen.png"
+	Model 2 "BoxHandles.md3"
+	Skin 2 "BoxHandle.png"
+	Model 3 "BoxText.md3"
+	Skin 3 "BoxText.png"
+	Scale 15.0 13.0 13.0
+
+	FrameIndex CLIP A 0 0
+}

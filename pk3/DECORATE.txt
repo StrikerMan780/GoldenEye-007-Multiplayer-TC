@@ -3,6 +3,8 @@
 #include "actors/puffs.txt"
 #include "actors/tracer.txt"
 #include "actors/hax.txt"
+#include "actors/ammo_slots.txt"
+#include "actors/weapon_slots.txt"
 
 actor DamageDummy : PowerupGiver
 {

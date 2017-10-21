@@ -6,6 +6,7 @@ ACTOR ShotgunCartridges : Ammo Replaces Shell
   Ammo.BackpackAmount 5
   Ammo.BackpackMaxAmount 100
   Inventory.Icon "SHELA0"
+  +INVENTORY.IGNORESKILL
   States
   {
   Spawn:
@@ -27,6 +28,7 @@ ACTOR GrenadeRounds : Ammo Replaces RocketAmmo
   Ammo.BackpackAmount 1
   Ammo.BackpackMaxAmount 24
   Inventory.Icon "ROCKA0"
+  +INVENTORY.IGNORESKILL
   States
   {
   Spawn:
@@ -43,6 +45,7 @@ ACTOR Rockets : Ammo Replaces RocketBox
   Ammo.BackpackAmount 1
   Ammo.BackpackMaxAmount 6
   Inventory.Icon "ROCKA0"
+  +INVENTORY.IGNORESKILL
   States
   {
   Spawn:
@@ -59,6 +62,7 @@ ACTOR 9mmBullets : Ammo Replaces Clip
   Ammo.BackpackAmount 14
   Ammo.BackpackMaxAmount 400
   Inventory.Icon "CLIPA0"
+  +INVENTORY.IGNORESKILL
   States
   {
   Spawn:
@@ -90,6 +94,7 @@ ACTOR PointedBullets : Ammo 16532
  Ammo.BackpackAmount 0
  Ammo.BackpackMaxAmount 400
  Inventory.Icon ICONBULL
+ +INVENTORY.IGNORESKILL
  States
  {
  Spawn:
@@ -127,6 +132,7 @@ ACTOR MagnumBullets : Ammo Replaces CellPack
 	Ammo.BackpackAmount 6
 	Ammo.BackpackMaxAmount 200
 	Inventory.Icon "MAGBA0"
+	+INVENTORY.IGNORESKILL
 	States
 	{
 	Spawn:

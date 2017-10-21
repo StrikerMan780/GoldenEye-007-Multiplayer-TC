@@ -1,0 +1,112 @@
+actor BaseAmmoSlot : CustomInventory
+{
+	Radius 20
+	Height 16
+	Inventory.PickupMessage ""
+	Inventory.PickupSound ""
+	+INVENTORY.UNDROPPABLE
+	Args 0
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 ACS_NamedExecuteAlways("AMMOSTATE", 0, args[0])
+			goto SpawnLoop
+		SpawnLoop:
+			CLIP A 35
+			CLIP A 0 ACS_NamedExecuteAlways("AMMOSTATE", 0, args[0])
+			loop
+		HideAmmo:
+			TNT1 A 35
+			TNT1 A 0 ACS_NamedExecuteAlways("AMMOSTATE", 0, args[0])
+			loop
+	}
+}
+
+actor AmmoSlot1 : BaseAmmoSlot 11007
+{
+	Args 0
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 0)
+			stop
+	}
+}
+
+actor AmmoSlot2 : BaseAmmoSlot 12007
+{
+	Args 1
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 1)
+			stop
+	}
+}
+
+actor AmmoSlot3 : BaseAmmoSlot 13007
+{
+	Args 2
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 2)
+			stop
+	}
+}
+
+actor AmmoSlot4 : BaseAmmoSlot 13107
+{
+	Args 3
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 3)
+			stop
+	}
+}
+
+actor AmmoSlot5 : BaseAmmoSlot 15007
+{
+	Args 4
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 4)
+			stop
+	}
+}
+
+actor AmmoSlot6 : BaseAmmoSlot 16007
+{
+	Args 5
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 5)
+			stop
+	}
+}
+
+actor AmmoSlot7 : BaseAmmoSlot 17007
+{
+	Args 6
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 6)
+			stop
+	}
+}
+
+actor AmmoSlot8 : BaseAmmoSlot 18007
+{
+	Args 7
+	States
+	{
+		Pickup:
+			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMO", 7)
+			stop
+	}
+}

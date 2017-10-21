@@ -1,0 +1,168 @@
+actor BaseWeaponSlot : CustomInventory
+{
+	Radius 20
+	Height 16
+	Inventory.PickupMessage ""
+	Inventory.PickupSound ""
+	+INVENTORY.UNDROPPABLE
+	Args 0
+	States
+	{
+		Spawn:
+			TNT1 A 0
+			TNT1 A 0 ACS_NamedExecuteAlways("WEAPONSTATE", 0, args[0])
+			goto SpawnLoop
+		SpawnLoop:
+			"####" "#" 35
+			"####" "#" 0 ACS_NamedExecuteAlways("WEAPONSTATE", 0, args[0])
+			loop
+		HideWeapon:
+			TNT1 A 0
+			goto SpawnLoop
+		PP7:
+			PIST A 0
+			goto SpawnLoop
+		AutomaticShotgun:
+			SGN2 A 0
+			goto SpawnLoop
+		ZMG:
+			ZMGP A 0
+			goto SpawnLoop
+		Klobb:
+			MGUN A 0
+			goto SpawnLoop
+		KF7Soviet:
+			KF7P A 0
+			goto SpawnLoop
+		GoldenGun:
+			BFUG A 0
+			goto SpawnLoop
+		GE64Shotgun:
+			SHOT A 0
+			goto SpawnLoop
+		GE64RocketLauncher:
+			LAUN A 0
+			goto SpawnLoop
+		MoonrakerLaser:
+			PLAS A 0
+			goto SpawnLoop
+		CougarMagnum:
+			RAIL A 0
+			goto SpawnLoop
+		SniperRifle:
+			SNPR A 0
+			goto SpawnLoop
+		GE64GrenadeLauncher:
+			GRLN A 0
+			goto SpawnLoop
+		RCP90:
+			RCPP A 0
+			goto SpawnLoop
+		DD44:
+			DD4P A 0
+			goto SpawnLoop
+		AR33:
+			AR3P A 0
+			goto SpawnLoop
+		ThrowingKnives:
+			TKNP A 0
+			goto SpawnLoop
+		ProximityMines:
+			AMMO A 0
+			goto SpawnLoop
+		RemoteMines:
+			AMMO A 0
+			goto SpawnLoop
+		TimedMines:
+			AMMO A 0
+			goto SpawnLoop
+	}
+}
+
+actor WeaponSlot1 : BaseWeaponSlot 18011
+{
+	Args 0
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 0)
+			stop
+	}
+}
+
+actor WeaponSlot2 : BaseWeaponSlot 18012
+{
+	Args 1
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 1)
+			stop
+	}
+}
+
+actor WeaponSlot3 : BaseWeaponSlot 18013
+{
+	Args 2
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 2)
+			stop
+	}
+}
+
+actor WeaponSlot4 : BaseWeaponSlot 18014
+{
+	Args 3
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 3)
+			stop
+	}
+}
+
+actor WeaponSlot5 : BaseWeaponSlot 18015
+{
+	Args 4
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 4)
+			stop
+	}
+}
+
+actor WeaponSlot6 : BaseWeaponSlot 18016
+{
+	Args 5
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 5)
+			stop
+	}
+}
+
+actor WeaponSlot7 : BaseWeaponSlot 18017
+{
+	Args 6
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 6)
+			stop
+	}
+}
+
+actor WeaponSlot8 : BaseWeaponSlot 18018
+{
+	Args 7
+	States
+	{
+		Pickup:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 7)
+			stop
+	}
+}

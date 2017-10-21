@@ -1826,25 +1826,6 @@ actor ProximityMines : GEWeapon
   }
 }
 
-ACTOR ProxPickup : Custominventory 25375
-{
-   Scale 0.3
-   inventory.respawntics 1750
-   inventory.pickupmessage "Picked up a Proximity Mine"
-   inventory.pickupsound "ProxBeep"
-   +COUNTITEM
-   +FLOATBOB
-   States
-   {
-   Spawn:
-	  MINE A -1
-	  loop
-   Pickup:
-	  TNT1 A 0 A_GiveInventory("ProximityMines")
-	  stop
-   }
-}
-
 actor RemoteMines : GEWeapon
 {
   Obituary "%k detonated a remote mine in %o's face."
@@ -1894,23 +1875,4 @@ actor RemoteMines : GEWeapon
 		TNT1 A 0 A_Refire
 		goto Ready
   }
-}
-
-ACTOR RemotePickup : Custominventory 25376
-{
-   Scale 0.3
-   inventory.respawntics 1750
-   inventory.pickupmessage "Picked up a Remote Mine"
-   inventory.pickupsound "ProxBeep"
-   +COUNTITEM
-   +FLOATBOB
-   States
-   {
-   Spawn:
-	  RMIP A -1
-	  loop
-   Pickup:
-	  TNT1 A 0 A_GiveInventory("RemoteMines")
-	  stop
-   }
 }
