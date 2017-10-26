@@ -1,2 +1,3 @@
-server noarchive int ge_weaponset = -1;
+server noarchive int ge_weaponset = 0;
+server noarchive bool ge_randomweaponset = true;
 server noarchive bool ge_startweapon = true;

@@ -1,0 +1,255 @@
+model ThrownKnife // Vicious/StrikerMan780
+{
+	Path "Models"
+	Model 0 "KnifeThrow.md2"
+	Skin 0 "Knife.png"
+	Scale 2.5 2.5 2.5
+
+   Frame TKNI A 0 "Base1"
+   Frame TKNI B 0 "Base2"
+   Frame TKNI C 0 "Base3"
+   Frame TKNI D 0 "Base4"
+   Frame TKNI E 0 "Base5"
+   Frame TKNI F 0 "Base6"
+   Frame TKNI G 0 "Base7"
+   Frame TKNI H 0 "Base8"
+}
+
+model LaserBeam // StrikerMan780
+{
+	Path "Models"
+	Model 0 "Tracer.md3"
+   Skin 0 "BeamCore.png"
+   Model 1 "TracerTip.md3"
+   Skin 1 "BeamTip.png"
+	Scale 36.0 6.0 6.0
+   PITCHFROMMOMENTUM
+  // ZOffset 0
+
+   FrameIndex PLSS A 0 0
+   FrameIndex PLSS B 0 0
+}
+
+model LaserTrail // StrikerMan780
+{
+	Path "Models"
+	Model 0 "Tracer.md3"
+	Skin 0 "BeamCore.png"
+	Scale 0.0 0.0 0.0
+   PITCHFROMMOMENTUM
+  // ZOffset 0
+
+   FrameIndex PLSS A 0 0
+   FrameIndex PLSS B 0 0
+}
+
+model GE64Grenade
+{
+	Path "Models"
+	Model 0 "GrenadeProjectile.md2"
+	Skin 0 "GrenadeProjectile.png"
+	Scale 1.1 1.1 1.1
+   PITCHFROMMOMENTUM
+
+   FrameIndex SGRN A 0 0
+}
+
+model BulletTracer
+{
+	Path "Models"
+	Model 0 "Tracer.md3"
+	Skin 0 "Tracer.png"
+	Scale 16.0 2.0 2.0
+   PITCHFROMMOMENTUM
+
+   FrameIndex PUFF A 0 0
+}
+
+model CyclonePlasma
+{
+	Path "Models"
+	Model 0 "Tracer.md3"
+	Skin 0 "CycloneTracer.png"
+	Scale 20.0 7.0 7.0
+   PITCHFROMMOMENTUM
+
+   FrameIndex TPLA A 0 0
+}
+
+model Ge64Rocket
+{
+	Path "Models\Projectiles\Rocket"
+	Model 0 "rocket.md3"
+	Scale 1.5 1.5 1.5
+   PITCHFROMMOMENTUM
+
+   FrameIndex MISL A 0 0
+}
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 8.0
+	
+	Rotating
+	Rotation-Speed -10
+	Rotation-Vector 0 0 1
+	Rotation-Center 0.0 4.0 0.0
+
+	FrameIndex RMIN A 0 0
+}
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+
+	FrameIndex RMIN B 0 0
+}
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset -1.25 0.0 8.0
+	PitchOffset -90
+
+	FrameIndex RMIN C 0 0
+}
+
+model RemoteMine
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 20.0
+	PitchOffset -180
+
+	FrameIndex RMIN D 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	SurfaceSkin 0 1 "proxmine.png"
+	Offset 0.0 0.0 8.0
+	
+	Rotating
+	Rotation-Speed -10
+	Rotation-Vector 0 0 1
+	Rotation-Center 0.0 4.0 0.0
+
+	FrameIndex PROX A 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	SurfaceSkin 0 1 "proxmine.png"
+
+	FrameIndex PROX B 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset -1.25 0.0 8.0
+	PitchOffset -90
+	SurfaceSkin 0 1 "proxmine.png"
+
+	FrameIndex PROX C 0 0
+}
+
+model ProxProj
+{
+	Path "Models\mines"
+	Model 0 "RemoteMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 20.0
+	PitchOffset -180
+	SurfaceSkin 0 1 "proxmine.png"
+
+	FrameIndex PROX D 0 0
+}
+
+model TimedMine
+{
+	Path "Models\mines"
+	Model 0 "TimedMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 8.0
+	
+	Rotating
+	Rotation-Speed -10
+	Rotation-Vector 0 0 1
+	Rotation-Center 0.0 4.0 0.0
+
+	FrameIndex RMIN A 0 0
+}
+
+model TimedMine
+{
+	Path "Models\mines"
+	Model 0 "TimedMine.md3"
+	Scale 3.0 3.0 3.0
+
+	FrameIndex RMIN B 0 0
+}
+
+model TimedMine
+{
+	Path "Models\mines"
+	Model 0 "TimedMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset -1.25 0.0 8.0
+	PitchOffset -90
+
+	FrameIndex RMIN C 0 0
+}
+
+model TimedMine
+{
+	Path "Models\mines"
+	Model 0 "TimedMine.md3"
+	Scale 3.0 3.0 3.0
+	Offset 0.0 0.0 20.0
+	PitchOffset -180
+
+	FrameIndex RMIN D 0 0
+}
+
+model HandGrenade
+{
+	Path "Models\projectiles\handgrenade"
+	Model 0 "handgrenade.md3"
+	Scale 2.0 2.0 2.0
+	Offset 0.0 0.0 6.0
+	
+	Rotating
+	Rotation-Speed -10
+	Rotation-Vector 1 0 0
+	Rotation-Center 0.0 4.0 0.0
+
+	FrameIndex SGRN A 0 0
+}
+
+model HandGrenade
+{
+	Path "Models\projectiles\handgrenade"
+	Model 0 "handgrenade.md3"
+	Scale 2.0 2.0 2.0
+	Offset 0.0 0.0 6.0
+	RollOffset 90.0
+
+	FrameIndex SGRN B 0 0
+}

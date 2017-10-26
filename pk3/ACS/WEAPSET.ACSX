@@ -1,7 +1,6 @@
 #library "WEAPSET"
 #include "zcommon.acs"
-
-int current_set;
+//#include "weapon_enum.h"
 
 // For Tests:
 // Slot 1 - PP7
@@ -89,7 +88,7 @@ enum
 	W_REMOTEMINE,
 	W_THROWINGKNIFE,
 	W_MAX,
-}
+};
 
 GEWeapon weapons[W_MAX] = {
 	{ "InvalidWeapon",			"an",	"Invalid Weapon",		"misc/w_pkup",	false,	AMMO_NONE,			0,	0 },	// W_NONE
@@ -108,7 +107,7 @@ GEWeapon weapons[W_MAX] = {
 	{ "MoonrakerLaser",			"a",	"Moonraker Laser",		"LaserUp",		false,	AMMO_NONE,			0,	0 },	// W_LASER
 	{ "GE64GrenadeLauncher",	"a",	"Grenade Launcher",		"misc/w_pkup",	true,	AMMO_GRENADE,		3,	6 },	// W_GLAUNCHER
 	{ "GE64RocketLauncher",		"a",	"Rocket Launcher",		"misc/w_pkup",	true,	AMMO_ROCKET,		1,	3 },	// W_RLAUNCHER
-	{ "HandGrenade",			"a",	"Grenade",				"misc/w_pkup",	false,	AMMO_HANDGRENADE,	1,	5 },	// W_HANDGRENADE
+	{ "HandGrenades",			"a",	"Grenade",				"misc/w_pkup",	false,	AMMO_HANDGRENADE,	1,	5 },	// W_HANDGRENADE
 	{ "TimedMines",				"a",	"Timed Mine",			"misc/w_pkup",	false,	AMMO_TIMEDMINE,		1,	5 },	// W_TIMEDMINE
 	{ "ProximityMines",			"a",	"Proximity Mine",		"misc/w_pkup",	false,	AMMO_PROXMINE,		1,	5 },	// W_PROXMINE
 	{ "RemoteMines",			"a",	"Remote Mine",			"misc/w_pkup",	false,	AMMO_REMOTEMINE,	1,	5 },	// W_REMOTEMINE
@@ -138,6 +137,8 @@ enum
 	SET_LASERS,
 	SET_GOLDENGUN,
 	SET_GETCCLASSIC,
+	SET_LASERWARS,
+	SET_ROCKETCLUSTERFUCK,
 	SET_MAX,
 }
 
@@ -157,20 +158,21 @@ GEWeaponSet weaponsets[SET_MAX] = {
 	{ "Lasers",					{ W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_KF7, W_KF7, W_LASER, W_LASER } },
 	{ "Golden Gun",				{ W_DD44, W_DD44, W_KLOBB, W_KLOBB, W_KF7, W_KF7, W_PP7, W_GOLDGUN } }, // Change to PP7 (Silenced) later.
 	{ "GETC Classic",			{ W_PP7, W_KLOBB, W_KF7, W_SHOTGUN, W_LASER, W_RLAUNCHER, W_RCP90, W_GOLDGUN } },
+	{ "Laser Wars",				{ W_LASER, W_LASER, W_LASER, W_LASER, W_LASER, W_LASER, W_LASER, W_LASER } },
+	{ "Rocket Clusterfuck",		{ W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER } },
 };
 
-script "PICKWEAPONSET" OPEN
+script "RANDOMWEAPONSET" OPEN
 {
-	current_set = GetCvar("ge_weaponset");
-	if(current_set == -1)
+	if((GameType() == GAME_NET_DEATHMATCH) && GetCVar("ge_randomweaponset"))
 	{
-		current_set = random(0, SET_MAX-1);
+		SetCVar("ge_weaponset", random(0, SET_MAX-1));
 	}
 }
 
 function int GetWeaponNum(int slot)
 {
-	return weaponsets[current_set].set_weapons[slot];
+	return weaponsets[GetCVar("ge_weaponset")].set_weapons[slot];
 }
 
 function GEWeapon GetGEWeapon(int slot)
@@ -228,20 +230,20 @@ script "AMMOSTATE" (int slot) CLIENTSIDE
 	}
 }
 
-function bool GiveWeapon(int slot, bool use_message)
+function bool GiveWeapon(int weapon_num, bool use_message, bool dropped)
 {
-	GEWeapon weapon = GetGEWeapon(slot);
-	GEAmmo ammo = GetGEAmmo(slot);
-	
-	if(GetWeaponNum(slot) == W_NONE)
+	if(weapon_num == W_NONE)
 	{
 		return false;
 	}
 	
+	GEWeapon weapon = weapons[weapon_num];
+	GEAmmo ammo = ammo_types[weapon.ammo_type];
+	
 	bool has_weapon = (CheckInventory(weapon.class_name) != 0);
 	bool at_capacity = (CheckInventory(ammo.class_name) >= GetAmmoCapacity(ammo.class_name));
 	
-	if(has_weapon && (at_capacity || (weapon.ammo_type == AMMO_NONE)))
+	if(has_weapon && (at_capacity || (weapon.ammo_type == AMMO_NONE) || GetCVar("sv_weaponstay")))
 	{
 		return false;
 	}
@@ -276,12 +278,34 @@ function bool GiveWeapon(int slot, bool use_message)
 	
 	GiveInventory(weapon.class_name, 1);
 	
+	if(GetCVar("sv_weaponstay") && !dropped)
+	{
+		return false;
+	}
+	
 	return true;
 }
 
-script "GIVEWEAPON" (int slot)
+script "GIVEWEAPON" (int weapon_num, int dropped, int usetarget)
 {
-	SetResultValue(GiveWeapon(slot, true));
+	if(usetarget)
+	{
+		SetActivatorToTarget(0);
+	}
+	
+	SetResultValue(GiveWeapon(weapon_num, true, dropped));
+}
+
+script "GIVEWEAPONSLOT" (int slot)
+{
+	if(GetWeaponNum(slot) != W_NONE)
+	{
+		int success = ACS_NamedExecuteWithResult("GIVEWEAPON", GetWeaponNum(slot), false, true);
+		if(success)
+		{
+			SetActorState(0, "WaitForRespawn");
+		}
+	}
 }
 
 script "WEAPONSTATE" (int slot) CLIENTSIDE
@@ -301,44 +325,73 @@ function void GiveStartWeapon(void)
 {
 	if(GetCVar("ge_startweapon"))
 	{	
-		GEWeapon weapon = GetGEWeapon(0);
 		if(GetWeaponNum(0) != W_NONE)
 		{
-			GiveWeapon(0, false);
-			SetWeapon(weapon.class_name);
+			GiveWeapon(GetWeaponNum(0), false, false);
+			SetWeapon(weapons[GetWeaponNum(0)].class_name);
 		}
 	}
 }
 
 function str GetWeaponSetName(void)
 {
-	return weaponsets[current_set].set_name;
+	return weaponsets[GetCVar("ge_weaponset")].set_name;
 }
 
-script "DISPLAYSET" ENTER
+int last_weapon_set = -1;
+script "DISPLAYSET" ENTER CLIENTSIDE
 {
+	if((ConsolePlayerNumber() != PlayerNumber()) || (ConsolePlayerNumber() == -1))
+	{
+		Terminate;
+	}
+	
 	if(GameType() == GAME_NET_DEATHMATCH)
 	{
-		int ypos = 64.1;
-		
-		Delay(1);
-		GiveStartWeapon();
-		
-		delay(35);
-		SetHudSize(640, 480, false);
-		SetFont("SMALLFONT");
-		HudMessage(s:"Weapon Set: \cd", s:GetWeaponSetName();
-		HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_WHITE, 8.1, ypos, 6.0, 0.5, 2.0);
-		
-		for(int i = 0; i < 8; i++)
+		while(1)
 		{
-			if((weaponsets[current_set].set_weapons[i] != W_NONE) && ((i == 0) || ((i > 0) && weaponsets[current_set].set_weapons[i] != weaponsets[current_set].set_weapons[i-1])))
+			delay(35);
+			int current_set = GetCVar("ge_weaponset");
+			if(current_set != last_weapon_set)
 			{
-				ypos += 14.0;
-				GEWeapon weapon = GetGEWeapon(i);
-				HudMessage(s:"\cf", s:weapon.friendly_name;
-				HUDMSG_FADEINOUT | HUDMSG_LOG, 0, CR_WHITE, 8.1, ypos, 6.0, 0.5, 2.0);
+				last_weapon_set = current_set;
+				int ypos = 64.1;
+				int messageid = 800;
+
+				SetHudSize(640, 480, false);
+				SetFont("SMALLFONT");
+				HudMessage(s:"Weapon Set: \cd", s:GetWeaponSetName();
+				HUDMSG_FADEINOUT | HUDMSG_LOG, messageid, CR_WHITE, 8.1, ypos, 6.0, 0.5, 2.0);
+				
+				for(int i = 0; i < 8; i++)
+				{
+					messageid++;
+					HudMessage(s:"";
+					HUDMSG_PLAIN, messageid, CR_WHITE, 0.0, 0.0, 0.0);
+					
+					if((weaponsets[current_set].set_weapons[i] != W_NONE) && ((i == 0) || ((i > 0) && weaponsets[current_set].set_weapons[i] != weaponsets[current_set].set_weapons[i-1])))
+					{
+						ypos += 14.0;
+						GEWeapon weapon = GetGEWeapon(i);
+						HudMessage(s:"\cf", s:weapon.friendly_name;
+						HUDMSG_FADEINOUT | HUDMSG_LOG, messageid, CR_WHITE, 8.1, ypos, 6.0, 0.5, 2.0);
+					}
+				}
 			}
 		}
 	}
+}
+
+script "STARTWEAPON" ENTER
+{
+	if(GameType() == GAME_NET_DEATHMATCH)
+	{
+		Delay(1);
+		GiveStartWeapon();
+	}
+}
+
+script "RESPAWNWEAPON" RESPAWN
+{
+	GiveStartWeapon();
 }

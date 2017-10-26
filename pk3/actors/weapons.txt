@@ -953,7 +953,7 @@ ACTOR CougarMagnumClip : Ammo
 	+INVENTORY.IGNORESKILL
 }
 
-ACTOR CougarMagnum : GEWeapon 5012
+ACTOR CougarMagnum : GEWeapon
 {
 	Decal BulletChip
 	Weapon.UpSound "misc/w_pkup"
@@ -1052,7 +1052,7 @@ ACTOR SniperRifleClip : Ammo
 	+INVENTORY.IGNORESKILL
 }
 
-ACTOR SniperRifle : GEWeapon 13532
+ACTOR SniperRifle : GEWeapon
 {
 	Decal BulletChip
 	Weapon.UpSound "misc/w_pkup"
@@ -1140,7 +1140,7 @@ Inventory.Icon "GRENADE"
 +INVENTORY.IGNORESKILL
 }
 
-actor GE64GrenadeLauncher : GEWeapon 5011
+actor GE64GrenadeLauncher : GEWeapon
 {
   Weapon.AmmoType "GE64GrenadeLauncherClip"
   Weapon.AmmoType2 "GrenadeRounds"
@@ -1227,7 +1227,7 @@ ACTOR RCP90Clip : Ammo
 	+INVENTORY.IGNORESKILL
 }
 
-actor RCP90 : GEWeapon 5013
+actor RCP90 : GEWeapon
 {
   Obituary "%o was ripped apart by %k's RC-P90."
   Weapon.Ammotype1 "RCP90Clip"
@@ -1342,7 +1342,7 @@ ACTOR DD44Clip : Ammo
 	+INVENTORY.IGNORESKILL
 }
 
-actor DD44 : GEWeapon 13200
+actor DD44 : GEWeapon
 {
 	Decal BulletChip
 	obituary "%o was pistol-raped by %k."
@@ -1503,7 +1503,7 @@ ACTOR AR33Clip : Ammo
 	+INVENTORY.IGNORESKILL
 }
 
-actor AR33 : GEWeapon 18431
+actor AR33 : GEWeapon
 {
   Obituary "%o was splattered by %k's AR-33."
   Weapon.Ammotype1 "AR33Clip"
@@ -1679,23 +1679,28 @@ ACTOR ThrowingKnives : GEWeapon
 		TNT1 A 0 A_Raise
 		Loop
 	Fire:
-		THRO A 1 A_JumpIfInventory("Knives", 2, "KnifeThrow")
-		THRO A 1 A_SelectWeapon("HuntingKnife")
-		goto Ready
-	KnifeThrow:
+		THRO A 2
 		THRO BCD 3
+		TNT1 A 0 A_Refire("Hold")
+		goto Throw
+	Hold:
+		TNT1 A 1 
+		TNT1 A 0 A_Refire("Hold")
+		goto Throw
+	Throw:
 		TNT1 A 0 A_PlayWeaponSound("KnifeSwing")
 		TNT1 A 8 A_FireCustomMissile("ThrownKnife", 0, 1, 4, 0, 0)
+		TNT1 A 0 A_JumpIfNoAmmo("TakeAway")
 		THRO EFGH 2
 		THRO A 4
-		THRO A 0 A_ReFire
+		THRO A 0 A_ReFire("Fire")
 		Goto Ready
-	Altfire:
-		THRO A 1 A_SelectWeapon("HuntingKnife")
-		goto Ready
+	TakeAway:
+		TNT1 A 0 A_TakeInventory("ThrowingKnives", 1)
+		stop
 	Spawn:
 		TKNP A 0
-		TKNP A 0 A_SpawnItem("Knives", 8)
+		TKNP A 0 A_SpawnItem("KnifePickup", 8)
 		stop
 	}
 }
@@ -1873,6 +1878,81 @@ actor RemoteMines : GEWeapon
 		TNT1 A 0 A_TakeInventory("Detonator", 999)
 		TNT1 A 10 A_WeaponReady(WRF_NOSECONDARY)
 		TNT1 A 0 A_Refire
+		goto Ready
+  }
+}
+
+actor TimedMines : GEWeapon
+{
+  Obituary "%o's time was cut short by %k's timed mine."
+  Weapon.Ammotype1 "TimedMineAmmo"
+  Weapon.UpSound "ProxBeep"
+  Inventory.Pickupmessage "Picked up a timed mine"
+  Weapon.Selectionorder 900
+  Weapon.AmmoUse1 1
+  Scale 0.3
+  +WEAPON.NOAUTOFIRE
+  +WEAPON.NOAUTOAIM
+  +FLOATBOB
+  States
+  {
+	Spawn:
+		MINE A -1
+		stop
+	Select:
+		TNT1 A 1 A_Raise
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+		loop
+	Deselect:
+		TNT1 A 1 A_Lower
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+		loop
+	Ready:
+		TNT1 A 1 A_WeaponReady
+		loop
+	Fire:
+		TNT1 A 30 A_FireCustomMissile("TimedMine", 0, true, 5, 0, 0, 4)
+		TNT1 A 0 A_Refire
+		goto Ready
+  }
+}
+
+actor HandGrenades : GEWeapon
+{
+  Weapon.Ammotype1 "HandGrenadeAmmo"
+  Inventory.Pickupmessage "Picked up a grenade."
+  Weapon.Selectionorder 900
+  Weapon.AmmoUse1 1
+  +WEAPON.NOAUTOFIRE
+  +WEAPON.NOAUTOAIM
+  States
+  {
+	Spawn:
+		AMMO A 0
+		stop
+	Select:
+		TNT1 A 1 A_Raise
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Raise
+		loop
+	Deselect:
+		TNT1 A 1 A_Lower
+		TNT1 AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA 0 A_Lower
+		loop
+	Ready:
+		TNT1 A 1 A_WeaponReady
+		loop
+	Fire:
+		TNT1 A 1 A_PlaySound("PinPull", CHAN_WEAPON)
+		TNT1 A 0 A_Refire("Hold")
+		goto Throw
+	Hold:
+		TNT1 A 1 A_GiveInventory("GrenadeTimer", 1)
+		TNT1 A 0 A_JumpIfInventory("GrenadeTimer", 175, "Throw")
+		TNT1 A 0 A_Refire("Hold")
+		goto Throw
+	Throw:
+		TNT1 A 30 A_FireCustomMissile("HandGrenade", 0, true, 5, 0, 0, 4)
+		TNT1 A 0 A_Refire("Fire")
 		goto Ready
   }
 }

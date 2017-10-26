@@ -7,7 +7,7 @@ setslot 5 GE64GrenadeLauncher GE64RocketLauncher
 setslot 6 MoonrakerLaser PD_Cyclone
 setslot 7 RCP90 GoldenGun
 setslot 8 SniperRifle
-setslot 9 RemoteMines ProximityMines
+setslot 9 RemoteMines ProximityMines TimedMines HandGrenades
 
 clearplayerclasses
 

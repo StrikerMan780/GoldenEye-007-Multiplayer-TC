@@ -1,0 +1,88 @@
+// Golden Gun
+Model WeaponSlot // Vicious
+{
+	Path "Models"
+	Model 0 "GoldenGun.md2"
+	Skin 0 "GoldenGun.png"
+	Scale 2.0 2.0 2.0
+
+	Frame BFUG A 0 "Base"
+}
+
+// ZMG
+model WeaponSlot // Vicious/StrikerMan780
+{
+	Path "Models"
+	Model 0 "ZMG.md2"
+	Skin 0 "ZMG.png"
+	Scale 0.8 0.8 0.8
+
+	Frame ZMGP A 0 "Base1"
+}
+
+
+// DD44
+model WeaponSlot // Vicious
+{
+	Path "Models"
+	Model 0 "DD44.md2"
+	Skin 0 "DD44.png"
+	Scale 0.7 0.7 0.7
+
+	Frame DD4P A 0 "Base1"
+}
+
+// Cougar Magnum
+model WeaponSlot // Vicious
+{
+	Path "Models"
+	Model 0 "CougarMagnum.md2"
+	Skin 0 "CougarMagnum.png"
+	Scale 0.6 0.6 0.6
+
+   Frame RAIL A 0 "Base"
+}
+
+// RC-P90
+model WeaponSlot // Dark_Knight
+{
+	Path "Models"
+	Model 0 "RC-P90.md3"
+	Skin 0 "RC-P90.png"
+	Scale 1.4 1.4 1.4
+
+   FrameIndex RCPP A 0 0
+}
+
+// Klobb
+model WeaponSlot // Dark_Knight
+{
+	Path "Models"
+	Model 0 "Klobb.md3"
+	Skin 0 "Klobb.png"
+	Scale 1.1 1.1 1.1
+
+   FrameIndex MGUN A 0 0
+}
+
+// Sniper Rifle
+model WeaponSlot // Dark_Knight
+{
+	Path "Models"
+	Model 0 "SniperRifle.md2"
+	Skin 0 "SniperRifle.png"
+	Scale 1.1 1.1 1.1
+
+   FrameIndex SNPR A 0 0
+}
+
+// Automatic Shotgun
+model WeaponSlot // Dark_Knight
+{
+	Path "Models"
+	Model 0 "AutomaticShotgun.md3"
+	Skin 0 "AutomaticShotgun.png"
+	Scale 1.1 1.1 1.1
+
+   FrameIndex SGN2 A 0 0
+}

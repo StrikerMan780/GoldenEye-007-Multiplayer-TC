@@ -101,7 +101,29 @@ map STACK "Goldeneye 007 - Stack/Library"
 	clipmidtextures
 	allowcrouch
 	UsePlayerStartZ
-	next = "FACILITY"
+	next = "BASEMENT"
+	cluster = 1
+}
+
+map BASEMENT "Goldeneye 007 - Basement"
+{
+	sky1 = bsky1, 0.0
+	music = "D_BASEME"
+	clipmidtextures
+	evenlighting
+	allowcrouch
+	next = "COMPLEX"
+	cluster = 1
+}
+
+map COMPLEX "Goldeneye 007 - Complex"
+{
+	sky1 = REDSKY1, 0.0
+	music = "FRIGATE"
+	clipmidtextures
+	allowcrouch
+	UsePlayerStartZ 
+	next = "ARCHIVES" // Go back to ARCHIVES for now, until the rest of the maps are ready. Once done, go to FACILITY.
 	cluster = 1
 }
 
@@ -120,17 +142,6 @@ map TEMPLE "Goldeneye 007 - Temple"
 	sky1 = bsky1, 0.0
 	music = "D_TEMPLE"
 	clipmidtextures
-	allowcrouch
-	next = "BASEMENT"
-	cluster = 1
-}
-
-map BASEMENT "Goldeneye 007 - Basement"
-{
-	sky1 = bsky1, 0.0
-	music = "D_BASEME"
-	clipmidtextures
-	evenlighting
 	allowcrouch
 	next = "EGYPTIAN"
 	cluster = 1
@@ -162,17 +173,6 @@ map FACILBZ "Goldeneye 007 - Facility Backzone"
 	music = "D_BACKZN"
 	clipmidtextures
 	allowcrouch
-	next = "COMPLEX"
-	cluster = 1
-}
-
-map COMPLEX "Goldeneye 007 - Complex"
-{
-	sky1 = REDSKY1, 0.0
-	music = "FRIGATE"
-	clipmidtextures
-	allowcrouch
-	UsePlayerStartZ 
 	next = "FACIQUAD"
 	cluster = 1
 }

@@ -1,21 +1,39 @@
-actor BaseWeaponSlot : CustomInventory
+actor WeaponSlot : SwitchableDecoration 18011
 {
+	//$Category GoldenEye Weapon & Ammo Spawners
+	//$Arg0 Weapon Slot
+	//$Arg0Type 11
+	//$Arg0Enum { 0 = "Slot 1"; 1 = "Slot 2"; 2 = "Slot 3"; 3 = "Slot 4"; 4 = "Slot 5"; 5 = "Slot 6"; 6 = "Slot 7"; 7 = "Slot 8"; }
+	Activation THINGSPEC_ThingTargets | THINGSPEC_ThingActs | THINGSPEC_Switch
 	Radius 20
-	Height 16
-	Inventory.PickupMessage ""
-	Inventory.PickupSound ""
-	+INVENTORY.UNDROPPABLE
-	Args 0
+	Height 1
+	+SOLID
+	+CANPASS
+	+BUMPSPECIAL
 	States
 	{
 		Spawn:
-			TNT1 A 0
-			TNT1 A 0 ACS_NamedExecuteAlways("WEAPONSTATE", 0, args[0])
+			TNT1 A 1 NoDelay
+			TNT1 A 0 ACS_NamedExecuteWithResult("WEAPONSTATE", args[0])
 			goto SpawnLoop
 		SpawnLoop:
 			"####" "#" 35
-			"####" "#" 0 ACS_NamedExecuteAlways("WEAPONSTATE", 0, args[0])
+			"####" "#" 0 ACS_NamedExecuteWithResult("WEAPONSTATE", args[0])
 			loop
+		WaitForRespawn:
+			TNT1 A 0 A_ChangeFlag("BUMPSPECIAL", 0)
+			TNT1 A 0 A_ChangeFlag("SOLID", 0)
+			TNT1 A 1050
+			TNT1 A 0 A_SpawnItemEx("ItemFog", 0, 0, 0, 0, 0, 0, 0, 0, 0)
+			TNT1 A 0 A_PlaySound("misc/spawn", CHAN_AUTO)
+			TNT1 A 0 A_ChangeFlag("BUMPSPECIAL", 1)
+			TNT1 A 0 A_ChangeFlag("SOLID", 1)
+			TNT1 A 0 ACS_NamedExecuteWithResult("WEAPONSTATE", args[0])
+			goto SpawnLoop
+		Inactive:
+		Active:
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPONSLOT", args[0])
+			goto SpawnLoop
 		HideWeapon:
 			TNT1 A 0
 			goto SpawnLoop
@@ -76,93 +94,5 @@ actor BaseWeaponSlot : CustomInventory
 		TimedMines:
 			AMMO A 0
 			goto SpawnLoop
-	}
-}
-
-actor WeaponSlot1 : BaseWeaponSlot 18011
-{
-	Args 0
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 0)
-			stop
-	}
-}
-
-actor WeaponSlot2 : BaseWeaponSlot 18012
-{
-	Args 1
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 1)
-			stop
-	}
-}
-
-actor WeaponSlot3 : BaseWeaponSlot 18013
-{
-	Args 2
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 2)
-			stop
-	}
-}
-
-actor WeaponSlot4 : BaseWeaponSlot 18014
-{
-	Args 3
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 3)
-			stop
-	}
-}
-
-actor WeaponSlot5 : BaseWeaponSlot 18015
-{
-	Args 4
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 4)
-			stop
-	}
-}
-
-actor WeaponSlot6 : BaseWeaponSlot 18016
-{
-	Args 5
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 5)
-			stop
-	}
-}
-
-actor WeaponSlot7 : BaseWeaponSlot 18017
-{
-	Args 6
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 6)
-			stop
-	}
-}
-
-actor WeaponSlot8 : BaseWeaponSlot 18018
-{
-	Args 7
-	States
-	{
-		Pickup:
-			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEWEAPON", 7)
-			stop
 	}
 }

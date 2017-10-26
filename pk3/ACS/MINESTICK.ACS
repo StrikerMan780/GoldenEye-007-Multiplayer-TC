@@ -103,3 +103,15 @@ script "DETONATEMINES" (void) NET
 		TakeInventory("DetonatorTimer", 1);
 	}
 }
+
+script "GETGRENADETIMER" (void)
+{
+	SetActivatorToTarget(0);
+	SetResultValue(CheckInventory("GrenadeTimer"));
+	TakeInventory("GrenadeTimer", 175);
+}
+
+script "GRENADETIMER" (void)
+{
+	GiveInventory("GrenadeTimer", ACS_NamedExecuteWithResult("GETGRENADETIMER"));
+}

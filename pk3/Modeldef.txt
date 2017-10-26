@@ -8,26 +8,6 @@ Model MunitionsBox // StrikerMan780
    FrameIndex BAR1 A 0 0
 }
 
-Model GoldenGun // Vicious
-{
-	Path "Models"
-	Model 0 "GoldenGun.md2"
-	Skin 0 "GoldenGun.png"
-	Scale 2.0 2.0 2.0
-
-   Frame BFUG A 0 "Base"
-}
-
-model ZMG // Vicious/StrikerMan780
-{
-	Path "Models"
-	Model 0 "ZMG.md2"
-	Skin 0 "ZMG.png"
-	Scale 0.8 0.8 0.8
-
-   Frame ZMGP A 0 "Base1"
-}
-
 model Tazer // StrikerMan780
 {
 	Path "Models"
@@ -36,23 +16,6 @@ model Tazer // StrikerMan780
 	Scale 2.7 2.7 2.7
 
    Frame TAZP A 0 "Skin"
-}
-
-model ThrownKnife // Vicious/StrikerMan780
-{
-	Path "Models"
-	Model 0 "KnifeThrow.md2"
-	Skin 0 "Knife.png"
-	Scale 2.5 2.5 2.5
-
-   Frame TKNI A 0 "Base1"
-   Frame TKNI B 0 "Base2"
-   Frame TKNI C 0 "Base3"
-   Frame TKNI D 0 "Base4"
-   Frame TKNI E 0 "Base5"
-   Frame TKNI F 0 "Base6"
-   Frame TKNI G 0 "Base7"
-   Frame TKNI H 0 "Base8"
 }
 
 model HuntingKnife // Vicious/StrikerMan780
@@ -66,48 +29,15 @@ model HuntingKnife // Vicious/StrikerMan780
    Frame TKNP A 0 "Base1"
 }
 
-model Knives // Vicious/StrikerMan780
+model KnifePickup // Vicious/StrikerMan780
 {
 	Path "Models"
 	Model 0 "Knife.md2"
 	Skin 0 "Knife.png"
 	Scale 2.5 2.5 2.5
-   ZOffset 1
+	ZOffset 1
 
-   Frame TKNP A 0 "Base1"
-}
-
-model ThrowingKnives // Vicious/StrikerMan780
-{
-	Path "Models"
-	Model 0 "Knife.md2"
-	Skin 0 "Knife.png"
-	Scale 2.5 2.5 2.5
-   ZOffset 1
-
-   Frame TKNP A 0 "Base1"
-}
-
-model DD44 // Vicious
-{
-	Path "Models"
-	Model 0 "DD44.md2"
-	Skin 0 "DD44.png"
-	Scale 0.7 0.7 0.7
-  // ZOffset 0
-
-   Frame DD4P A 0 "Base1"
-}
-
-model CougarMagnum // Vicious
-{
-	Path "Models"
-	Model 0 "CougarMagnum.md2"
-	Skin 0 "CougarMagnum.png"
-	Scale 0.6 0.6 0.6
-  // ZOffset 0
-
-   Frame RAIL A 0 "Base"
+	Frame TKNP A 0 "Base1"
 }
 
 model BloodsplatterPool // StrikerMan780
@@ -121,116 +51,22 @@ model BloodsplatterPool // StrikerMan780
    Frame BLUD E 0 "Skin"
 }
 
-model RCP90 // Dark_Knight
-{
-	Path "Models"
-	Model 0 "RC-P90.md3"
-	Skin 0 "RC-P90.png"
-	Scale 1.4 1.4 1.4
-  // ZOffset 0
-
-   FrameIndex RCPP A 0 0
-}
-
-model Klobb // Dark_Knight
-{
-	Path "Models"
-	Model 0 "Klobb.md3"
-	Skin 0 "Klobb.png"
-	Scale 1.1 1.1 1.1
-  // ZOffset 0
-
-   FrameIndex MGUN A 0 0
-}
-
-model SniperRifle // Dark_Knight
-{
-	Path "Models"
-	Model 0 "SniperRifle.md2"
-	Skin 0 "SniperRifle.png"
-	Scale 1.1 1.1 1.1
-   ZOffset 0
-
-   FrameIndex SNPR A 0 0
-}
-
-model AutomaticShotgun // Dark_Knight
-{
-	Path "Models"
-	Model 0 "AutomaticShotgun.md3"
-	Skin 0 "AutomaticShotgun.png"
-	Scale 1.1 1.1 1.1
-   ZOffset 0
-
-   FrameIndex SGN2 A 0 0
-}
-
-model LaserBeam // StrikerMan780
-{
-	Path "Models"
-	Model 0 "Tracer.md3"
-   Skin 0 "BeamCore.png"
-   Model 1 "TracerTip.md3"
-   Skin 1 "BeamTip.png"
-	Scale 36.0 6.0 6.0
-   PITCHFROMMOMENTUM
-  // ZOffset 0
-
-   FrameIndex PLSS A 0 0
-   FrameIndex PLSS B 0 0
-}
-
-model LaserTrail // StrikerMan780
-{
-	Path "Models"
-	Model 0 "Tracer.md3"
-	Skin 0 "BeamCore.png"
-	Scale 0.0 0.0 0.0
-   PITCHFROMMOMENTUM
-  // ZOffset 0
-
-   FrameIndex PLSS A 0 0
-   FrameIndex PLSS B 0 0
-}
-
-model GE64Grenade
-{
-	Path "Models"
-	Model 0 "GrenadeProjectile.md2"
-	Skin 0 "GrenadeProjectile.png"
-	Scale 1.1 1.1 1.1
-   PITCHFROMMOMENTUM
-
-   FrameIndex SGRN A 0 0
-}
-
-model BulletTracer
-{
-	Path "Models"
-	Model 0 "Tracer.md3"
-	Skin 0 "Tracer.png"
-	Scale 16.0 2.0 2.0
-   PITCHFROMMOMENTUM
-
-   FrameIndex PUFF A 0 0
-}
-
 model Debris1
 {
 	Path "Models"
 	Model 0 "Debris.md2"
 	Skin 0 "Debris1.png"
 	Scale 1.32 1.32 1.32
-   PITCHFROMMOMENTUM
+	PITCHFROMMOMENTUM
 
-   FrameIndex DEB1 A 0 0
-   FrameIndex DEB1 B 0 1
-   FrameIndex DEB1 C 0 2
-   FrameIndex DEB1 D 0 3
-   FrameIndex DEB1 E 0 4
-   FrameIndex DEB1 F 0 5
-   FrameIndex DEB1 G 0 6
-   FrameIndex DEB1 H 0 7
+	FrameIndex DEB1 A 0 0
+	FrameIndex DEB1 B 0 1
+	FrameIndex DEB1 C 0 2
+	FrameIndex DEB1 D 0 3
+	FrameIndex DEB1 E 0 4
+	FrameIndex DEB1 F 0 5
+	FrameIndex DEB1 G 0 6
+	FrameIndex DEB1 H 0 7
 }
 
 model Debris2
@@ -239,7 +75,7 @@ model Debris2
 	Model 0 "Debris.md2"
 	Skin 0 "Debris2.png"
 	Scale 1.32 1.32 1.32
-   PITCHFROMMOMENTUM
+	PITCHFROMMOMENTUM
 
    FrameIndex DEB2 A 0 0
    FrameIndex DEB2 B 0 1
@@ -305,152 +141,14 @@ model Debris5
    FrameIndex DEB5 H 0 7
 }
 
-model CyclonePlasma
-{
-	Path "Models"
-	Model 0 "Tracer.md3"
-	Skin 0 "CycloneTracer.png"
-	Scale 20.0 7.0 7.0
-   PITCHFROMMOMENTUM
-
-   FrameIndex TPLA A 0 0
-}
-
-model MagnumBullets
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainGrey.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideGrey.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxText.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex MAGB A 0 0
-}
-
-model 9mmBullets
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainGreen.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideGreen.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxText.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex CLIP A 0 0
-}
-
-model Large9mmBullets
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainGreen.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideGreen.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxText.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex CLIP A 0 0
-}
-
-model PointedBullets
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainGreen.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideGreen.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxText.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex PAMO A 0 0
-}
-
-model ShotgunCartridges
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainRed.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideRed.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxTextYellow.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex SHEL A 0 0
-}
-
-model LargeShotgunCartridges
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainRed.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideRed.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxTextYellow.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex SHEL A 0 0
-}
-
-model GrenadeRounds
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainBrown.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideBrown.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxText.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex ROCK A 0 0
-}
-
-model Rockets
-{
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainBrown.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideBrown.png"
-	Model 2 "BoxHandles.md3"
-	Skin 2 "BoxHandle.png"
-	Model 3 "BoxText.md3"
-	Skin 3 "BoxText.png"
-	Scale 15.0 13.0 13.0
-
-	FrameIndex ROCK A 0 0
-}
-
 model MedikitPickup
 {
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainMed.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideMed.png"
+	Path "Models/ammobox"
+	Model 0 "ammobox.md3"
+	SurfaceSkin 0 0 "main_med.png"
+	SurfaceSkin 0 1 "sides_med.png"
+	SurfaceSkin 0 2 "null.png"
+	SurfaceSkin 0 3 "null.png"
 	Scale 10.0 8.0 8.0
 
 	FrameIndex MEDI A 0 0
@@ -458,11 +156,12 @@ model MedikitPickup
 
 model StimpackPickup
 {
-	Path "Models"
-	Model 0 "BoxMain.md3"
-	Skin 0 "BoxMainMed.png"
-	Model 1 "BoxSides.md3"
-	Skin 1 "BoxSideMed.png"
+	Path "Models/ammobox"
+	Model 0 "ammobox.md3"
+	SurfaceSkin 0 0 "main_med.png"
+	SurfaceSkin 0 1 "sides_med.png"
+	SurfaceSkin 0 2 "null.png"
+	SurfaceSkin 0 3 "null.png"
 	Scale 7.0 5.0 7.0
 
 	FrameIndex STIM A 0 0
@@ -530,16 +229,6 @@ Model AutomaticShotgunPaintball
 
    FrameIndex NULL A 0 0
    FrameIndex NULL B 0 1
-}
-
-model Ge64Rocket
-{
-	Path "Models\Projectiles\Rocket"
-	Model 0 "rocket.md3"
-	Scale 1.5 1.5 1.5
-   PITCHFROMMOMENTUM
-
-   FrameIndex MISL A 0 0
 }
 
 Model MoonrakerLaser
@@ -722,102 +411,6 @@ Model KF7SovietPaintball
 
 	FrameIndex NULL A 0 0
 	FrameIndex NULL B 0 1
-}
-
-model RemoteMine
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-	Offset 0.0 0.0 8.0
-	
-	Rotating
-	Rotation-Speed -10
-	Rotation-Vector 0 0 1
-	Rotation-Center 0.0 4.0 0.0
-
-	FrameIndex RMIN A 0 0
-}
-
-model RemoteMine
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-
-	FrameIndex RMIN B 0 0
-}
-
-model RemoteMine
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-	Offset -1.25 0.0 8.0
-	PitchOffset -90
-
-	FrameIndex RMIN C 0 0
-}
-
-model RemoteMine
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-	Offset 0.0 0.0 20.0
-	PitchOffset -180
-
-	FrameIndex RMIN D 0 0
-}
-
-model ProxProj
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-	SurfaceSkin 0 1 "proxmine.png"
-	Offset 0.0 0.0 8.0
-	
-	Rotating
-	Rotation-Speed -10
-	Rotation-Vector 0 0 1
-	Rotation-Center 0.0 4.0 0.0
-
-	FrameIndex PROX A 0 0
-}
-
-model ProxProj
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-	SurfaceSkin 0 1 "proxmine.png"
-
-	FrameIndex PROX B 0 0
-}
-
-model ProxProj
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-	Offset -1.25 0.0 8.0
-	PitchOffset -90
-	SurfaceSkin 0 1 "proxmine.png"
-
-	FrameIndex PROX C 0 0
-}
-
-model ProxProj
-{
-	Path "Models\mines"
-	Model 0 "RemoteMine.md3"
-	Scale 3.0 3.0 3.0
-	Offset 0.0 0.0 20.0
-	PitchOffset -180
-	SurfaceSkin 0 1 "proxmine.png"
-
-	FrameIndex PROX D 0 0
 }
 
 model PointedBulletCasing

@@ -141,22 +141,31 @@ ACTOR MagnumBullets : Ammo Replaces CellPack
 	}
 }
 
-ACTOR Knives : Ammo 16701
+ACTOR Knives : Ammo
 {
 	Inventory.MaxAmount 11
 	Ammo.BackpackAmount 0
 	Ammo.BackpackMaxAmount 22
 	Inventory.Icon "KNIFE"
-	Inventory.PickupMessage "Throwing Knife"
-	Inventory.PickupSound "KnifeUp"
-	Scale 0.5
 	+INVENTORY.ALWAYSPICKUP
 	+INVENTORY.IGNORESKILL
+}
+
+actor KnifePickup : CustomInventory
+{
+	Inventory.PickupMessage ""
+	Inventory.PickupSound "KnifeUp"
+	+INVENTORY.ALWAYSPICKUP
+	Scale 0.5
 	States
 	{
 		Spawn:
 			TKNP A -1
 			loop
+		Pickup:
+			TKNP A 0 A_GiveInventory("Knives", 1)
+			TKNP A 0 A_GiveInventory("ThrowingKnives", 1)
+			stop
 	}
 }
 
@@ -171,7 +180,7 @@ actor ProxMineAmmo : Ammo
 	inventory.maxamount 11
 	ammo.backpackamount 3
 	ammo.backpackmaxamount 22
-	+FLOATBOB
+	+INVENTORY.IGNORESKILL
 	states
 	{
 		Spawn:
@@ -191,7 +200,7 @@ actor RemoteMineAmmo : Ammo
 	inventory.maxamount 11
 	ammo.backpackamount 3
 	ammo.backpackmaxamount 22
-	+FLOATBOB
+	+INVENTORY.IGNORESKILL
 	states
 	{
 		Spawn:
@@ -211,7 +220,7 @@ actor TimedMineAmmo : Ammo
 	inventory.maxamount 11
 	ammo.backpackamount 3
 	ammo.backpackmaxamount 22
-	+FLOATBOB
+	+INVENTORY.IGNORESKILL
 	states
 	{
 		Spawn:
@@ -229,10 +238,31 @@ ACTOR CycloneCell : Ammo 16552
 	Ammo.BackpackMaxAmount 400
 	Scale 0.6
 	Inventory.Icon ICONBULL
+	+INVENTORY.IGNORESKILL
 	States
 	{
 		Spawn:
 			CCEL A -1
 			loop
+	}
+}
+
+actor HandGrenadeAmmo : Ammo
+{
+	scale 0.3
+	radius 16
+	height 8
+	inventory.pickupmessage "Picked up a hand grenade."
+	inventory.icon "HGRNICON"
+	inventory.amount 1
+	inventory.maxamount 13
+	ammo.backpackamount 3
+	ammo.backpackmaxamount 26
+	+INVENTORY.IGNORESKILL
+	states
+	{
+		Spawn:
+			RMIP A -1
+			stop
 	}
 }

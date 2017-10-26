@@ -59,11 +59,35 @@ ListMenu "SkillMenu"
 	// Will be filled in by difficulties
 }
 
+OptionValue "WeaponSets"
+{
+	0, "Hunting Knives Only!"
+	1, "Pistols"
+	2, "Throwing Knives"
+	3, "Automatics"
+	4, "Power Weapons"
+	5, "Sniper Rifles"
+	6, "Grenades"
+	7, "Remote Mines"
+	8, "Timed Mines"
+	9, "Proximity Mines"
+	10, "Grenade Launchers"
+	11, "Rockets"
+	12, "Lasers"
+	13, "Golden Gun"
+	14, "GETC Classic"
+	15, "Laser Wars"
+	16, "Rocket Clusterfuck"
+}
+
 OptionMenu "GETCOptions"
 {
 	Title "GoldenEye Options"
 	SafeCommand "Set Recommended Font Scaling", "getc_fontfix"
-	StaticText 	""
+	StaticText ""
+	Option "Weapon Set", "ge_weaponset", "WeaponSets"
+	Option "Random Weapon Set", "ge_randomweaponset", "OnOff"
+	StaticText ""
 	StaticText "Key Bindings", 1
 	Control "Detonate Remote Mines", "getc_detonate"
 }
