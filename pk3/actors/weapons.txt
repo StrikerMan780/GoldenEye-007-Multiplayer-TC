@@ -1947,7 +1947,7 @@ actor HandGrenades : GEWeapon
 		goto Throw
 	Hold:
 		TNT1 A 1 A_GiveInventory("GrenadeTimer", 1)
-		TNT1 A 0 A_JumpIfInventory("GrenadeTimer", 175, "Throw")
+		TNT1 A 0 A_JumpIfInventory("GrenadeTimer", 140, "Throw")
 		TNT1 A 0 A_Refire("Hold")
 		goto Throw
 	Throw:

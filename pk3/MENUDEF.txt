@@ -78,6 +78,7 @@ OptionValue "WeaponSets"
 	14, "GETC Classic"
 	15, "Laser Wars"
 	16, "Rocket Clusterfuck"
+	17, "Mine Fiesta"
 }
 
 OptionMenu "GETCOptions"

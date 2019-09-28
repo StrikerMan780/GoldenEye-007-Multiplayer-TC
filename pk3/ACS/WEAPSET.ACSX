@@ -38,8 +38,8 @@ enum
 
 GEAmmo ammo_types[AMMO_MAX] = {
 	{ "InvalidAmmo"			"invalid ammo type" },	// AMMO_NONE
-	{ "9mmBullets",			"ammo" },				// AMMO_BASIC
-	{ "PointedBullets", 	"ammo" },				// AMMO_POINTED
+	{ "9mmBullets",			"9mm ammo" },			// AMMO_BASIC
+	{ "PointedBullets", 	"7.62mm ammo" },		// AMMO_POINTED
 	{ "ShotgunCartridges",	"shotgun cartridges" },	// AMMO_SHOTGUN
 	{ "MagnumBullets",		"magnum bullets" },		// AMMO_MAGNUM
 	{ "GoldenBullet",		"golden bullets" },		// AMMO_GOLDEN
@@ -139,6 +139,7 @@ enum
 	SET_GETCCLASSIC,
 	SET_LASERWARS,
 	SET_ROCKETCLUSTERFUCK,
+	SET_MINEFIESTA,
 	SET_MAX,
 }
 
@@ -160,6 +161,7 @@ GEWeaponSet weaponsets[SET_MAX] = {
 	{ "GETC Classic",			{ W_PP7, W_KLOBB, W_KF7, W_SHOTGUN, W_LASER, W_RLAUNCHER, W_RCP90, W_GOLDGUN } },
 	{ "Laser Wars",				{ W_LASER, W_LASER, W_LASER, W_LASER, W_LASER, W_LASER, W_LASER, W_LASER } },
 	{ "Rocket Clusterfuck",		{ W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER, W_RLAUNCHER } },
+	{ "Mine Fiesta",			{ W_HANDGRENADE, W_HANDGRENADE, W_TIMEDMINE, W_REMOTEMINE, W_REMOTEMINE, W_PROXMINE, W_PROXMINE, W_RLAUNCHER } },
 };
 
 script "RANDOMWEAPONSET" OPEN
@@ -213,13 +215,27 @@ function bool GiveAmmo(int slot)
 
 script "GIVEAMMO" (int slot)
 {
+	SetActivatorToTarget(0);
 	SetResultValue(GiveAmmo(slot));
+}
+
+script "GIVEAMMOSLOT" (int slot)
+{	
+	GEWeapon weapon = GetGEWeapon(slot);
+	if(weapon.ammo_type != AMMO_NONE)
+	{
+		int success = ACS_NamedExecuteWithResult("GIVEAMMO", slot);
+		if(success)
+		{
+			SetActorState(0, "WaitForRespawn");
+		}
+	}
 }
 
 script "AMMOSTATE" (int slot) CLIENTSIDE
 {
 	GEWeapon weapon = GetGEWeapon(slot);
-	GEAmmo ammo = GetGEAmmo(slot);
+	
 	if((GetWeaponNum(slot) == W_NONE) || (weapon.ammo_box == 0) || (weapon.ammo_type == AMMO_NONE))
 	{
 		SetActorState(0, "HideAmmo", false); 
@@ -261,7 +277,13 @@ function bool GiveWeapon(int weapon_num, bool use_message, bool dropped)
 	{
 		str clip_name = StrParam(s:weapon.class_name, s:"Clip");
 		int clip_capacity = GetAmmoCapacity(clip_name);
-		if(weapon.ammo_pickup > clip_capacity)
+		
+		if(GetCvar("ge_fullmagonpickup"))
+		{
+			GiveInventory(clip_name, clip_capacity);
+			GiveInventory(ammo.class_name, weapon.ammo_pickup);
+		}
+		else if(weapon.ammo_pickup > clip_capacity)
 		{
 			GiveInventory(clip_name, clip_capacity);
 			GiveInventory(ammo.class_name, weapon.ammo_pickup-clip_capacity);
@@ -394,4 +416,17 @@ script "STARTWEAPON" ENTER
 script "RESPAWNWEAPON" RESPAWN
 {
 	GiveStartWeapon();
+}
+
+script "CALCULATERESPAWNTIMER" (void)
+{
+	int dividend = PlayerCount()/4;
+	int time = 35*30;
+	
+	if(dividend <= 0)
+	{
+		dividend = 1;
+	}
+	
+	SetResultValue(time/dividend);
 }
