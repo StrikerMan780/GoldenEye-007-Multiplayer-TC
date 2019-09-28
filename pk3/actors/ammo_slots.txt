@@ -23,7 +23,7 @@ actor BaseAmmoSlot : SwitchableDecoration
 			
 		Inactive:
 		Active:
-			CLIP A 0 ACS_NamedExecuteWithResult("GIVEAMMOSLOT", args[0])
+			"####" "#" 0 ACS_NamedExecuteWithResult("GIVEAMMOSLOT", args[0])
 			goto SpawnLoop
 			
 		WaitForRespawn:
