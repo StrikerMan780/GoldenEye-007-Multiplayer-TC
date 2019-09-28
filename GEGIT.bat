@@ -1,12 +1,32 @@
 @echo off
-SET PATH=%PATH%;%~dp0\Tools
-set WorkingCopyPath=%~dp0
-cls
+setlocal
+setlocal EnableDelayedExpansion
 
+SET PATH=%PATH%;%~dp0\Tools
+set GIT=None
+set WorkingCopyPath=%~dp0
+set REVISIONNUMBER=Unknown
+
+for /f "tokens=1-2*" %%A in ('reg query HKEY_LOCAL_MACHINE\Software\GitForWindows /v InstallPath ^| find "REG_SZ"') do (
+	set GIT=%%C
+	set "PATH=!GIT!\bin;%PATH%"
+)
+
+if exist "!GIT!\bin\git.exe" (
+	echo Found Git at !GIT!
+	goto GITFOUND
+) else (
+	echo GIT NOT FOUND^^!
+	goto MENU
+)
+
+:GITFOUND
 echo ---------------------------
 echo Retrieving GIT Commit Count
 echo ---------------------------
-for /f "delims=" %%i in ('git rev-list HEAD --count') do set REVISIONNUMBER=%%i
+for /f "delims=" %%i in ('git rev-list HEAD --count') do ( 
+	set "REVISIONNUMBER=%%i"
+)
 
 :MENU
 cd /d %~dp0
@@ -16,7 +36,7 @@ chgcolor 0a
 echo 浜様様様様様様様様様様様様様様様様融
 echoj $ba
 chgcolor 0f
-echoj " GoldenEye TC GIT Build Compiler "
+echoj " GoldenEye TC GIT Build Compiler  "
 chgcolor 0a
 chgcolor 0a
 echoj $ba $0a
@@ -58,7 +78,7 @@ echo Compiling GoldenEye TC Local Development Build...
 del .\builds\GE007_MPTC-DEV.pk3 /q
 
 cd pk3
-7za a -y -tzip -mx=0 -mmt -x!.git -xr!*.backup* -xr!*.dbs ..\builds\GE007_MPTC-DEV.pk3 .\
+7za a -y -tzip -mx=0 -mmt -x^^!.git -xr^^!*.backup* -xr^^!*.dbs ..\builds\GE007_MPTC-DEV.pk3 .\
 
 pause
 goto MENU
@@ -68,7 +88,7 @@ echo Compiling GoldenEye TC GIT Release Rev#: %REVISIONNUMBER% (Full Compression
 del .\builds\GE007_MPTC-r%REVISIONNUMBER%.pk3 /q
 
 cd pk3
-7za a -y -tzip -mx=9 -mmt -x!.git -xr!*.backup* -xr!*.dbs ..\builds\GE007_MPTC-r%REVISIONNUMBER%.pk3 .\
+7za a -y -tzip -mx=9 -mmt -x^^!.git -xr^^!*.backup* -xr^^!*.dbs ..\builds\GE007_MPTC-r%REVISIONNUMBER%.pk3 .\
 
 pause
 goto MENU
